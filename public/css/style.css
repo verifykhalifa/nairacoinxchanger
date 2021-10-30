@@ -882,7 +882,7 @@ a.navbar-brand {
 }
 
 .about_bg {
-    background-image: url('../images/about_bg.png');
+    background-image: url('../images/dark.jpg');
     background-repeat: no-repeat;
     background-position: left center;
 }
@@ -2316,7 +2316,7 @@ ul.bottom_menu li {
 }
 
 .contact_form {
-    background: url('../images/contact_bg.png');
+    background: url('../images/nair.png');
     background-size: cover;
     background-position: center center;
     min-height: 650px;

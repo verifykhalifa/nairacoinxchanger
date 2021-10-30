@@ -22,6 +22,14 @@ Route::get('/home', "App\Http\Controllers\HomeController@home");
 Route::get('/rate', "App\Http\Controllers\HomeController@rate");
 
 
+/** Dashboard  */
+Route::get('/superdash', "App\Http\Controllers\dcontroller@superdash");
+Route::get('/pref', "App\Http\Controllers\dcontroller@pref");
+Route::get('/linked', "App\Http\Controllers\dcontroller@linked");
+Route::get('/settings', "App\Http\Controllers\dcontroller@settings");
+Route::get('/transaction', "App\Http\Controllers\dcontroller@transaction");
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

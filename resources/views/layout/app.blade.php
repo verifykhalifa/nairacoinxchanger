@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Metas -->
-    <title>Exchange Currency - Responsive HTML5 Template</title>
+    <title>Nairacoinxchange - Responsive HTML5 Template</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,7 +18,7 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
-
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Pogo Slider CSS -->
@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo_section">
-                        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="image"></a>
+                        <a class="navbar-brand" href="index.html"><img src="images/Naira.png" style="width: 228px; height: 69px;" alt="image"></a>
                     </div>
                 
                     <div class="site_information" style="text-align: right;">
@@ -91,7 +91,7 @@
                         <li><a class="nav-link" href="services.html">Services</a></li>
                         @if (Route::has('login'))
                             @auth
-                                <li><a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a></li>
+                                <li><a class="nav-link" href="{{ url('/superdash') }}">Dashboard</a></li>
                                 @else
                                 <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                                     @if (Route::has('register'))
@@ -178,7 +178,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p class="crp">© Copyrights 2019 design by html.design</p>
+                    <p class="crp">© Copyrights 2021 design by Leogenix</p>
                 </div>
             </div>
         </div>
@@ -302,6 +302,7 @@ jQuery(function ($) {
   }
 });
 	</script>
+    
 </body>
 
 </html>
