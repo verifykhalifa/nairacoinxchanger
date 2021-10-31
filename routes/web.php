@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,25 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-
-Route::get('/home', "App\Http\Controllers\HomeController@home");
+Route::get('/', "App\Http\Controllers\HomeController@home");
 Route::get('/rate', "App\Http\Controllers\HomeController@rate");
 
 
 /** Dashboard  */
-Route::get('/superdash', "App\Http\Controllers\dcontroller@superdash");
+Route::get('/dashboard', "App\Http\Controllers\dcontroller@dashboard");
 Route::get('/pref', "App\Http\Controllers\dcontroller@pref");
 Route::get('/linked', "App\Http\Controllers\dcontroller@linked");
 Route::get('/settings', "App\Http\Controllers\dcontroller@settings");
 Route::get('/transaction', "App\Http\Controllers\dcontroller@transaction");
+Route::get('/verification', "App\Http\Controllers\dcontroller@verification");
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+/**Auth Route Both */
+Route::group(['middleware' => ['auth']], function() {
+    Route::get('/dashboard', "App\Http\Controllers\dcontroller@dashboard")->name('dashboard');
+});
+
 
 require __DIR__.'/auth.php';

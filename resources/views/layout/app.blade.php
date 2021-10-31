@@ -91,7 +91,7 @@
                         <li><a class="nav-link" href="services.html">Services</a></li>
                         @if (Route::has('login'))
                             @auth
-                                <li><a class="nav-link" href="{{ url('/superdash') }}">Dashboard</a></li>
+                                <li><a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a></li>
                                 @else
                                 <li><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                                     @if (Route::has('register'))

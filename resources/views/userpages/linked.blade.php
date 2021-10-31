@@ -5,7 +5,7 @@
 <div class="col-xl-9 col-md-8">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Linked Account or Card</h4>
+            <h4 class="card-title">Linked Bank Account</h4>
         </div>
         <div class="card-body">
             <div class="form">
@@ -91,10 +91,9 @@
                 </ul>
 
                 <div class="mt-5">
-                    <a href="verify-step-5.html" class="btn btn-primary px-4 me-3">Add Bank
+                    <a href="/verification" class="btn btn-primary px-4 me-3">Add Bank
                         Account</a>
-                    <a href="verify-step-1.html" class="btn btn-success px-4">Add Debit
-                        Account</a>
+                    
                 </div>
             </div>
         </div>

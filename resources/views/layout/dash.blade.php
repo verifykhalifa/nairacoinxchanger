@@ -34,8 +34,8 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="/home"><img src="admin/images/new.png" style="width: 223px; height: 69px;" alt="">
-                               
+                            <a class="navbar-brand" href="index.html"><img src="admin/images/nai.png" style="width: 223px; height: 69px;" alt="">
+                                </a>
 
 
                             <div class="dashboard_log my-2">
@@ -54,25 +54,25 @@
                                     <div class="profile_log dropdown">
                                         <div class="user" data-toggle="dropdown">
                                             <span class="thumb"><i class="la la-user"></i></span>
-                                            <span class="name">Maria Pascle</span>
+                                            <span class="name">{{ Auth::user()->name }}</span>
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="accounts.html" class="dropdown-item">
-                                                <i class="la la-user"></i> Account
-                                            </a>
-                                            <a href="history.html" class="dropdown-item">
+                                        
+                                            <a href="/transaction" class="dropdown-item">
                                                 <i class="la la-book"></i> History
                                             </a>
                                             <a href="/settings" class="dropdown-item">
                                                 <i class="la la-cog"></i> Setting
                                             </a>
-                                            <a href="lock.html" class="dropdown-item">
-                                                <i class="la la-lock"></i> Lock
+                                        
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                                            <a href="{{ route('logout') }}" class="dropdown-item logout" onclick="event.preventDefault();
+                                            this.closest('form').submit();" >
+                                                <i class="la la-sign-out"></i> {{ __('Log Out') }}
                                             </a>
-                                            <a href="signin.html" class="dropdown-item logout">
-                                                <i class="la la-sign-out"></i> Logout
-                                            </a>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -87,7 +87,7 @@
             <div class="menu">
                 <ul>
                     <li>
-                        <a href="/superdash" data-toggle="tooltip" data-placement="right" title="Home">
+                        <a href="/dashboard" data-toggle="tooltip" data-placement="right" title="Home">
                             <span><i class="la la-igloo"></i></span>
                         </a>
                     </li>
@@ -109,7 +109,7 @@
                     <div class="col-xl-12">
                         <div class="page_title-content">
                             <p>Welcome Back,
-                                <span> Maria Pascle</span>
+                                <span> {{ Auth::user()->name }}</span>
                             </p>
                         </div>
                     </div>
@@ -117,9 +117,9 @@
             </div>
         </div>
 
-        <main class="py-4">
+        
             @yield('content')
-        </main>
+        
 
 
 
