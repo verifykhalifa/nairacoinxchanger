@@ -38,24 +38,17 @@
                             </a>
                             <div class="dashboard_log my-2">
                                 <div class="d-flex align-items-center">
-                                    <div class="account_money">
-                                        <ul>
-                                            <li class="crypto">
-                                                <span>0.0025</span>
-                                                <i class="cc BTC-alt"></i>
-                                            </li>
-                                            <li class="usd">
-                                                <span>19.93 USD</span>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
                                     <div class="profile_log dropdown">
                                         <div class="user" data-toggle="dropdown">
                                             <span class="thumb"><i class="la la-user"></i></span>
-                                            <span class="name">{{ Auth::user()->name }}</span>
+                                            <span class="name">{{ Auth::user()->name }} </span>
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="/verification" class="dropdown-item">
+                                                <i class="la la-book"></i> Verification
+                                            </a>
                                             <a href="/transaction" class="dropdown-item">
                                                 <i class="la la-book"></i> History
                                             </a>
@@ -105,7 +98,7 @@
                     <div class="col-xl-12">
                         <div class="page_title-content">
                             <p>Welcome Back,
-                                <span> {{ Auth::user()->name }}</span>
+                                <span> {{ Auth::user()->name }} </span>
                             </p>
                         </div>
                     </div>
@@ -163,20 +156,14 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-md-6">
                         <div class="copy_right">
-                            Copyright ©
+                            Copyright © All Rights Reserved By Nairacoinxchange
                             <script>
                                 var CurrentYear = new Date().getFullYear()
                                 document.write(CurrentYear)
-                            </script> Quixlab. All Rights Reserved.
+                            </script>.
                         </div>
                     </div>
-                    <div class="col-xl-6 col-md-6 text-lg-right text-center">
-                        <div class="social">
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                        </div>
+                    
                     </div>
                 </div>
             </div>
@@ -186,83 +173,7 @@
         <!--**********************************
             Right sidebar start
         ***********************************-->
-        <div class="sidebar-right">
-            <a class="sidebar-right-trigger" href="javascript:void(0)">
-                <span><i class="fa fa-cog fa-spin"></i></span>
-            </a>
-            <div class="sidebar-right-inner">
-                <div class="admin-settings">
-                    <div class="opt-background">
-                        <p>Font Family</p>
-                        <select class="form-control" name="theme_font" id="theme_font">
-                            <option value="nunito">Nunito</option>
-                            <option value="opensans">Open Sans</option>
-
-                        </select>
-                    </div>
-                    <div>
-                        <p>Primary Color</p>
-                        <div class="opt-nav-header-color">
-                            <span>
-                                <input type="radio" name="navigation_header" value="color_1"
-                                    class="filled-in chk-col-primary" id="nav_header_color_1" />
-                                <label for="nav_header_color_1"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="navigation_header" value="color_2"
-                                    class="filled-in chk-col-primary" id="nav_header_color_2" />
-                                <label for="nav_header_color_2"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="navigation_header" value="color_3"
-                                    class="filled-in chk-col-primary" id="nav_header_color_3" />
-                                <label for="nav_header_color_3"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="navigation_header" value="color_4"
-                                    class="filled-in chk-col-primary" id="nav_header_color_4" />
-                                <label for="nav_header_color_4"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="navigation_header" value="color_5"
-                                    class="filled-in chk-col-primary" id="nav_header_color_5" />
-                                <label for="nav_header_color_5"></label>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="opt-header-color">
-                        <p>Background Color</p>
-                        <div>
-                            <span>
-                                <input type="radio" name="header_bg" value="color_1" class="filled-in chk-col-primary"
-                                    id="header_color_1">
-                                <label for="header_color_1"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="header_bg" value="color_2" class="filled-in chk-col-primary"
-                                    id="header_color_2">
-                                <label for="header_color_2"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="header_bg" value="color_3" class="filled-in chk-col-primary"
-                                    id="header_color_3">
-                                <label for="header_color_3"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="header_bg" value="color_4" class="filled-in chk-col-primary"
-                                    id="header_color_4">
-                                <label for="header_color_4"></label>
-                            </span>
-                            <span>
-                                <input type="radio" name="header_bg" value="color_5" class="filled-in chk-col-primary"
-                                    id="header_color_5">
-                                <label for="header_color_5"></label>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!--**********************************
             Right sidebar end
         ***********************************-->

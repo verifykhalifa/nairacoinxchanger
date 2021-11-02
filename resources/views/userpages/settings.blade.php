@@ -13,40 +13,33 @@
                     <form method="post" name="myform" class="personal_validate">
                         <div class="row">
                             <div class="mb-3 col-xl-6">
-                                <label class="me-sm-2">Your Name</label>
-                                <input type="text" class="form-control" placeholder="Maria Pascle"
-                                    name="fullname">
+                                <label class="me-sm-2">First Name</label>
+                                <input type="text" class="form-control" placeholder="{{ Auth::user()->name }}"
+                                    name="name">
+                            </div>
+                            <div class="mb-3 col-xl-6">
+                                <label class="me-sm-2">Last Name</label>
+                                <input type="text" class="form-control" placeholder="{{ Auth::user()->last_name }}"
+                                    name="last_name">
                             </div>
                             <div class="mb-3 col-xl-6">
                                 <label class="me-sm-2">Email</label>
                                 <input type="email" class="form-control"
-                                    placeholder="Hello@example.com" name="email">
+                                    placeholder="{{ Auth::user()->email }}" name="email">
                             </div>
+                        
                             <div class="mb-3 col-xl-6">
-                                <label class="me-sm-2">Date of birth</label>
-                                <input type="text" class="form-control" placeholder="" id="datepicker" autocomplete="off" name="dob">
-                            </div>
-                            <div class="mb-3 col-xl-6">
-                                <label class="me-sm-2">Present Address</label>
+                                <label class="me-sm-2">Address</label>
                                 <input type="text" class="form-control"
-                                    placeholder="56, Old Street, Brooklyn" name="presentaddress">
-                            </div>
-                            <div class="mb-3 col-xl-6">
-                                <label class="me-sm-2">Permanent Address</label>
-                                <input type="text" class="form-control"
-                                    placeholder="123, Central Square, Brooklyn"
-                                    name="permanentaddress">
+                                    placeholder="{{ Auth::user()->address }}" name="address">
                             </div>
                             <div class="mb-3 col-xl-6">
                                 <label class="me-sm-2">City</label>
-                                <input type="text" class="form-control" placeholder="New York"
+                                <input type="text" class="form-control"
+                                    placeholder="{{ Auth::user()->city }}"
                                     name="city">
                             </div>
-                            <div class="mb-3 col-xl-6">
-                                <label class="me-sm-2">Postal Code</label>
-                                <input type="text" class="form-control" placeholder="25481"
-                                    name="postal">
-                            </div>
+
                             <div class="mb-3 col-xl-6">
                                 <label class="me-sm-2">Country</label>
                                 <select class="form-control" name="country">
@@ -331,6 +324,13 @@
                                         </ul>
                                 </select>
                             </div>
+
+                            <div class="mb-3 col-xl-6">
+                                <label class="me-sm-2">Phone</label>
+                                <input type="text" class="form-control" placeholder="{{ Auth::user()->phone }}"
+                                    name="phone">
+                            </div>
+                            
 
                             <div class="mb-3 col-12">
                                 <button class="btn btn-success ps-5 pe-5">Save</button>

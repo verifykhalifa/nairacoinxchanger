@@ -99,7 +99,7 @@
                                                 </div>
                                                 <select class="form-control" name="method">
                                                     <option value="">Select</option>
-                                                    <option value="bank">Bank of America ********45845</option>
+                                                    <option value="bank" href="/verification">Add Bank</option>
                                                     <option value="master">Master Card ***********5458</option>
                                                 </select>
                                             </div>
@@ -150,7 +150,7 @@
                                                 </div>
                                                 <select class="form-control" name="method">
                                                     <option value="">Select</option>
-                                                    <option value="bank">Bank of America ********45845</option>
+                                                    <option value="bank" href="/verification">Add Bank</option>
                                                     <option value="master">Master Card ***********5458</option>
                                                 </select>
                                             </div>

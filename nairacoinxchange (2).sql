@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2021 at 08:38 PM
+-- Generation Time: Nov 02, 2021 at 11:54 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 7.3.29
 
@@ -58,7 +58,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2021_10_31_143655_laratrust_setup_tables', 2);
+(5, '2021_10_31_143655_laratrust_setup_tables', 1);
 
 -- --------------------------------------------------------
 
@@ -92,16 +92,16 @@ CREATE TABLE `permissions` (
 --
 
 INSERT INTO `permissions` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'users-create', 'Create Users', 'Create Users', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(2, 'users-read', 'Read Users', 'Read Users', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(3, 'users-update', 'Update Users', 'Update Users', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(4, 'users-delete', 'Delete Users', 'Delete Users', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(5, 'payments-create', 'Create Payments', 'Create Payments', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(6, 'payments-read', 'Read Payments', 'Read Payments', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(7, 'payments-update', 'Update Payments', 'Update Payments', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(8, 'payments-delete', 'Delete Payments', 'Delete Payments', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(9, 'profile-read', 'Read Profile', 'Read Profile', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(10, 'profile-update', 'Update Profile', 'Update Profile', '2021-10-31 19:46:15', '2021-10-31 19:46:15');
+(1, 'users-create', 'Create Users', 'Create Users', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(2, 'users-read', 'Read Users', 'Read Users', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(3, 'users-update', 'Update Users', 'Update Users', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(4, 'users-delete', 'Delete Users', 'Delete Users', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(5, 'payments-create', 'Create Payments', 'Create Payments', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(6, 'payments-read', 'Read Payments', 'Read Payments', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(7, 'payments-update', 'Update Payments', 'Update Payments', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(8, 'payments-delete', 'Delete Payments', 'Delete Payments', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(9, 'profile-read', 'Read Profile', 'Read Profile', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(10, 'profile-update', 'Update Profile', 'Update Profile', '2021-11-01 04:11:37', '2021-11-01 04:11:37');
 
 -- --------------------------------------------------------
 
@@ -186,8 +186,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'Admin', 'Admin', '2021-10-31 19:46:15', '2021-10-31 19:46:15'),
-(2, 'user', 'User', 'User', '2021-10-31 19:46:15', '2021-10-31 19:46:15');
+(1, 'admin', 'Admin', 'Admin', '2021-11-01 04:11:37', '2021-11-01 04:11:37'),
+(2, 'user', 'User', 'User', '2021-11-01 04:11:37', '2021-11-01 04:11:37');
 
 -- --------------------------------------------------------
 
@@ -206,8 +206,9 @@ CREATE TABLE `role_user` (
 --
 
 INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
-(1, 2, 'App\\Models\\User'),
-(2, 3, 'App\\Models\\User');
+(2, 2, 'App\\Models\\User'),
+(1, 3, 'App\\Models\\User'),
+(2, 4, 'App\\Models\\User');
 
 -- --------------------------------------------------------
 
@@ -218,7 +219,12 @@ INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -230,10 +236,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@admin.com', NULL, '$2y$10$UUnsFePFdxKpVlJYAvXrY..VXq70.NDd0x5bGqN2bUwMIya3qDZfu', NULL, '2021-10-29 22:48:12', '2021-10-29 22:48:12'),
-(2, 'admin', 'admin@admin1.com', NULL, '$2y$10$42p.yg8yhl/3qD8lXT5b.uEANGl9CaCPeO34jqbJ53A/iIHl4JGEe', NULL, '2021-10-31 21:01:54', '2021-10-31 21:01:54'),
-(3, 'user role', 'user1@yahoo.com', NULL, '$2y$10$PjfOGCV9fSnM/E7mIIXwke8HN6jL9ZiyHbIFaYtDQxcAbjEDwiLuO', NULL, '2021-10-31 21:35:42', '2021-10-31 21:35:42');
+INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `address`, `city`, `country`, `phone`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'hekdj', 'jdjdj', 'jdjdj@yahoo.com', 'hshfdh', 'jjdj', 'Bahamas', '2427288323', NULL, '$2y$10$LMbCW1g7z.HiphRqnq.suuj4LqF5C3YHetskYStJ9IgBztR7aA7LW', NULL, '2021-11-01 04:00:31', '2021-11-01 04:00:31'),
+(2, 'user', 'role', 'userrole1@yahoo.com', '728 yahoo street', 'kola', 'Bahrain', '8928388723', NULL, '$2y$10$qGtudGcq0EmVQxyIEsIgX.ZtjYMJo8C8ZSj/MYZXLuCy8HDsy57Se', NULL, '2021-11-01 04:13:12', '2021-11-01 04:13:12'),
+(3, 'Admin', 'Admin', 'admin@admin.com', 'admin address', 'admin city', 'Nigeria', '809282827', NULL, '$2y$10$gA3ZKp1rlwGNxs0aaQsMSudKtemt/gVPoAIeGyAqsvmojC/53yiHS', NULL, '2021-11-01 04:32:42', '2021-11-01 04:32:42'),
+(4, 'user', 'seconduser', 'user2@yahoo.com', 'user address', 'user2 city', 'Azerbaijan', '782739343', NULL, '$2y$10$5KqMshP9zpPvjeeyqP3AVeLVTL0dvDN2LyVNiZWOOSdqgRtiIzQ8m', NULL, '2021-11-01 04:34:34', '2021-11-01 04:34:34');
 
 --
 -- Indexes for dumped tables
@@ -346,7 +353,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables

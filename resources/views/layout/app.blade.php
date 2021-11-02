@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Metas -->
-    <title>Nairacoinxchange - Responsive HTML5 Template</title>
+    <title>Buy & Sell Bitcoin | Perfect Money | Bitcoin Cash | Ethereum - Nairacoinxchange</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,7 +18,7 @@
     <!-- Site Icons -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <link rel="apple-touch-icon" href="#" />
-    
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <!-- Pogo Slider CSS -->
@@ -34,6 +34,176 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+    
+                .demo{ font-family: 'Noto Sans', sans-serif; }
+                .panel{
+                    background: linear-gradient(to right, #2980b9, #2c3e50);
+                    padding: 0;
+                    border-radius: 10px;
+                    border: none;
+                    box-shadow: 0 0 0 5px rgba(0,0,0,0.05),0 0 0 10px rgba(0,0,0,0.05);
+                }
+                .panel .panel-heading{
+                    padding: 20px 15px;
+                    border-radius: 10px 10px 0 0;
+                    margin: 0;
+                }
+                .panel .panel-heading .title{
+                    color: #fff;
+                    font-size: 28px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                    line-height: 40px;
+                    margin: 0;
+                }
+                .panel .panel-heading .btn{
+                    color: rgba(255,255,255,0.5);
+                    background: transparent;
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    border: 2px solid #fff;
+                    border-radius: 50px;
+                    transition: all 0.3s ease 0s;
+                }
+                .panel .panel-heading .btn:hover{
+                    color: #fff;
+                    text-shadow: 3px 3px rgba(255,255,255,0.2);
+                }
+                .panel .panel-heading .form-control{
+                    color: #fff;
+                    background-color: transparent;
+                    width: 35%;
+                    height: 40px;
+                    border: 2px solid #fff;
+                    border-radius: 20px;
+                    display: inline-block;
+                    transition: all 0.3s ease 0s;
+                }
+                .panel .panel-heading .form-control:focus{
+                    background-color: rgba(255,255,255,0.2);
+                    box-shadow: none;
+                    outline: none;
+                }
+                .panel .panel-heading .form-control::placeholder{
+                    color: rgba(255,255,255,0.5);
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+                .panel .panel-body{ padding: 0; }
+                .panel .panel-body .table thead tr th{
+                    color: #fff;
+                    background-color: rgba(255, 255, 255, 0.2);
+                    font-size: 16px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    padding: 12px;
+                    border: none;
+                }
+                .panel .panel-body .table tbody tr td{
+                    color: #fff;
+                    font-size: 15px;
+                    padding: 10px 12px;
+                    vertical-align: middle;
+                    border: none;
+                }
+                .panel .panel-body .table tbody tr:nth-child(even){ background-color: rgba(255,255,255,0.05); }
+                .panel .panel-body .table tbody .action-list{
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                }
+                .panel .panel-body .table tbody .action-list li{
+                    display: inline-block;
+                    margin: 0 5px;
+                }
+                .panel .panel-body .table tbody .action-list li a{
+                    color: #fff;
+                    font-size: 15px;
+                    position: relative;
+                    z-index: 1;
+                    transition: all 0.3s ease 0s;
+                }
+                .panel .panel-body .table tbody .action-list li a:hover{ text-shadow: 3px 3px 0 rgba(255,255,255,0.3); }
+                .panel .panel-body .table tbody .action-list li a:before,
+                .panel .panel-body .table tbody .action-list li a:after{
+                    content: attr(data-tip);
+                    color: #fff;
+                    background-color: #111;
+                    font-size: 12px;
+                    padding: 5px 7px;
+                    border-radius: 4px;
+                    text-transform: capitalize;
+                    display: none;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    left: 50%;
+                    top: -32px;
+                    transition: all 0.3s ease 0s;
+                }
+                .panel .panel-body .table tbody .action-list li a:after{
+                    content: '';
+                    height: 15px;
+                    width: 15px;
+                    padding: 0;
+                    border-radius: 0;
+                    transform: translateX(-50%) rotate(45deg);
+                    top: -18px;
+                    z-index: -1;
+                }
+                .panel .panel-body .table tbody .action-list li a:hover:before,
+                .panel .panel-body .table tbody .action-list li a:hover:after{
+                    display: block;
+                }
+                .panel .panel-footer{
+                    color: #fff;
+                    background-color: transparent;
+                    padding: 15px;
+                    border: none;
+                }
+                .panel .panel-footer .col{ line-height: 35px; }
+                .pagination{ margin: 0; }
+                .pagination li a{
+                    color: #fff;
+                    background-color: transparent;
+                    border: 2px solid transparent;
+                    font-size: 18px;
+                    font-weight: 500;
+                    text-align: center;
+                    line-height: 31px;
+                    width: 35px;
+                    height: 35px;
+                    padding: 0;
+                    margin: 0 3px;
+                    border-radius: 50px;
+                    transition: all 0.3s ease 0s;
+                }
+                .pagination li a:hover{
+                    color: #fff;
+                    background-color: transparent;
+                    border-color: rgba(255,255,255,0.2);
+                }
+                .pagination li a:focus,
+                .pagination li.active a,
+                .pagination li.active a:hover{
+                    color: #fff;
+                    background-color: transparent;
+                    border-color: #fff;
+                }
+                .pagination li:first-child a,
+                .pagination li:last-child a{
+                    border-radius: 50%;
+                }
+                @media only screen and (max-width:767px){
+                    .panel .panel-heading .title{
+                        text-align: center;
+                        margin: 0 0 10px;
+                    }
+                    .panel .panel-heading .btn_group{ text-align: center; }
+                }
+    
+</style>
 
 </head>
 
@@ -123,36 +293,27 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="full">
-                                <img class="img-responsive" src="images/footer_logo.png" alt="#" />
+                                <img class="img-responsive" src="images/Naira.png" alt="#" />
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-3">
-                            <div class="full">
-                                <h3>Quick Links</h3>
-                            </div>
-                            <div class="full">
-                                <ul class="menu_footer">
-                                    <li><a href="home.html">> Home</a></li>
-                                    <li><a href="about.html">> About</a></li>
-                                    <li><a href="exchange.html">> Exchange</a></li>
-                                    <li><a href="services.html">> Services</a></li>
-                                    <li><a href="new.html">> New</a></li>
-                                    <li><a href="contact.html">> Contact</a></li>
-                                </ul>
-                            </div>
+                            
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-3">
                             <div class="full">
-                                <div class="footer_blog full white_fonts">
-                             <h3>Newsletter</h3>
-                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                             <div class="newsletter_form">
-                                <form action="index.html">
-                                   <input type="email" placeholder="Your Email" name="#" required="">
-                                   <button>Submit</button>
-                                </form>
-                             </div>
-                         </div>
+                                <div class="full">
+                                    <h3>Quick Links</h3>
+                                </div>
+                                <div class="full">
+                                    <ul class="menu_footer">
+                                        <li><a href="home.html">> Home</a></li>
+                                        <li><a href="about.html">> About</a></li>
+                                        <li><a href="exchange.html">> Exchange</a></li>
+                                        <li><a href="services.html">> Services</a></li>
+                                        <li><a href="new.html">> New</a></li>
+                                        <li><a href="contact.html">> Contact</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-3">
@@ -178,7 +339,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <p class="crp">© Copyrights 2021 design by Leogenix</p>
+                    Copyright © All Rights Reserved By Nairacoinxchange
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>.
                 </div>
             </div>
         </div>

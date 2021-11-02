@@ -20,22 +20,58 @@
     <div class="section">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="full text_align_right_img">
-                        <img src="images/img1.png" alt="#" />
-                    </div>
-                </div>
-                <div class="col-md-6 layout_padding">
+               
+                <div class="col-md-12 layout_padding">
                     <div class="full paddding_left_15">
                         <div class="heading_main text_align_left">
-						   <h2><span class="theme_color">Welcome</span> To Exchange</h2>	
+						   <h2><span class="theme_color">Our</span> Price List</h2>	
                         </div>
                     </div>
                     <div class="full paddding_left_15">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <table class="table table-dark table-striped">
+                            <thead>
+                              <tr>
+                                
+                                <th scope="col">Coin</th>
+                                <th scope="col"></th>
+                                <th scope="col">We Buy</th>
+                                <th scope="col">We Sell</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                
+                                <th colspan="2"><img src="images/btc.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin BTC</td>
+                                <td>550</td>
+                                <td>600</td>
+                              </tr>
+                              <tr>
+                                
+                                <th colspan="2"><img src="images/pm.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Perfect Money PM</td>
+                                <td >550</td>
+                                <td>600</td>
+                              </tr>
+                              <tr>
+                                
+                                <th colspan="2"><img src="images/eth.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Etherium ETH</td>
+                                <td>550</td>
+                                <td>600</td>
+                              </tr>
+                              <tr>
+                                
+                                <th colspan="2"><img src="images/bch.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin Cash BCH</td>
+                                <td>550</td>
+                                <td>600</td>
+                              </tr>
+                            </tbody>
+                          </table>
                     </div>
                     <div class="full paddding_left_15">
-                        <a class="main_bt" href="#">About more ></a>
+                        <div class="container">
+                            <div class="row">
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -57,26 +93,251 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                       <img class="img-responsive" src="images/s1.png" alt="#" />
-                       <h4>Safe & Secure</h4>
+                       <img class="img-responsive" src="images/google.png" alt="#" />
+                                    <div class="rates" style="background: #fff;">
+                                        <table class="table table-striped">
+                                            <thead >
+                                                <tr align="center">
+                                                    <th style="padding: 4px !important;">Dollar Value</th>
+                                                    <th style="padding: 4px !important;">Rate</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody align="center">
+                                                                                                                                                    <tr>
+                                                        <td><h6>300 Dollars</h6></td>
+                                                        <td><h6>₦110,000</h6></td>
+                                                    </tr>
+                                                                                                    <tr>
+                                                        <td><h6>500 Dollars</h6></td>
+                                                        <td><h6>₦190,000</h6></td>
+                                                    </tr>
+                                                                                                    <tr>
+                                                        <td><h6>1000 Dollars</h6></td>
+                                                        <td><h6>₦380,000</h6></td>
+                                                    </tr>
+                                            </tbody>
+                                            
+                                        </table>
+                                        <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                                    </div>
+                             
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="images/s2.png" alt="#" />
-                        <h4>Mobile Apps</h4>
+                        <img class="img-responsive" src="images/itunes.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="images/s3.png" alt="#" />
-                        <h4>Wallet</h4>
+                        <img class="img-responsive" src="images/amazon.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="full services_blog">
-                        <img class="img-responsive" src="images/s4.png" alt="#" />
-                        <h4>Experts Support</h4>
+                        <img class="img-responsive" src="images/steam.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="full services_blog">
+                        <img class="img-responsive" src="images/steam.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="full services_blog">
+                        <img class="img-responsive" src="images/steam.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="full services_blog">
+                        <img class="img-responsive" src="images/steam.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="full services_blog">
+                        <img class="img-responsive" src="images/steam.png" alt="#" />
+                        <div class="rates" style="background: #fff;">
+                            <table class="table table-striped">
+                                <thead >
+                                    <tr align="center">
+                                        <th style="padding: 4px !important;">Dollar Value</th>
+                                        <th style="padding: 4px !important;">Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody align="center">
+                                                                                                                                        <tr>
+                                            <td><h6>300 Dollars</h6></td>
+                                            <td><h6>₦110,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>500 Dollars</h6></td>
+                                            <td><h6>₦190,000</h6></td>
+                                        </tr>
+                                                                                        <tr>
+                                            <td><h6>1000 Dollars</h6></td>
+                                            <td><h6>₦380,000</h6></td>
+                                        </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div style="text-align: center"><button type="button" class="btn btn-danger" onclick="window.location.href='#';" >Trade Google</button></div>
+                        </div>
                     </div>
                 </div>
             </div>
