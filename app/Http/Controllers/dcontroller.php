@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Rate;
 
 class dcontroller extends Controller
 {
@@ -12,9 +13,11 @@ class dcontroller extends Controller
         public function dashboard()
         {
             if(Auth::user()->hasRole('admin')){
+                
                 return view('layout.master');
             }elseif(Auth::user()->hasRole('user')){
-                    return view('userpages.dash');
+                $rates = Rate::orderBy('created_at','asc')->get();
+                return view('userpages.dash')->with('rates', $rates);
             }
             
         }

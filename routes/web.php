@@ -26,11 +26,13 @@ Route::get('/linked', "App\Http\Controllers\dcontroller@linked");
 Route::get('/settings', "App\Http\Controllers\dcontroller@settings");
 Route::get('/transaction', "App\Http\Controllers\dcontroller@transaction");
 Route::get('/verification', "App\Http\Controllers\dcontroller@verification");
-
+Route::resource('api/ratetemp','App\Http\Controllers\RateApiController');
+Route::resource('api/cointemp','App\Http\Controllers\CoinApiController');
 
 /**Auth Route Both */
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', "App\Http\Controllers\dcontroller@dashboard")->name('dashboard');
+    Route::resource('/rates', "App\Http\Controllers\RateController");
 });
 
 

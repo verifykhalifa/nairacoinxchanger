@@ -148,9 +148,8 @@
     <script src="admin/vendor/jquery/jquery.min.js"></script>
     <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="admin/vendor/waves/waves.min.js"></script>
-
-    <script src="admin/vendor/toastr/toastr.min.js"></script>
-    <script src="admin/vendor/toastr/toastr-init.js"></script>
+    {{-- <script src="admin/vendor/toastr/toastr.min.js"></script>
+    <script src="admin/vendor/toastr/toastr-init.js"></script> --}}
 
     <script src="admin/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="admin/vendor/circle-progress/circle-progress-init.js"></script>

@@ -8,54 +8,36 @@
 
             <div class="col-xl-5 col-lg-5 col-md-12">
                 <div class="card balance-widget">
-                    
                     <div class="card-body pt-0">
                         <div class="balance-widget">
                             <div class="total-balance">
-                                <h2>CURRENT RATE</h2>
+                                <h2>Current Rate</h2>
                             </div>
-                            <ul class="list-unstyled">
-                                <li class="d-flex">
-                                    <i class="cc BTC me-3"></i>
-                                    <div class="flex-grow-1">
-                                        <h5 class="m-0">Bitcoin</h6>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5>0.000242 BTC</h5>
-                                       
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="cc LTC me-3"></i>
-                                    <div class="flex-grow-1">
-                                        <h5 class="m-0">Litecoin</h6>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5>0.000242 LTC</h5>
-                                       
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="cc XRP me-3"></i>
-                                    <div class="flex-grow-1">
-                                        <h5 class="m-0">Ripple</h6>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5>0.000242 XRP</h5>
-                                        
-                                    </div>
-                                </li>
-                                <li class="d-flex">
-                                    <i class="cc PM me-3"></i>
-                                    <div class="flex-grow-1">
-                                        <h5 class="m-0">Perfect Money</h6>
-                                    </div>
-                                    <div class="text-end">
-                                        <h5>0.000242 XRP</h5>
-                                        
-                                    </div>
-                                </li>
-                            </ul>
+                            <table class="table table-striped table-dark">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Coin</th>
+                                    <th scope="col">Buy</th>
+                                    <th scope="col">Sell</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($rates as $rate)
+                                    <tr>
+                                        <th scope="row"><img src="{{$rate->coin_image}}" alt="Coin Image" 
+                                            style ="width:25px;border:none"></th>
+                                        <td>{{$rate->coin}}</td>
+                                        <td>{{$rate->buy}}</td>
+                                        @if(empty($rate->sell))
+                                        <td>---</td>
+                                        @else
+                                        <td>{{$rate->sell}}</td>
+                                        @endif
+                                      </tr>
+                                    @endforeach
+                                </tbody>
+                              </table>
                         </div>
                     </div>
                 </div>
@@ -75,17 +57,21 @@
                             <div class="tab-content tab-content-default">
                                 <div class="tab-pane fade show active" id="buy" role="tabpanel">
                                     <form method="post" name="myform" class="currency_validate">
+                                        <div class="d-flex">
+                                            <b><span style="color: red">Current rate: </span>&nbsp;&#8358;</b><b id="label"></b><b>/USD</b>
+                                        </div>
                                         <div class="mb-3">
                                             <label class="me-sm-2">Currency</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
-                                                            class="cc BTC-alt"></i></label>
+                                                            class="fa fa-money"></i></label>
                                                 </div>
-                                                <select name='currency' class="form-control">
+                                                <select id="mySelect" onchange="copy()" class="form-control">
                                                     <option value="">Select</option>
-                                                    <option value="bitcoin">Bitcoin</option>
-                                                    <option value="litecoin">Litecoin</option>
+                                                    @foreach ($rates as $rate)
+                                                    <option value="{{$rate->sell}}">{{$rate->coin}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -107,11 +93,16 @@
 
                                         <div class="mb-3">
                                             <label class="me-sm-2">Enter your amount</label>
-                                            <div class="input-group">
-                                                <input type="text" name="currency_amount" class="form-control"
-                                                    placeholder="0.0214 BTC">
-                                                <input type="text" name="usd_amount" class="form-control"
-                                                    placeholder="125.00 USD">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"><i
+                                                            class="fa fa-usd"></i></label>
+                                                </div>
+                                                <input type="text" id="usdAmount" name="usd_amount" onKeyPress="edValueKeyPress()" class="form-control"
+                                                    placeholder="Amount in USD">
+                                            </div>
+                                            <div class="d-flex justify-content-between mt-3">
+                                                <span id="ShowRes">You Receive: </span>
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
                                                 <p class="mb-0">Monthly Limit</p>
@@ -131,7 +122,7 @@
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
-                                                            class="cc BTC-alt"></i></label>
+                                                            class="fa fa-money"></i></label>
                                                 </div>
                                                 <select name='currency' class="form-control">
                                                     <option value="">Select</option>
@@ -159,8 +150,12 @@
                                         <div class="mb-3">
                                             <label class="me-sm-2">Enter your amount</label>
                                             <div class="input-group">
-                                                <input type="text" name="currency_amount" class="form-control"
-                                                    placeholder="0.0214 BTC">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"><i
+                                                            class="fa fa-usd"></i></label>
+                                                </div>
+                                                {{-- <input type="text" name="currency_amount" class="form-control"
+                                                    placeholder="0.0214 BTC"> --}}
                                                 <input type="text" name="usd_amount" class="form-control"
                                                     placeholder="125.00 USD">
                                             </div>
@@ -169,10 +164,12 @@
                                                 <h6 class="mb-0">$49750 remaining</h6>
                                             </div>
                                         </div>
-                                        <button type="submit" name="submit"
+                                        <div class="text-center">
+                                            <button type="submit" name="submit"
                                             class="btn btn-success btn-block">Exchange
-                                            Now</button>
-
+                                            Now
+                                        </button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -182,14 +179,22 @@
                 </div>
                 
             </div>
-            
-
-            
-            
         </div>
-        
-        
     </div>
 </div>
+<script>
+    function copy() { 
+        document.getElementById("label").innerHTML=document.getElementById("mySelect").value
+    }
+</script>
+<script>
+    function edValueKeyPress() {
+    var coinRate = document.getElementById("mySelect");
+    var amountRate = document.getElementById("usdAmount");
+    var total    = ((coinRate.value * 1) * (amountRate.value * 1));
 
+    var ShowRes = document.getElementById("ShowRes");
+    ShowRes.innerText = "You Receive: " + total;
+}
+</script>
 @endsection
