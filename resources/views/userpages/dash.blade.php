@@ -85,7 +85,7 @@
                                                 </div>
                                                 <select class="form-control" name="method">
                                                     <option value="">Select</option>
-                                                    <option value="bank" href="/verification">Add Bank</option>
+                                                    <option value="bank" href="{{__('verification')}}">Add Bank</option>
                                                     <option value="master">Master Card ***********5458</option>
                                                 </select>
                                             </div>
@@ -104,10 +104,7 @@
                                             <div class="d-flex justify-content-between mt-3">
                                                 <span id="ShowRes">You Receive: </span>
                                             </div>
-                                            <div class="d-flex justify-content-between mt-3">
-                                                <p class="mb-0">Monthly Limit</p>
-                                                <h6 class="mb-0">$49750 remaining</h6>
-                                            </div>
+                                            
                                         </div>
                                         <button type="submit" name="submit"
                                             class="btn btn-success btn-block">Exchange
@@ -139,9 +136,9 @@
                                                     <label class="input-group-text"><i
                                                             class="fa fa-bank"></i></label>
                                                 </div>
-                                                <select class="form-control" name="method">
+                                                <select class="form-control" name="method" onChange="window.location.redirect(this.value)" >
                                                     <option value="">Select</option>
-                                                    <option value="bank" href="/verification">Add Bank</option>
+                                                    <option value="/verification">Add Bank</option>
                                                     <option value="master">Master Card ***********5458</option>
                                                 </select>
                                             </div>
@@ -160,8 +157,7 @@
                                                     placeholder="125.00 USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
-                                                <p class="mb-0">Monthly Limit</p>
-                                                <h6 class="mb-0">$49750 remaining</h6>
+                                                <span id="ShowRes">You Receive: </span>
                                             </div>
                                         </div>
                                         <div class="text-center">
@@ -194,7 +190,7 @@
     var total    = ((coinRate.value * 1) * (amountRate.value * 1));
 
     var ShowRes = document.getElementById("ShowRes");
-    ShowRes.innerText = "You Receive: " + total;
+    ShowRes.innerText = "You Receive: " + total + "0" + ".00" + " " + "NGN";
 }
 </script>
 @endsection

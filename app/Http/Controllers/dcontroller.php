@@ -14,7 +14,7 @@ class dcontroller extends Controller
         {
             if(Auth::user()->hasRole('admin')){
                 
-                return view('layout.master');
+                return view('adminpages.admindash');
             }elseif(Auth::user()->hasRole('user')){
                 $rates = Rate::orderBy('created_at','asc')->get();
                 return view('userpages.dash')->with('rates', $rates);
@@ -41,4 +41,13 @@ class dcontroller extends Controller
         public function verification(){
             return view('userpages.verification');
         }
+
+        public function admindash(){
+            return view('adminpages.admindash');
+        }
+
+        public function rate(){
+            return view('adminpages.rate');
+        }
+
 }

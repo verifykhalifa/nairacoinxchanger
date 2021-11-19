@@ -120,7 +120,7 @@
                 <div class="row align-items-center">
                     <div class="col-xl-6 col-md-6">
                         <div class="copy_right">
-                            Copyright © Nairacoinxchange
+                            Copyright © All Rights Reserved By Nairacoinxchange
                             <script>
                                 var CurrentYear = new Date().getFullYear()
                                 document.write(CurrentYear)
