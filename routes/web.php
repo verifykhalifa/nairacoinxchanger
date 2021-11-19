@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', "App\Http\Controllers\HomeController@home");
 Route::get('/rate', "App\Http\Controllers\HomeController@rate");
+Route::get('/about', "App\Http\Controllers\HomeController@about");
+Route::get('/howtobuy', "App\Http\Controllers\HomeController@howtobuy");
+Route::get('/howtosell', "App\Http\Controllers\HomeController@howtosell");
 
 
 /** Dashboard  */
