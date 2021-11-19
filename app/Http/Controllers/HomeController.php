@@ -13,4 +13,17 @@ class HomeController extends Controller
     public function rate(){
         return view('userpages.rate');
     }
+
+    public function about(){
+        return view('userpages.about');
+    }
+
+    public function howtobuy(){
+        return view('userpages.howtobuy');
+    }
+
+    public function howtosell(){
+        return view('userpages.howtosell');
+    }
+
 }

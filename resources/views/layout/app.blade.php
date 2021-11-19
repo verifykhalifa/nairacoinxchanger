@@ -225,7 +225,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo_section">
-                        <a class="navbar-brand" href="index.html"><img src="images/Naira.png" style="width: 228px; height: 69px;" alt="image"></a>
+                        <a class="navbar-brand" href="/"><img src="images/Naira.png" style="width: 228px; height: 69px;" alt="image"></a>
                     </div>
                 
                     <div class="site_information" style="text-align: right;">
@@ -255,10 +255,10 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
-                        <li><a class="nav-link active" href="index.html">Home</a></li>
-                        <li><a class="nav-link" href="about.html">About</a></li>
-                        <li><a class="nav-link" href="exchange.html">Exchange</a></li>
-                        <li><a class="nav-link" href="services.html">Services</a></li>
+                        <li><a class="nav-link active" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/about">About</a></li>
+                        <li><a class="nav-link" href="/howtobuy">How to buy</a></li>
+                        <li><a class="nav-link" href="/howtosell">How to sell</a></li>
                         @if (Route::has('login'))
                             @auth
                                 <li><a class="nav-link" href="{{ route('dashboard') }}">Dashboard</a></li>
@@ -306,12 +306,11 @@
                                 </div>
                                 <div class="full">
                                     <ul class="menu_footer">
-                                        <li><a href="home.html">> Home</a></li>
-                                        <li><a href="about.html">> About</a></li>
-                                        <li><a href="exchange.html">> Exchange</a></li>
-                                        <li><a href="services.html">> Services</a></li>
-                                        <li><a href="new.html">> New</a></li>
-                                        <li><a href="contact.html">> Contact</a></li>
+                                        <li><a href="/">> Home</a></li>
+                                        <li><a href="/about">> About</a></li>
+                                        <li><a href="/howtobuy">> How To Buy</a></li>
+                                        <li><a href="/howtosell">> How To Sell</a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
