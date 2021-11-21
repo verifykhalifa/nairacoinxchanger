@@ -2316,10 +2316,10 @@ ul.bottom_menu li {
 }
 
 .contact_form {
-    background: url('../images/nair.png');
+    background: url('../images/banner.jpg');
     background-size: cover;
     background-position: center center;
-    min-height: 650px;
+    min-height: 700px;
     padding: 80px 0;
 }
 

@@ -1,33 +1,23 @@
-@extends('layout.app')
+@extends('layout.howtobuy')
 
 @section('content')
     
 
-<!-- Start Banner -->
-<div class="section inner_page_banner">
+<!-- product section -->
+<div class="product-section mt-150 mb-150">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="banner_title">
-                    <h3>How To Buy</h3>
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">	
+                    <h3><span class="orange-text">STEPS TO CREATING A</span> BUY ORDER</h3>
+                    
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<!-- End Banner -->
 
-<div class="section white_fonts" style="background: #2a2a2a;">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            
-            <div class="col-md-11 layout_padding">
-                <div class="full paddding_left_15">
-                    <div class="heading_main text_align_left">
-                        <h2>STEPS TO CREATING A BUY ORDER</h2>    
-                     </div>
-                </div>
-                <div class="full paddding_left_15">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="single-product-item">
                     <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action list-group-item-light"
                           style="font-size: 130%">Click to register, if you are not registered, check your phone and email code to verify </a>
@@ -55,10 +45,12 @@
                           style="font-size: 130%"><b>FEEL FREE TO CONTACT US FOR ASSISTANCE VIA WHATSAPP</b></a>
                     </div>
                 </div>
-                
             </div>
+            
         </div>
     </div>
 </div>
+<!-- end product section -->
+
 
 @endsection

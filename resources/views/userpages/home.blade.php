@@ -1,250 +1,337 @@
-@extends('layout.app')
+@extends('layout.home')
 
 @section('content')
     
-    <!-- Start Banner -->
-    <div class="section contact_form">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 offset-lg-3">
-                    <div class="full">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Banner -->
+
+    <!-- features list section -->
+	<div class="list-section pt-80 pb-80">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-shield-alt"></i>
+						</div>
+						<div class="content">
+							<h3>Secure Transaction</h3>
+							<p>Trading with us is completely safe and secure. Your gift cards are safe because we redeem them directly. We don't give out cards to third party. </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+					<div class="list-box d-flex align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-phone-volume"></i>
+						</div>
+						<div class="content">
+							<h3>24/7 Support</h3>
+							<p>Yes, we are available every single minute of the day to trade your gift cards. This is a fact! </p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6">
+					<div class="list-box d-flex justify-content-start align-items-center">
+						<div class="list-icon">
+							<i class="fas fa-thumbs-up"></i>
+						</div>
+						<div class="content">
+							<h3>101% Satisfaction</h3>
+							<p>Maximum satisfaction is guaranteed when you trade with us. You will always come back for more. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- end features list section -->
+
+  <!-- product section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Our</span> Price List</h3>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="single-product-item">
+						<table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  
+                  <th scope="col">Coin</th>
+                  
+                  <th scope="col">We Buy</th>
+                  <th scope="col">We Sell</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
+                  <th ><img src="images/btc.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin BTC</td>
+                  <td>550</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  
+                  <th><img src="assets/img/bnb.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Binance Coin BNB</td>
+                  <td >550</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  
+                  <th><img src="images/eth.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Etherium ETH</td>
+                  <td>550</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  
+                  <th><img src="images/bch.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin Cash BCH</td>
+                  <td>550</td>
+                  <td>600</td>
+                </tr>
+                <tr>
+                  
+                  <th><img src="assets/img/usdt.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Tether USDT</td>
+                  <td>550</td>
+                  <td>600</td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- end product section -->
+
+  	<!-- shop banner -->
+	<section class="shop-banner">
+    <div class="container">
+        <h3>We buy all kinds <br>  of   <span class="orange-text">gift Card</span></h3>
+          
+          
+      </div>
+  </section>
+<!-- end shop banner -->
+
+
+  <!-- product section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Sell</span> Your <span class="orange-text">Gift Cards</span> for Instant Cash and<span class="orange-text"> Naira!</span></h3>
+						
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="single-product-item">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  
+                  <th scope="col">Cards</th>    
+                  <th scope="col">We Buy</th>
+                  <th scope="col">We Sell</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  
+                  <td><img src="images/itunes.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Itunes Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td><a href="https://wa.me/message/7ESEQ5BIV7H7I1">Trade Itunes</a></td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/steam.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Steam Gift Card</td>
+                  <td >550</td>
+                  <td>600</td>
+                  <td>Trade Stream</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/amazon.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Amazon Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Amazon</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/apple.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Apple Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Apple</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/google.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Googleplay Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Google</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/ebay.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Ebay Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Ebay</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/nike.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Nike Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Nike</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/sephora.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Sephora Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Sephora</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/nordstrom.jpg" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Nordsrom Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade nordstrom</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/macys.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Macys Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Macys</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/footlocker.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Footlocker Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Footlocker</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/visa.jpg" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Visa card , Walmart Visa, Mastercard and Vanilla visa card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Visa</td>
+                </tr>
+                <tr>
+                  
+                  <td><img src="images/razer.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Razer Gift Card</td>
+                  <td>550</td>
+                  <td>600</td>
+                  <td>Trade Razer</td>
+                </tr>
+              </tbody>
+            </table>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- end product section -->
+
     
-	<!-- section -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
-               
-                <div class="col-md-12 layout_padding">
-                    <div class="full paddding_left_15">
-                        <div class="heading_main text_align_left">
-						   <h2><span class="theme_color">Our</span> Price List</h2>	
-                        </div>
-                    </div>
-                    <div class="full paddding_left_15">
-                        <table class="table table-dark table-striped">
-                            <thead>
-                              <tr>
-                                
-                                <th scope="col">Coin</th>
-                                <th scope="col"></th>
-                                <th scope="col">We Buy</th>
-                                <th scope="col">We Sell</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                
-                                <th colspan="2"><img src="images/btc.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin BTC</td>
-                                <td>550</td>
-                                <td>600</td>
-                              </tr>
-                              <tr>
-                                
-                                <th colspan="2"><img src="images/pm.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Perfect Money PM</td>
-                                <td >550</td>
-                                <td>600</td>
-                              </tr>
-                              <tr>
-                                
-                                <th colspan="2"><img src="images/eth.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Etherium ETH</td>
-                                <td>550</td>
-                                <td>600</td>
-                              </tr>
-                              <tr>
-                                
-                                <th colspan="2"><img src="images/bch.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin Cash BCH</td>
-                                <td>550</td>
-                                <td>600</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </div>
-                    <div class="full paddding_left_15">
-                        <div class="container">
-                            <div class="row">
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<!-- end section -->
-    <!-- section -->
-    <div class="section layout_padding">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="full">
-                        <div class="heading_main text_align_center">
-                           <h2><span class="theme_color"></span>Sell Your Gift Cards for Instant Cash and Naira!</h2>    
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-md-center">
-                <div class="col-md-10">
-                    <div class="full paddding_left_15">
-                        <table class="table table-striped">
-                            <thead>
-                              <tr>
-                                
-                                <th scope="col">Cards</th>    
-                                <th scope="col">We Buy</th>
-                                <th scope="col">We Sell</th>
-                                <th scope="col"></th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                
-                                <td><img src="images/itunes.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Itunes Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Itunes</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/steam.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Steam Gift Card</td>
-                                <td >550</td>
-                                <td>600</td>
-                                <td>Trade Stream</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/amazon.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Amazon Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Amazon</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/apple.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Apple Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Apple</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/google.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Googleplay Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Google</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/ebay.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Ebay Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Ebay</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/nike.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Nike Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Nike</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/sephora.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Sephora Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Sephora</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/nordstrom.jpg" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Nordsrom Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade nordstrom</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/macys.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Macys Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Macys</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/footlocker.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Footlocker Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Footlocker</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/visa.jpg" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Visa card , Walmart Visa, Mastercard and Vanilla visa card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Visa</td>
-                              </tr>
-                              <tr>
-                                
-                                <td><img src="images/razer.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Razer Gift Card</td>
-                                <td>550</td>
-                                <td>600</td>
-                                <td>Trade Razer</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </div>
-                </div>
-                
-            </div>
+    <!-- cart banner section -->
+	<section class="cart-banner pt-100 pb-100">
+    <div class="container">
+        <div class="row clearfix">
+            <!--Image Column-->
+            <div class="image-column col-lg-6">
+                <div class="image">
+                    
+                    <img src="assets/img/scamalert.png" alt="">
+                  </div>
+              </div>
+              <!--Content Column-->
+              <div class="content-column col-lg-6">
+        <h3><span class="orange-text">* Disclaimer *</span> </h3>
+                  
+                  <div class="text" style="font-size: 20px"><b>We do not give out our bank details nor Transact via social media.
+                    All transactions must be done on our website or any of our offices.
+                    Beware of fake facebook and other accounts pretending to be our agents, they are scammers. Always use the site/office or whatsapp number display confirm from us only here.</b></div>
+                  <!--Countdown Timer-->
+                  
+                <a href="#" class="cart-btn mt-3"> Beware!!!</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- end cart banner section -->
 
-            <div class="section white_fonts" style="background: #2a2a2a;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6" style="background: #fff;">
-                            <div class="full text_align_center_img">
-                                <img src="images/scamalert.png" alt="#" />
-                            </div>
-                        </div>
-                        <div class="col-md-6 layout_padding">
-                            <div class="full paddding_left_15">
-                                <div class="heading_main text_align_left">
-                                   <h2><span class="theme_color">* Disclaimer *</span></h2>    
-                                </div>
-                            </div>
-                            <div class="full paddding_left_15">
-                                <h3>We do not give out our bank details nor Transact via social media. <br/>All transactions must be done on our website or any of our offices. <br/>Beware of fake facebook and other accounts pretending to be our agents, they are scammers. <br.>Always use the site/office or whatsapp number display confirm from us only here.</h3>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        
-        </div>
-    </div>
-    <!-- end section -->
-    <!-- section -->
-
-    <!-- end section -->
-	<!-- section -->
-
-    <!-- end section -->
-	<!-- section -->
-    
-    <!-- end section -->
-    <!-- section -->
-    
-    <!-- end section -->
-    <!-- contact_form -->
-   
-    <!-- end contact_form -->
-    <!-- end section -->
+  <!-- testimonail-section -->
+	<div class="testimonail-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 text-center">
+					<div class="testimonial-sliders">
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="assets/img/avaters/avatar1.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Saira Hakim <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="assets/img/avaters/avatar2.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>David Niph <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+						<div class="single-testimonial-slider">
+							<div class="client-avater">
+								<img src="assets/img/avaters/avatar3.png" alt="">
+							</div>
+							<div class="client-meta">
+								<h3>Jacob Sikim <span>Local shop owner</span></h3>
+								<p class="testimonial-body">
+									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "
+								</p>
+								<div class="last-icon">
+									<i class="fas fa-quote-right"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end testimonail-section -->
 
 @endsection

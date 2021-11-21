@@ -26,4 +26,8 @@ class HomeController extends Controller
         return view('userpages.howtosell');
     }
 
+    public function terms(){
+        return view('userpages.terms');
+    }
+
 }

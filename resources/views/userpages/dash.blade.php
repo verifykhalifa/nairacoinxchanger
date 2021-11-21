@@ -2,6 +2,21 @@
 
 @section('content')
     
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row" id="main" >
+            <div class="col-sm-12 col-md-12 well" id="content" style="padding-left: 75px">
+                <br>
+                <h4 >Welcome Back, </h4>
+                <h1 style="font-size: 40px; padding-left:100px;" >{{ Auth::user()->name }}</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
 <div class="content-body">
     <div class="container-fluid">
         <div class="row">

@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="index.html"><img src="admin/images/nai.png" style="width: 223px; height: 69px;" alt="">
+                            <a class="navbar-brand" href="index.html"><img src="images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
                                 </a>
 
 
@@ -92,19 +92,17 @@
             </div>
         </div>
 
-        <div class="page_title">
+        <div class="page_title" style="height: 0%">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-xl-12">
-                        <div class="page_title-content">
-                            <p>Welcome Back,
-                                <span> {{ Auth::user()->name }} </span>
-                            </p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+
+       
 
         
             @yield('content')

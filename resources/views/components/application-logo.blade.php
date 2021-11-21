@@ -1,1 +1,1 @@
-<img src="images/Naira.png" style="width: 228px; height: 69px;" alt="image">
+<img src="images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
