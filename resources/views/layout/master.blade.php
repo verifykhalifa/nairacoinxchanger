@@ -87,7 +87,10 @@
                             <span><i class="la la-exchange-alt"></i></span>
                         </a>
                     </li>
-                
+                    <li><a href="/adminsettings" data-toggle="tooltip" data-placement="right" title="Settings">
+                        <span><i class="la la-tools"></i></span>
+                    </a>
+                </li>
                 </ul>
             </div>
         </div>

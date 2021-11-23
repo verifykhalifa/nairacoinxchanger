@@ -2,6 +2,23 @@
 
 @section('content')
     
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="row" id="main" >
+            <div class="col-sm-12 col-md-12 well" id="content" style="padding-left: 75px">
+                <br>
+                <div style="color: #7b6fff">
+                <h4>Welcome Back, </h4>
+                </div>
+                <h1 style="font-size: 40px; padding-left:100px;" >{{ Auth::user()->name }}</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
 <div class="content-body">
     <div class="container-fluid">
         <div class="row">
@@ -85,13 +102,37 @@
                                                             class="fa fa-bank"></i></label>
                                                 </div>
                                                 <select class="form-control" name="method">
-                                                    <option value="">Payment Method</option>
-                                                    <option value="bank" href="{{__('verification')}}">Add Bank</option>
-                                                    <option value="master">Master Card ***********5458</option>
+                                                    <option value="">Select Payment Method</option>
+                                                    <option value="bank" >Bank Transfer</option>
+                                                    <option value="master">Cash Deposit</option>
                                                 </select>
                                             </div>
                                         </div>
-
+                                        <div class="mb-3">
+                                            <label class="me-sm-2">Bank Choice</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"><i
+                                                            class="fa fa-bank"></i></label>
+                                                </div>
+                                                <select class="form-control" name="method">
+                                                    <option value="">Select Bank Choice</option>
+                                                    <option value="bank" >Gtb</option>
+                                                    <option value="master">ACCESSBANK</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="me-sm-2">Receiving Bitcoin Address</label>
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <label class="input-group-text"><i
+                                                            class="fa fa-bank"></i></label>
+                                                </div>
+                                                <input type="text" id="btcaddress" name="btcaddress"  class="form-control"
+                                                    placeholder="BTC Address">
+                                            </div>
+                                        </div>
                                         <div class="mb-3">
                                             {{-- <label class="me-sm-2">Enter your amount</label> --}}
                                             <div class="input-group mb-3">
@@ -108,8 +149,7 @@
                                             
                                         </div>
                                         <button type="submit" name="submit"
-                                            class="btn btn-success btn-block">Exchange
-                                            Now</button>
+                                            class="btn btn-success btn-block" style="text-">Submit</button>
 
                                     </form>
                                 </div>
@@ -136,22 +176,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            {{-- <label class="me-sm-2">Payment Method</label> --}}
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <label class="input-group-text"><i
-                                                            class="fa fa-bank"></i></label>
-                                                </div>
-                                                <select class="form-control" name="method" onChange="window.location.redirect(this.value)" >
-                                                    <option value="">Payment Method</option>
-                                                    <option value="/verification">Add Bank</option>
-                                                    <option value="master">Master Card ***********5458</option>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            {{-- <label class="me-sm-2">Enter your amount</label> --}}
+                                            <label class="me-sm-2">Enter your amount</label>
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
@@ -168,8 +193,7 @@
                                         </div>
                                         <div class="text-center">
                                             <button type="submit" name="submit"
-                                            class="btn btn-success btn-block">Exchange
-                                            Now
+                                            class="btn btn-success btn-block">Submit
                                         </button>
                                         </div>
                                     </form>
