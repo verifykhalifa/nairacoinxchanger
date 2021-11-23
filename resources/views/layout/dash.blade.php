@@ -11,6 +11,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="admin/images/favicon.png">
     <!-- Custom Stylesheet -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="admin/vendor/waves/waves.min.css">
     <link rel="stylesheet" href="admin/vendor/toastr/toastr.min.css">
     <link rel="stylesheet" href="admin/vendor/owlcarousel/css/owl.carousel.min.css">
@@ -91,6 +92,10 @@
                             <span><i class="la la-tools"></i></span>
                         </a>
                     </li>
+                    <li><a href="/sample_link" data-toggle="tooltip" data-placement="right" title="Setting">
+                        <span><i class="la la-tools"></i></span>
+                    </a>
+                </li>
                 </ul>
             </div>
         </div>

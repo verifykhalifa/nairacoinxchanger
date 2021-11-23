@@ -17,8 +17,8 @@ class CreateRatesTable extends Migration
             $table->id();
             $table->string('coin_image');
             $table->string('coin');
-            $table->string('buy')->nullable();
-            $table->string('sell')->nullable();
+            $table->bigInteger('buy')->nullable();
+            $table->bigInteger('sell')->nullable();
             $table->timestamps();
         });
     }
