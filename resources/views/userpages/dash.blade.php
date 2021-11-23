@@ -75,7 +75,7 @@
                                 <div class="tab-pane fade show active" id="buy" role="tabpanel">
                                     <form method="post" name="myform" class="currency_validate">
                                         <div class="d-flex">
-                                            <b><span style="color: rgb(255, 196, 0)">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b>
+                                            <b><span style="color: red">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b>
                                         </div>
                                         <br>
                                         <div class="mb-3">
@@ -144,7 +144,7 @@
                                                     placeholder="Amount in USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
-                                                <small style="color: rgb(255, 196, 0)" class="text:right"><b><span id="ShowRes"></span></b></small>
+                                                <small style="color: red" class="text:right"><b><span id="ShowRes"></span></b></small>
                                             </div>
                                             
                                         </div>
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="sell">
                                     <div class="d-flex">
-                                        <b><span style="color: rgb(255, 196, 0)">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>
+                                        <b><span style="color: red">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>
                                     </div>
                                     <br>
                                     <form method="post" name="myform" class="currency2_validate">
@@ -188,7 +188,7 @@
                                                     placeholder="Amount in USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
-                                                <small style="color: rgb(255, 196, 0)" class="text:right"><b><span id="ShowSell"></span></b></small>
+                                                <small style="color: red" class="text:right"><b><span id="ShowSell"></span></b></small>
                                             </div>
                                         </div>
                                         <div class="text-center">
