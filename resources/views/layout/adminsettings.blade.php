@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,12 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nairacoinxchange </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="admin/images/favicon.png">
+    <link rel="icon" type="/image/png" sizes="16x16" href="/admin/images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="admin/vendor/waves/waves.min.css">
-    <link rel="stylesheet" href="admin/vendor/toastr/toastr.min.css">
-    <link rel="stylesheet" href="admin/vendor/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="admin/css/style.css">
+    <link rel="stylesheet" href="/admin/vendor/waves/waves.min.css">
+    <link rel="stylesheet" href="/admin/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="/admin/vendor/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
 </head>
 
 <body>
@@ -34,17 +35,15 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="index.html"><img src="images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
-                                </a>
-
-
+                            <a class="navbar-brand" href="index.html"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
+                            </a>
                             <div class="dashboard_log my-2">
                                 <div class="d-flex align-items-center">
                                     
                                     <div class="profile_log dropdown">
                                         <div class="user" data-toggle="dropdown">
                                             <span class="thumb"><i class="la la-user"></i></span>
-                                            <span class="name">{{ Auth::user()->name }}</span>
+                                            <span class="name">{{ Auth::user()->name }} </span>
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
@@ -57,7 +56,6 @@
                                             <a href="/settings" class="dropdown-item">
                                                 <i class="la la-cog"></i> Setting
                                             </a>
-                                        
                                             <form method="POST" action="{{ route('logout') }}">
                                                 @csrf
                                             <a href="{{ route('logout') }}" class="dropdown-item logout" onclick="event.preventDefault();
@@ -88,9 +86,9 @@
                         </a>
                     </li>
                     <li><a href="/adminsettings" data-toggle="tooltip" data-placement="right" title="Settings">
-                        <span><i class="la la-tools"></i></span>
-                    </a>
-                </li>
+                            <span><i class="la la-tools"></i></span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -105,12 +103,51 @@
             </div>
         </div>
 
-       
-
-        
-            @yield('content')
         
 
+
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-3 col-md-4">
+                        <div class="card settings_menu">
+                            <div class="card-header">
+                                <h4 class="card-title">Settings</h4>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a href="/linked/create" class="nav-link active">
+                                            <i class="la la-university"></i>
+                                            <span>Link Bank</span>
+                                        </a>
+                                    </li>
+                                
+                                    <li class="nav-item">
+                                        <a href="/addbtc" class="nav-link">
+                                            <i class="la la-plus"></i>
+                                            <span>Add BTC Address</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/editbtc" class="nav-link">
+                                            <i class="la la-edit"></i>
+                                            <span>Edit BTC Address</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                        @yield('content')
+                    
+
+
+                </div>
+            </div>
+        </div>
 
 
         <div class="footer">
@@ -126,6 +163,7 @@
                         </div>
                     </div>
                     
+                    </div>
                 </div>
             </div>
         </div>
@@ -143,27 +181,27 @@
 
 
 
-    <script src="admin/vendor/jquery/jquery.min.js"></script>
-    <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="admin/vendor/waves/waves.min.js"></script>
+    <script src="/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/vendor/waves/waves.min.js"></script>
 
-   
 
-    <script src="admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="admin/vendor/circle-progress/circle-progress-init.js"></script>
+
+    <script src="/admin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/admin/vendor/circle-progress/circle-progress-init.js"></script>
 
 
     <!--  flot-chart js -->
-    <script src="admin/vendor/apexchart/apexcharts.min.js"></script>
-    <script src="admin/vendor/apexchart/apexchart-init.js"></script>
+    <script src="/admin/vendor/apexchart/apexcharts.min.js"></script>
+    <script src="/admin/vendor/apexchart/apexchart-init.js"></script>
 
-    <script src="admin/js/dashboard.js"></script>
+    <script src="/admin/js/dashboard.js"></script>
 
 
-    <script src="admin/js/scripts.js"></script>
-    <script src="admin/js/settings.js"></script>
-    <script src="admin/js/quixnav-init.js"></script>
-    <script src="admin/js/styleSwitcher.js"></script>
+    <script src="/admin/js/scripts.js"></script>
+    <script src="/admin/js/settings.js"></script>
+    <script src="/admin/js/quixnav-init.js"></script>
+    <script src="/admin/js/styleSwitcher.js"></script>
 </body>
 
 

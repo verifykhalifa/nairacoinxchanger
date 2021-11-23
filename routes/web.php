@@ -32,7 +32,13 @@ Route::get('/transaction', "App\Http\Controllers\dcontroller@transaction");
 Route::get('/verification', "App\Http\Controllers\dcontroller@verification");
 Route::get('/admindash', "App\Http\Controllers\dcontroller@admindash");
 Route::get('/rate', "App\Http\Controllers\dcontroller@rate");
-
+Route::get('/adminsettings', "App\Http\Controllers\dcontroller@adminsettings");
+Route::get('/addbtc', "App\Http\Controllers\dcontroller@addbtc");
+Route::get('/editbtc', "App\Http\Controllers\dcontroller@editbtc");
+Route::get('/adminverification', "App\Http\Controllers\dcontroller@adminverification");
+Route::get('/adminconfirm', "App\Http\Controllers\dcontroller@adminconfirm");
+Route::get('/admineditbk', "App\Http\Controllers\dcontroller@admineditbk");
+Route::resource('/linked', "App\Http\Controllers\linkedController");
 
 
 /**Auth Route Both */
