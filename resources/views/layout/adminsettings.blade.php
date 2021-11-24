@@ -117,7 +117,7 @@
                             <div class="card-body">
                                 <ul>
                                     <li class="nav-item">
-                                        <a href="/linked/create" class="nav-link active">
+                                        <a href="adminsettings" class="nav-link active">
                                             <i class="la la-university"></i>
                                             <span>Link Bank</span>
                                         </a>

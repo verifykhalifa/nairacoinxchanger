@@ -83,7 +83,7 @@ class LinkedController extends Controller
     public function edit($id)
     {
         $linked = Linked::find($id);
-
+        dd($linked);
         return view('adminpages.admineditbk', compact('linked'));
     }
 
@@ -119,20 +119,9 @@ class LinkedController extends Controller
      */
     public function destroy($id)
     {
-        $Linked = Linked::where('id',$id)->first();
-       
-        if( $Linked==null)
-        {
-            session()->flash('message', 'Deletion failed');
-        }
-            else
-        {
-            $Linked ->delete();
-            session()->flash('message', 'Delete Successfully');
-        }
-    
-
-        return redirect()->back();
+        $Linked = Linked::find($id);
+        $Linked->delete();
+        return view('adminpages.adminsettings');
     }
 
 }

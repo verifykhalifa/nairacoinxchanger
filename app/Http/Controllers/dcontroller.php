@@ -76,6 +76,7 @@ class dcontroller extends Controller
         }
 
         public function admineditbk(){
+            
             return view('adminpages.admineditbk');
         }
 

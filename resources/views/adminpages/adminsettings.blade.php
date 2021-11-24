@@ -23,11 +23,11 @@
                                     <div class="edit-option">
                                         
                                         <a href="{{('linked/'.$items->userid.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
-                                        
+                                        <br><br>
                                         <form action="{{url( 'linked/'.$items->userid)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <Button type="submit" name="Delete" class="btn btn-sm btn-primary">Delete</Button>
+                                            <Button type="submit" name="Delete" class="btn btn-sm btn-danger">Delete</Button>
                                         </form>
                                     </div>
                                 </div>
