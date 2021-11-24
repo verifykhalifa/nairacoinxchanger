@@ -9,9 +9,9 @@
             <div class="col-sm-12 col-md-12 well" id="content" style="padding-left: 75px">
                 <br>
                 <div style="color: #7b6fff">
-                <h4>Welcome Back, </h4>
+                <h4>Welcome Back,  <span style="color: rgb(233, 236, 16)">{{ Auth::user()->name }}</span></h4>
                 </div>
-                <h1 style="font-size: 40px; padding-left:100px;" >{{ Auth::user()->name }}</h1>
+                {{-- <h1 style="font-size: 40px; padding-left:100px;" ></h1> --}}
             </div>
         </div>
         <!-- /.row -->
@@ -75,7 +75,7 @@
                                 <div class="tab-pane fade show active" id="buy" role="tabpanel">
                                     <form method="post" name="myform" class="currency_validate">
                                         <div class="d-flex">
-                                            <b><span style="color: red">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b>
+                                            <b><span style="color: rgb(233, 236, 16)">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b>
                                         </div>
                                         <br>
                                         <div class="mb-3">
@@ -109,7 +109,7 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="me-sm-2">Bank Choice</label>
+                                            {{-- <label class="me-sm-2">Bank Choice</label> --}}
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
@@ -123,14 +123,14 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label class="me-sm-2">Receiving Bitcoin Address</label>
+                                            {{-- <label class="me-sm-2">Receiving Bitcoin Address</label> --}}
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
                                                             class="fa fa-bank"></i></label>
                                                 </div>
                                                 <input type="text" id="btcaddress" name="btcaddress"  class="form-control"
-                                                    placeholder="BTC Address">
+                                                    placeholder="Receiving BTC Address">
                                             </div>
                                         </div>
                                         <div class="mb-3">
@@ -144,7 +144,7 @@
                                                     placeholder="Amount in USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
-                                                <small style="color: red" class="text:right"><b><span id="ShowRes"></span></b></small>
+                                                <small style="color: rgb(233, 236, 16)" class="text:right"><b><span id="ShowRes"></span></b></small>
                                             </div>
                                             
                                         </div>
@@ -155,7 +155,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="sell">
                                     <div class="d-flex">
-                                        <b><span style="color: red">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>
+                                        <b><span style="color: rgb(233, 236, 16)">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>
                                     </div>
                                     <br>
                                     <form method="post" name="myform" class="currency2_validate">
@@ -176,7 +176,7 @@
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="me-sm-2">Enter your amount</label>
+                                            {{-- <label class="me-sm-2">Enter your amount</label> --}}
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
@@ -188,7 +188,7 @@
                                                     placeholder="Amount in USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
-                                                <small style="color: red" class="text:right"><b><span id="ShowSell"></span></b></small>
+                                                <small style="color: rgb(233, 236, 16)" class="text:right"><b><span id="ShowSell"></span></b></small>
                                             </div>
                                         </div>
                                         <div class="text-center">

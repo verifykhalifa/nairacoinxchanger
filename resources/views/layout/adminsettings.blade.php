@@ -186,7 +186,6 @@
     <script src="/admin/vendor/waves/waves.min.js"></script>
 
 
-
     <script src="/admin/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="/admin/vendor/circle-progress/circle-progress-init.js"></script>
 

@@ -92,10 +92,6 @@
                             <span><i class="la la-tools"></i></span>
                         </a>
                     </li>
-                    <li><a href="/sample_link" data-toggle="tooltip" data-placement="right" title="Setting">
-                        <span><i class="la la-tools"></i></span>
-                    </a>
-                </li>
                 </ul>
             </div>
         </div>

@@ -38,15 +38,14 @@ class LinkedController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
 
         $validatedData = $request->validate([
             
             'firstname' => 'required',
             'lastname' => 'required',
             'bankname' => 'required',
-            'acctnumber' => 'required',
-            'userid' => 'required',
-            
+            'acctnumber' => 'required'
         ]);
 
         $save = new Linked();
@@ -56,6 +55,7 @@ class LinkedController extends Controller
         $save->acctnumber           = $request->input('acctnumber');
         $save->userid               = Auth::user()->id;
        
+        //dd($save);
 
         if($save->save()){
 
@@ -111,28 +111,34 @@ class LinkedController extends Controller
 
     }
 
+    public function banks_kill($id)
+       {
+           Linked::find($id)->delete();
+           return back();
+       }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        $Linked = Linked::where('id',$id)->first();
+    // public function destroy($id)
+    // {
+    //     $Linked = Linked::where('id',$id)->first();
        
-        if( $Linked==null)
-        {
-            session()->flash('message', 'Deletion failed');
-        }
-            else
-        {
-            $Linked ->delete();
-            session()->flash('message', 'Delete Successfully');
-        }
+    //     if( $Linked==null)
+    //     {
+    //         session()->flash('message', 'Deletion failed');
+    //     }
+    //         else
+    //     {
+    //         $Linked ->delete();
+    //         session()->flash('message', 'Delete Successfully');
+    //     }
     
 
-        return redirect()->back();
-    }
+    //     return redirect()->back();
+    // }
 
 }

@@ -52,7 +52,7 @@ class dcontroller extends Controller
         }
 
         public function adminsettings(){
-            $linked = Linked::orderBy('created_at', 'desc')->get();
+            $linked = Linked::orderBy('created_at', 'asc')->get();
             //dd($linked);
             return view('adminpages.adminsettings', compact('linked'));
         }
@@ -78,6 +78,4 @@ class dcontroller extends Controller
         public function admineditbk(){
             return view('adminpages.admineditbk');
         }
-
-       
 }
