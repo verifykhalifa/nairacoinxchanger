@@ -38,15 +38,14 @@ class LinkedController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
 
         $validatedData = $request->validate([
             
             'firstname' => 'required',
             'lastname' => 'required',
             'bankname' => 'required',
-            'acctnumber' => 'required',
-            'userid' => 'required',
-            
+            'acctnumber' => 'required'
         ]);
 
         $save = new Linked();
@@ -56,6 +55,7 @@ class LinkedController extends Controller
         $save->acctnumber           = $request->input('acctnumber');
         $save->userid               = Auth::user()->id;
        
+        //dd($save);
 
         if($save->save()){
 
@@ -111,17 +111,43 @@ class LinkedController extends Controller
 
     }
 
+    public function banks_kill($id)
+       {
+           Linked::find($id)->delete();
+           return back();
+       }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function destroy($id)
     {
         $Linked = Linked::find($id);
         $Linked->delete();
         return view('adminpages.adminsettings');
     }
+=======
+    // public function destroy($id)
+    // {
+    //     $Linked = Linked::where('id',$id)->first();
+       
+    //     if( $Linked==null)
+    //     {
+    //         session()->flash('message', 'Deletion failed');
+    //     }
+    //         else
+    //     {
+    //         $Linked ->delete();
+    //         session()->flash('message', 'Delete Successfully');
+    //     }
+    
+
+    //     return redirect()->back();
+    // }
+>>>>>>> 1f5fbaf184d17a4ad17c46195ec4a5c2e2c8a66d
 
 }
