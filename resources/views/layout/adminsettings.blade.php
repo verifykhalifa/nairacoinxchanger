@@ -102,10 +102,7 @@
                 </div>
             </div>
         </div>
-
-        
-
-
+        <br><br>
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row">
@@ -124,13 +121,13 @@
                                     </li>
                                 
                                     <li class="nav-item">
-                                        <a href="/addbtc" class="nav-link">
+                                        <a href="{{route('address.create')}}" class="nav-link">
                                             <i class="la la-plus"></i>
                                             <span>Add BTC Address</span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/editbtc" class="nav-link">
+                                        <a href="{{route('address.index')}}" class="nav-link">
                                             <i class="la la-edit"></i>
                                             <span>Edit BTC Address</span>
                                         </a>

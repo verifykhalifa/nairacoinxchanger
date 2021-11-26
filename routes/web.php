@@ -38,6 +38,7 @@ Route::get('/editbtc', "App\Http\Controllers\dcontroller@editbtc");
 Route::get('/adminverification', "App\Http\Controllers\dcontroller@adminverification");
 Route::get('/adminconfirm', "App\Http\Controllers\dcontroller@adminconfirm");
 Route::resource('/linked', "App\Http\Controllers\linkedController");
+Route::resource('/address', "App\Http\Controllers\AddressController");
 
 
 
