@@ -37,14 +37,15 @@ Route::get('/addbtc', "App\Http\Controllers\dcontroller@addbtc");
 Route::get('/editbtc', "App\Http\Controllers\dcontroller@editbtc");
 Route::get('/adminverification', "App\Http\Controllers\dcontroller@adminverification");
 Route::get('/adminconfirm', "App\Http\Controllers\dcontroller@adminconfirm");
-Route::get('/admineditbk', "App\Http\Controllers\dcontroller@admineditbk");
 Route::resource('/linked', "App\Http\Controllers\linkedController");
+
 
 
 /**Auth Route Both */
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', "App\Http\Controllers\dcontroller@dashboard")->name('dashboard');
     Route::resource('/rates', "App\Http\Controllers\RateController");
+    Route::get('/banks/kill/{id}', "App\Http\Controllers\linkedController@banks_kill")->name('bank.kill');
 });
 
 

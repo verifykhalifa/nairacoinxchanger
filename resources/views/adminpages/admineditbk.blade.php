@@ -16,16 +16,16 @@
                 <div class="row">
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">First Name </label>
-                        <input type="text" name="firstname" class="form-control" value="">
+                        <input type="text" name="firstname" class="form-control" value="{{$linked['firstname']}}">
                     </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Last Name </label>
-                        <input type="text" name="lastname" class="form-control" value="">
+                        <input type="text" name="lastname" class="form-control" value="{{$linked['lastname']}}">
                     </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Bank Name </label>
                         <select class="form-control" name="bankname">
-                            <option value="{{$linked['bankname']}}}">Select Bank</option>
+                            <option value="{{$linked['bankname']}}">Select Bank</option>
                             <option value="Access Bank|044|ABP">Access Bank</option>
                             <option value="Citi Bank Nigeria|023|CITI">Citi Bank Nigeria</option>
                             <option value="Diamond Bank|063|DBP">Diamond Bank</option>

@@ -18,17 +18,24 @@
                                     <span class="me-3"><i class="fa fa-bank"></i></span>
                                     <div class="flex-grow-1">
                                         <h5 class="mt-0 mb-1">{{$items->bankname}}</h5>
-                                        <p>{{$items->firstname}}&nbsp; {{$items->firstname}}</p>
+                                        <p>{{$items->firstname}}&nbsp; {{$items->lastname}}</p>
                                     </div>
                                     <div class="edit-option">
+<<<<<<< HEAD
                                         
                                         <a href="{{('linked/'.$items->userid.'/edit')}}" class="btn btn-sm btn-primary">Edit</a>
-                                        
+                                        <br><br>
                                         <form action="{{url( 'linked/'.$items->userid)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <Button type="submit" name="Delete" class="btn btn-sm btn-primary">Delete</Button>
+                                            <Button type="submit" name="Delete" class="btn btn-sm btn-danger">Delete</Button>
                                         </form>
+=======
+                                        <a href="{{('linked/'.$items->id.'/edit')}}"><i class="fa fa-pencil"></i></a>
+                                        &nbsp;
+                                        <a href="/banks/kill/{{$items->id}}">
+                                        <i class="fa fa-trash" onclick="return confirm_delete()"></i></a>
+>>>>>>> 1f5fbaf184d17a4ad17c46195ec4a5c2e2c8a66d
                                     </div>
                                 </div>
                             </div>
@@ -50,5 +57,9 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    function confirm_delete() {
+      return confirm('Are you sure you want to delete bank details?');
+    }
+</script>
 @endsection

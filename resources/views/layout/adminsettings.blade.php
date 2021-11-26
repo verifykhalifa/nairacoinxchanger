@@ -117,7 +117,7 @@
                             <div class="card-body">
                                 <ul>
                                     <li class="nav-item">
-                                        <a href="/linked/create" class="nav-link active">
+                                        <a href="adminsettings" class="nav-link active">
                                             <i class="la la-university"></i>
                                             <span>Link Bank</span>
                                         </a>
@@ -184,7 +184,6 @@
     <script src="/admin/vendor/jquery/jquery.min.js"></script>
     <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/vendor/waves/waves.min.js"></script>
-
 
 
     <script src="/admin/vendor/circle-progress/circle-progress.min.js"></script>
