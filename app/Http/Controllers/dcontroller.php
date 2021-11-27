@@ -78,4 +78,13 @@ class dcontroller extends Controller
         public function admineditbk(){
             return view('adminpages.admineditbk');
         }
+
+        public function buyinvoice(){
+            return view('userpages.buyinvoice');
+        }
+
+        public function sellinvoice(){
+            return view('userpages.sellinvoice');
+        }
+
 }

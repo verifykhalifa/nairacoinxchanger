@@ -37,6 +37,8 @@ Route::get('/addbtc', "App\Http\Controllers\dcontroller@addbtc");
 Route::get('/editbtc', "App\Http\Controllers\dcontroller@editbtc");
 Route::get('/adminverification', "App\Http\Controllers\dcontroller@adminverification");
 Route::get('/adminconfirm', "App\Http\Controllers\dcontroller@adminconfirm");
+Route::get('/buyinvoice', "App\Http\Controllers\dcontroller@buyinvoice");
+Route::get('/sellinvoice', "App\Http\Controllers\dcontroller@sellinvoice");
 Route::resource('/linked', "App\Http\Controllers\linkedController");
 
 
