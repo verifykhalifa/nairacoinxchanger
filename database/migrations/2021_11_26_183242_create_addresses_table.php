@@ -17,7 +17,8 @@ class CreateAddressesTable extends Migration
             $table->id();
             $table->string('address');
             $table->string('barcode');
-            $table->string('coinname');
+            $table->string('coin');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

@@ -16,9 +16,9 @@ class Rate extends Model
         'sell'
     ];
 
-    public function ratetemp()
+    public function address()
     {
-        return $this->hasMany('App\Models\SaleTemp')->orderBy('id', 'DESC');
+        return $this->hasOne('App\Models\Address')->orderBy('id', 'DESC');
     }
 
 }

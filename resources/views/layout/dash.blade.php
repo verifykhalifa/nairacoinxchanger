@@ -9,13 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NairacoinXchange </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/nairacoinr.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/nairacoinr.png">
     <!-- Custom Stylesheet -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="admin/vendor/waves/waves.min.css">
-    <link rel="stylesheet" href="admin/vendor/toastr/toastr.min.css">
-    <link rel="stylesheet" href="admin/vendor/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="admin/css/style.css">
+    <link rel="stylesheet" href="/admin/vendor/waves/waves.min.css">
+    <link rel="stylesheet" href="/admin/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="/admin/vendor/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="index.html"><img src="images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
+                            <a class="navbar-brand" href="index.html"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
                                 </a>
 
 
@@ -146,27 +146,27 @@
 
 
 
-    <script src="admin/vendor/jquery/jquery.min.js"></script>
-    <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="admin/vendor/waves/waves.min.js"></script>
+    <script src="/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/vendor/waves/waves.min.js"></script>
     {{-- <script src="admin/vendor/toastr/toastr.min.js"></script>
     <script src="admin/vendor/toastr/toastr-init.js"></script> --}}
 
-    <script src="admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="admin/vendor/circle-progress/circle-progress-init.js"></script>
+    <script src="/admin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/admin/vendor/circle-progress/circle-progress-init.js"></script>
 
 
     <!--  flot-chart js -->
-    <script src="admin/vendor/apexchart/apexcharts.min.js"></script>
-    <script src="admin/vendor/apexchart/apexchart-init.js"></script>
+    <script src="/admin/vendor/apexchart/apexcharts.min.js"></script>
+    <script src="/admin/vendor/apexchart/apexchart-init.js"></script>
 
-    <script src="admin/js/dashboard.js"></script>
+    <script src="/admin/js/dashboard.js"></script>
 
 
-    <script src="admin/js/scripts.js"></script>
-    <script src="admin/js/settings.js"></script>
-    <script src="admin/js/quixnav-init.js"></script>
-    <script src="admin/js/styleSwitcher.js"></script>
+    <script src="/admin/js/scripts.js"></script>
+    <script src="/admin/js/settings.js"></script>
+    <script src="/admin/js/quixnav-init.js"></script>
+    <script src="/admin/js/styleSwitcher.js"></script>
 </body>
 
 

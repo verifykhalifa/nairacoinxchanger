@@ -41,6 +41,8 @@ Route::get('/buyinvoice', "App\Http\Controllers\dcontroller@buyinvoice");
 Route::get('/sellinvoice', "App\Http\Controllers\dcontroller@sellinvoice");
 Route::resource('/linked', "App\Http\Controllers\linkedController");
 Route::resource('/address', "App\Http\Controllers\AddressController");
+Route::resource('/purchases', "App\Http\Controllers\PurchaseController");
+Route::resource('/sales', "App\Http\Controllers\SalesController");
 
 
 

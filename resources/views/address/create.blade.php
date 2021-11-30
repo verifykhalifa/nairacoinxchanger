@@ -30,8 +30,13 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12">
                     <div class="card-body pt-0">
-                        <label>Coin Name</label>
-                        <input type="text" id="coinname" name="coinname" placeholder="Coin name" class="form-control mb-3">
+                        <label>Select Coin</label>
+                        <select name="coin" class="form-control">
+                            <option value="">------</option>
+                            @foreach ($rates as $rate)
+                            <option value="{{$rate->id}}">{{$rate->coin}}</option>
+                            @endforeach
+                        </select>
                     </div>
             </div>
             </div>

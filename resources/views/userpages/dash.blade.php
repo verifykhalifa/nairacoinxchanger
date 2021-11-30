@@ -73,7 +73,8 @@
                             </ul>
                             <div class="tab-content tab-content-default">
                                 <div class="tab-pane fade show active" id="buy" role="tabpanel">
-                                    <form method="post" name="myform" class="currency_validate">
+                                    <form action="{{ route('purchases.store')}}" method="post" name="myform" id="buyCoins" class="currency_validate">
+                                        @csrf
                                         <div class="d-flex">
                                             <b><span style="color: rgb(233, 236, 16)">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b>
                                         </div>
@@ -85,7 +86,7 @@
                                                     <label class="input-group-text"><i
                                                             class="fa fa-money"></i></label>
                                                 </div>
-                                                <select id="mySelect_buy" onchange="copy_buy()" class="form-control">
+                                                <select id="mySelect_buy" name="rate" onchange="copy_buy()" class="form-control">
                                                     <option value="">Select Currency</option>
                                                     @foreach ($rates as $rate)
                                                     <option value="{{$rate->buy}}">{{$rate->coin}}</option>
@@ -101,15 +102,15 @@
                                                     <label class="input-group-text"><i
                                                             class="fa fa-bank"></i></label>
                                                 </div>
-                                                <select class="form-control" name="method">
+                                                <select class="form-control" name="method" id="method">
                                                     <option value="">Select Payment Method</option>
                                                     <option value="bank" >Bank Transfer</option>
                                                     <option value="master">Cash Deposit</option>
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="mb-3">
-                                            {{-- <label class="me-sm-2">Bank Choice</label> --}}
+                                        {{-- <div class="mb-3">
+                                            <label class="me-sm-2">Bank Choice</label>
                                             <div class="input-group mb-3">
                                                 <div class="input-group-prepend">
                                                     <label class="input-group-text"><i
@@ -121,7 +122,7 @@
                                                     <option value="master">ACCESSBANK</option>
                                                 </select>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="mb-3">
                                             {{-- <label class="me-sm-2">Receiving Bitcoin Address</label> --}}
                                             <div class="input-group mb-3">
@@ -140,17 +141,17 @@
                                                     <label class="input-group-text"><i
                                                             class="fa fa-usd"></i></label>
                                                 </div>
-                                                <input type="text" id="val1" onkeyup="myFunction_buy()" class="form-control"
+                                                <input type="text" id="val1" name="value" onkeyup="myFunction_buy()" class="form-control"
                                                     placeholder="Amount in USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
                                                 <small style="color: rgb(233, 236, 16)" class="text:right"><b><span id="ShowRes"></span></b></small>
+                                                <input type="text" id="InputRes" hidden="hidden" name="total">
                                             </div>
                                             
                                         </div>
-                                        <button type="submit" name="submit"
-                                            class="btn btn-success btn-block" style="text-">Submit</button>
-
+                                        <button type="submit" id="insert" class="btn btn-success btn-block" style="text-">Place Order
+                                        </button>
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="sell">
@@ -158,7 +159,8 @@
                                         <b><span style="color: rgb(233, 236, 16)">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>
                                     </div>
                                     <br>
-                                    <form method="post" name="myform" class="currency2_validate">
+                                    <form action="{{ route('sales.store')}}" method="post" class="currency2_validate">
+                                        @csrf
                                         <div class="mb-3">
                                             {{-- <label class="me-sm-2">Currency</label> --}}
                                             <div class="input-group mb-3">
@@ -166,11 +168,13 @@
                                                     <label class="input-group-text"><i
                                                             class="fa fa-money"></i></label>
                                                 </div>
-                                                <select id="mySelect_sell" onchange="copy_sell()" class="form-control">
+                                                <select id="mySelect_sell" name="rate_sell" onchange="copy_sell()" class="form-control">
                                                     <option value="">Select Currency</option>
                                                     @foreach ($rates as $rate)
                                                     <option value="{{$rate->sell}}">{{$rate->coin}}</option>
                                                     @endforeach
+                                                    <input type="text" id="InputSell" hidden="hidden" name="rate_id" 
+                                                    value="{{ $rate->id}}">
                                                 </select>
                                             </div>
                                         </div>
@@ -184,15 +188,16 @@
                                                 </div>
                                                 {{-- <input type="text" name="currency_amount" class="form-control"
                                                     placeholder="0.0214 BTC"> --}}
-                                                    <input type="text" id="val2" onkeyup="myFunction_sell()" class="form-control"
+                                                    <input type="text" id="val2" name="value_sell" onkeyup="myFunction_sell()" class="form-control"
                                                     placeholder="Amount in USD">
                                             </div>
                                             <div class="d-flex justify-content-between mt-3">
                                                 <small style="color: rgb(233, 236, 16)" class="text:right"><b><span id="ShowSell"></span></b></small>
+                                                <input type="text" id="InputSell" hidden="hidden" name="total">
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" name="submit"
+                                            <button type="submit"
                                             class="btn btn-success btn-block">Submit
                                         </button>
                                         </div>
@@ -218,7 +223,9 @@
     first = Number($('#val1').val());
     second = Number($('#mySelect_buy').val());
     if(first && second && !isNaN(first) && !isNaN(second)){
+        //console.log(first * second + ".00"+ " NGN");
         $('span#ShowRes').text( "You receive: " + first * second + ".00"+ " NGN" );
+        $('input#InputRes').val(first * second);
     }
     else {
         $('span#ShowRes').text(" ");
@@ -236,10 +243,43 @@
     second = Number($('#mySelect_sell').val());
     if(first && second && !isNaN(first) && !isNaN(second)){
         $('span#ShowSell').text( "You receive: " + first * second + ".00"+ " NGN" );
+        $('input#InputSell').val(first * second);
     }
     else {
         $('span#ShowSell').text(" ");
     }
 }
 </script>
+
+{{-- <script>
+    $(document).ready(function(){
+        $('#buyCoins').on('submit',function(event){
+            event.preventDefault();
+            let btcaddress = $('#btcaddress').val();
+            let value = $('#val1').val();
+            let rate = $("#mySelect_buy option:selected").text();
+            let method = $('#method').val();
+            let total = $('#InputRes').val();
+            $.ajax({
+                url: "{{ route('purchases.store')}}",
+                method: "post",
+                data:{
+                        "_token": "{{ csrf_token() }}",
+                        btcaddress:btcaddress,
+                        value:value,
+                        rate:rate,
+                        method:method,
+                        total:total
+                    }, 
+                beforeSend:function(){
+                  $('#insert').val("Placing Order...");
+              },
+                success:function(data){
+                  //console.log(data);
+                window.location = ;
+                }
+            });
+        });
+    });
+  </script> --}}
 @endsection

@@ -16,7 +16,7 @@
                             <div class="col-9">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                       <b><h4 class="mt-0 mb-1">{{$addy->coinname}} :</h4></b>
+                                       <b><h4 class="mt-0 mb-1">{{$addy->coin}} :</h4></b>
                                     </div>
                                     <div class="flex-grow-1">
                                         <h5 class="mt-0 mb-1">{{$addy->address}}</h5>

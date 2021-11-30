@@ -12,6 +12,12 @@ class Address extends Model
     protected $fillable = [
         'barcode',
         'address',
-        'coinname'
+        'coin',
+        'user_id'
     ];
+
+    public function rate()
+    {
+        return $this->belongsTo('App\Models\Rate')->orderBy('id', 'DESC');
+    }
 }

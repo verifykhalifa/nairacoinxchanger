@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sale;
+use App\Models\Rate;
+use App\Models\Address;
+use Uuid;
 
 class SalesController extends Controller
 {
@@ -34,7 +38,34 @@ class SalesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $this->validate($request,[
+
+            'value_sell' => 'required',
+            'rate_sell' => 'required',
+            'total' => 'required'
+        ]);
+
+        $rateName = Rate::where('sell', $request->rate_sell)->pluck('id','coin');
+
+        $orderId = Uuid::generate();
+
+        foreach($rateName as $coin => $id){
+
+            $sale = new Sale;
+            $sale->value = $request->value_sell;
+            $sale->orderId = $orderId;
+            $sale->rate = $coin;
+            $sale->total = $request->total;
+            $sale->user_id = auth()->user()->id;
+        }
+
+        if($sale->save()){
+
+            return redirect()->route('sales.show', $sale->id);
+        }
+
     }
 
     /**
@@ -45,7 +76,10 @@ class SalesController extends Controller
      */
     public function show($id)
     {
-        //
+        $sale = Sale::findorfail($id);
+        $barcode = Address::where('coin', $sale->rate)->first();
+        return view('sale.show')->with('sale', $sale)
+                                ->with('barcode',$barcode);
     }
 
     /**
