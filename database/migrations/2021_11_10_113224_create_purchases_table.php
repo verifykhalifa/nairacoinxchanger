@@ -15,10 +15,13 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->string('currency');
-            $table->string('pay_method');
-            $table->string('btc_amount');
-            $table->string('usd_amount');
+            $table->string('btcaddress');
+            $table->string('user_id');
+            $table->bigInteger('value');
+            $table->string('rate');
+            $table->string('method');
+            $table->bigInteger('total');
+            $table->string('orderId');
             $table->timestamps();
         });
     }

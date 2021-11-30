@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Purchase;
+use App\Models\Rate;
+use Uuid;
 
 class PurchaseController extends Controller
 {
@@ -34,7 +37,41 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+
+        $this->validate($request,[
+
+            'btcaddress' => 'required',
+            'value' => 'required',
+            'rate' => 'required',
+            'method' => 'required',
+            'total' => 'required'
+
+        ]);
+
+        $rateName = Rate::where('buy', $request->rate)->pluck('id','coin');
+        //dd($rateName);
+
+        $orderId = Uuid::generate();
+
+        foreach($rateName as $coin => $id){
+
+            $purchases = new Purchase;
+            $purchases->btcaddress = $request->btcaddress;
+            $purchases->value = $request->value;
+            $purchases->orderId = $orderId;
+            $purchases->rate = $coin;
+            $purchases->method = $request->method;
+            $purchases->total = $request->total;
+            $purchases->user_id = auth()->user()->id;
+
+        }
+        
+        if($purchases->save()){
+
+            return redirect()->route('purchases.show', $purchases->id);
+        }
+
     }
 
     /**
@@ -45,7 +82,8 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
-        //
+        $purchase = Purchase::findorfail($id);
+        return view('purchase.show')->with('purchase', $purchase);
     }
 
     /**

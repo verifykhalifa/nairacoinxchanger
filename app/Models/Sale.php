@@ -9,6 +9,14 @@ class Sale extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'value', 
+        'rate',  
+        'total',
+        'orderId',
+        'user_id'
+    ];
+
     public function user()
     {
         return $this->belongsTo('App\Models\User');

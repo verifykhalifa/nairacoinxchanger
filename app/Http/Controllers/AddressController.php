@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Address;
+use App\Models\Rate;
 use Illuminate\Support\Str;
 
 class AddressController extends Controller
@@ -27,7 +28,8 @@ class AddressController extends Controller
      */
     public function create()
     {
-        return view('address.create');
+        $rates = Rate::all();
+        return view('address.create')->with('rates', $rates);
     }
 
     /**
@@ -42,14 +44,15 @@ class AddressController extends Controller
          $this->validate($request,[
             'barcode'=> 'image|required|max:1999',
             'address' => 'required',
-            'coinname'=> 'required'
+            'coin'=> 'required'
         ]);
 
 
         $data = [
             'barcode'=> $request->get('barcode'),
             'address'=> $request->get('address'),
-            'coinname'=> $request->get('coinname')
+            'coin'=> $request->get('coin'),
+            'user_id' => auth()->user()->id
         ];
 
         if ($request->has('barcode')) {

@@ -49,8 +49,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function linked(){
-        return $this->hasMany('App\Linked');
+    public function purchases()
+    {
+        return $this->hasMany('App\Models\Purchase');
     }
-
 }
