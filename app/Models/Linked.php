@@ -17,6 +17,8 @@ class Linked extends Model
         'userid'
     ];
 
-   
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 
 }
