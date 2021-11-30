@@ -7,18 +7,22 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Rate;
 use App\Models\Linked;
 
+
 class dcontroller extends Controller
 {
 
 
         public function dashboard()
         {
-            if(Auth::user()->hasRole('admin')){
-                
-                return view('adminpages.admindash');
+            if(!Auth::user()){
+                return view('userpages.home');
             }elseif(Auth::user()->hasRole('user')){
                 $rates = Rate::orderBy('created_at','asc')->get();
                 return view('userpages.dash')->with('rates', $rates);
+            }
+            elseif(Auth::user()->hasRole('Admin')){
+                //dd(Auth::user());
+                return view('adminpages.admindash');
             }
             
         }
@@ -87,4 +91,10 @@ class dcontroller extends Controller
             return view('userpages.sellinvoice');
         }
 
+        public function addbk(){
+            $auth = auth()->user()->id;
+            $adminds = Linked::where('userid',$auth)->get();
+            //dd($adminds);
+            return view('userpages.addbk')->with('adminds', $adminds);
+        }
 }

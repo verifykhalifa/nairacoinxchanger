@@ -8,8 +8,10 @@
         <div class="row" id="main" >
             <div class="col-sm-12 col-md-12 well" id="content" style="padding-left: 75px">
                 <br>
-                <h4 >Welcome Back,  {{ Auth::user()->name }} </h4>
+                <div style="color: #7b6fff">
+                <h4 >Welcome Back,  <span style="color: rgb(233, 236, 16)">{{ Auth::user()->name }}</span></h4>
                 {{-- <h1 style="font-size: 40px; padding-left:100px;" ></h1> --}}
+                </div>
             </div>
         </div>
         <!-- /.row -->
