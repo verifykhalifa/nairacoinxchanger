@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 08:48 AM
+-- Generation Time: Dec 01, 2021 at 09:01 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -25,6 +25,31 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `addresses`
+--
+
+CREATE TABLE `addresses` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `barcode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `coin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `addresses`
+--
+
+INSERT INTO `addresses` (`id`, `address`, `barcode`, `coin`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 'jkjakhyrqwyy841841208', '/Barcodes/mKcz1638271520Han_Xin_2D_Barcode.svg.png', 'Bitcoin', '5', '2021-11-30 10:25:20', '2021-11-30 10:25:20'),
+(2, 'vagyyy21489708dehuwdhw', '/Barcodes/uO7e1638271556Han_Xin_2D_Barcode.svg.png', 'Ethereum', '5', '2021-11-30 10:25:56', '2021-11-30 10:25:56'),
+(3, 'fhgffguugwqq81881941', '/Barcodes/62hw1638271574Han_Xin_2D_Barcode.svg.png', 'Perfect Money', '5', '2021-11-30 10:26:14', '2021-11-30 10:26:14');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -37,6 +62,30 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `linkeds`
+--
+
+CREATE TABLE `linkeds` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `firstname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bankname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `acctnumber` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `userid` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `linkeds`
+--
+
+INSERT INTO `linkeds` (`id`, `firstname`, `lastname`, `bankname`, `acctnumber`, `userid`, `created_at`, `updated_at`) VALUES
+(2, 'Miguel', 'Djokovic', 'Guaranty Trust Bank|058|GTB', '0876876545', '5', '2021-11-26 17:22:46', '2021-11-26 17:22:46');
 
 -- --------------------------------------------------------
 
@@ -60,10 +109,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2019_08_19_000000_create_failed_jobs_table', 1),
 (12, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (13, '2021_10_31_143655_laratrust_setup_tables', 1),
-(15, '2021_11_10_113224_create_purchases_table', 1),
 (17, '2021_11_13_190436_add_coin_image_to_rates', 2),
-(22, '2021_11_10_113110_create_sales_table', 3),
-(24, '2021_11_13_115652_create_rates_table', 4);
+(25, '2021_11_13_115652_create_rates_table', 4),
+(26, '2021_11_23_001207_create_linkeds_table', 5),
+(32, '2021_11_10_113224_create_purchases_table', 7),
+(33, '2021_11_10_113110_create_sales_table', 8),
+(34, '2021_11_26_183242_create_addresses_table', 9);
 
 -- --------------------------------------------------------
 
@@ -179,13 +230,46 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `purchases` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `currency` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pay_method` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `btc_amount` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `usd_amount` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `btcaddress` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` bigint(20) NOT NULL,
+  `rate` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `method` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total` bigint(20) NOT NULL,
+  `orderId` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `purchases`
+--
+
+INSERT INTO `purchases` (`id`, `btcaddress`, `user_id`, `value`, `rate`, `method`, `total`, `orderId`, `created_at`, `updated_at`) VALUES
+(1, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a259e2b87bd', '2021-11-27 15:16:34', '2021-11-27 15:16:34'),
+(2, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a25a39009a6', '2021-11-27 15:18:01', '2021-11-27 15:18:01'),
+(3, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a25df74e500', '2021-11-27 15:33:59', '2021-11-27 15:33:59'),
+(4, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a25e49ca4e1', '2021-11-27 15:35:21', '2021-11-27 15:35:21'),
+(5, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a25fb36b1ee', '2021-11-27 15:41:23', '2021-11-27 15:41:23'),
+(6, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a25fec48ec2', '2021-11-27 15:42:20', '2021-11-27 15:42:20'),
+(7, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a260210f327', '2021-11-27 15:43:13', '2021-11-27 15:43:13'),
+(8, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a2603510b36', '2021-11-27 15:43:33', '2021-11-27 15:43:33'),
+(9, 'hgjhgu878768', '6', 565, 'Bitcoin', 'bank', 322050, '61a2608ad55be', '2021-11-27 15:44:58', '2021-11-27 15:44:58'),
+(10, 'hgjhgu878768', '6', 233, 'Bitcoin', 'bank', 132810, '61a2721963e80', '2021-11-27 16:59:53', '2021-11-27 16:59:53'),
+(11, 'hgjhgu878768', '6', 233, 'Bitcoin', 'bank', 132810, '61a272422d0d2', '2021-11-27 17:00:34', '2021-11-27 17:00:34'),
+(12, 'hgjhgu878768', '6', 233, 'Bitcoin', 'bank', 132810, '61a272b253a9e', '2021-11-27 17:02:26', '2021-11-27 17:02:26'),
+(13, 'hgjhgu878768', '6', 233, 'Bitcoin', 'bank', 132810, '61a2768c7187d', '2021-11-27 17:18:52', '2021-11-27 17:18:52'),
+(14, 'hgjhgu878768', '6', 233, 'Bitcoin', 'master', 132810, '61a276b14b654', '2021-11-27 17:19:29', '2021-11-27 17:19:29'),
+(15, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a27eebdd7f6', '2021-11-27 17:54:35', '2021-11-27 17:54:35'),
+(16, 'hgjhgu878768', '6', 123, '[\"Perfect Money\"]', 'bank', 69495, '61a28005410af', '2021-11-27 17:59:17', '2021-11-27 17:59:17'),
+(17, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a2820469141', '2021-11-27 18:07:48', '2021-11-27 18:07:48'),
+(18, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a2825661fef', '2021-11-27 18:09:10', '2021-11-27 18:09:10'),
+(19, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a282a0d55f0', '2021-11-27 18:10:24', '2021-11-27 18:10:24'),
+(20, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a282c45222e', '2021-11-27 18:11:00', '2021-11-27 18:11:00'),
+(21, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a4ce82518ef', '2021-11-29 11:58:42', '2021-11-29 11:58:42'),
+(22, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, '61a5d41e2cfb2', '2021-11-30 06:34:54', '2021-11-30 06:34:54'),
+(23, 'hgjhgu878768', '6', 123, '[\"Bitcoin\"]', 'bank', 70110, 'a1f54bd0-51e9-11ec-817c-fb480955dc2e', '2021-11-30 13:27:22', '2021-11-30 13:27:22'),
+(24, 'hgjhgu878768', '6', 123, 'Perfect Money', 'bank', 69495, '669a75e0-51ea-11ec-8310-4bbadae7c004', '2021-11-30 13:32:52', '2021-11-30 13:32:52');
 
 -- --------------------------------------------------------
 
@@ -197,8 +281,8 @@ CREATE TABLE `rates` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `coin_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `coin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `buy` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sell` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `buy` bigint(20) DEFAULT NULL,
+  `sell` bigint(20) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -208,10 +292,10 @@ CREATE TABLE `rates` (
 --
 
 INSERT INTO `rates` (`id`, `coin_image`, `coin`, `buy`, `sell`, `created_at`, `updated_at`) VALUES
-(1, '/CoinImages/xU1g1636979110images (11).jfif', 'Bitcoin', '570', '532', '2021-11-15 11:25:10', '2021-11-15 11:25:10'),
-(2, '/CoinImages/ymvS1636979162download (64).png', 'Perfect Money', '570', '540', '2021-11-15 11:26:02', '2021-11-15 11:26:02'),
-(3, '/CoinImages/raL21636979220qhglut5m3ovzm92frajd.png', 'Bitcoin Cash BCH', '600', NULL, '2021-11-15 11:27:00', '2021-11-15 11:27:00'),
-(4, '/CoinImages/VvUf1636979234800px-Ethereum-icon-purple.svg.png', 'Ethereum', '500', NULL, '2021-11-15 11:27:14', '2021-11-15 11:27:14');
+(1, '/CoinImages/xs581637674267images (11).jfif', 'Bitcoin', 570, 550, '2021-11-23 12:31:07', '2021-11-23 12:31:07'),
+(2, '/CoinImages/TobN1637674359download (64).png', 'Perfect Money', 565, 510, '2021-11-23 12:32:39', '2021-11-23 12:32:39'),
+(3, '/CoinImages/Dq3R1637674404qhglut5m3ovzm92frajd.png', 'Bitcoin Cash', 600, NULL, '2021-11-23 12:33:24', '2021-11-23 12:33:24'),
+(4, '/CoinImages/YjDI1637674424800px-Ethereum-icon-purple.svg.png', 'Ethereum', 500, NULL, '2021-11-23 12:33:44', '2021-11-23 12:33:44');
 
 -- --------------------------------------------------------
 
@@ -267,12 +351,28 @@ INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
 
 CREATE TABLE `sales` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `currency` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `pay_method` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `usd_amount` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` bigint(20) NOT NULL,
+  `rate` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total` bigint(20) NOT NULL,
+  `orderId` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sales`
+--
+
+INSERT INTO `sales` (`id`, `user_id`, `value`, `rate`, `total`, `orderId`, `created_at`, `updated_at`) VALUES
+(1, '6', 222, '[\"Perfect Money\"]', 113220, 'a762c630-51c9-11ec-b384-cfca2f8a97c3', '2021-11-30 09:38:28', '2021-11-30 09:38:28'),
+(2, '6', 222, '[\"Bitcoin\"]', 122100, '8b95e230-51d2-11ec-b754-9bb0124d4533', '2021-11-30 10:42:06', '2021-11-30 10:42:06'),
+(3, '6', 222, '[\"Perfect Money\"]', 113220, '3c213c50-51d5-11ec-8da9-65e62a58638b', '2021-11-30 11:01:22', '2021-11-30 11:01:22'),
+(4, '6', 222, '[\"Perfect Money\"]', 113220, '9eb15720-51d5-11ec-83c5-97effd4b80ca', '2021-11-30 11:04:07', '2021-11-30 11:04:07'),
+(5, '6', 222, '[\"Perfect Money\"]', 113220, 'eb0f3860-51de-11ec-ad8f-a7c6302cbcf9', '2021-11-30 12:10:41', '2021-11-30 12:10:41'),
+(6, '6', 222, 'Bitcoin', 122100, 'fa9f9d60-51e6-11ec-95d9-bf57dcf23e35', '2021-11-30 13:08:23', '2021-11-30 13:08:23'),
+(7, '6', 222, 'Perfect Money', 113220, '6c356980-51e7-11ec-bf9d-2385ddb7bbd0', '2021-11-30 13:11:33', '2021-11-30 13:11:33'),
+(8, '6', 222, 'Bitcoin', 122100, '354c3600-51e9-11ec-91d2-33cbcff43916', '2021-11-30 13:24:20', '2021-11-30 13:24:20');
 
 -- --------------------------------------------------------
 
@@ -313,11 +413,23 @@ INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `address`, `city`, `cou
 --
 
 --
+-- Indexes for table `addresses`
+--
+ALTER TABLE `addresses`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `linkeds`
+--
+ALTER TABLE `linkeds`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -404,16 +516,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `addresses`
+--
+ALTER TABLE `addresses`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `linkeds`
+--
+ALTER TABLE `linkeds`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -431,7 +555,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `rates`
@@ -449,7 +573,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
