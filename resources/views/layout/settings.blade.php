@@ -128,7 +128,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/linked" class="nav-link">
+                                        <a href="/addbk" class="nav-link">
                                             <i class="la la-university"></i>
                                             <span>Linked Account</span>
                                         </a>

@@ -87,4 +87,12 @@ class dcontroller extends Controller
             return view('userpages.sellinvoice');
         }
 
+        public function addbk(){
+            $auth = auth()->user()->id;
+            $adminds = Linked::where('userid',$auth)->get();
+            //dd($adminds);
+            return view('userpages.addbk')->with('adminds', $adminds);
+            
+        }
+
 }

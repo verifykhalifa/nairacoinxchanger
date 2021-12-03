@@ -39,6 +39,7 @@ Route::get('/adminverification', "App\Http\Controllers\dcontroller@adminverifica
 Route::get('/adminconfirm', "App\Http\Controllers\dcontroller@adminconfirm");
 Route::get('/buyinvoice', "App\Http\Controllers\dcontroller@buyinvoice");
 Route::get('/sellinvoice', "App\Http\Controllers\dcontroller@sellinvoice");
+Route::get('/addbk', "App\Http\Controllers\dcontroller@addbk");
 Route::resource('/linked', "App\Http\Controllers\linkedController");
 Route::resource('/address', "App\Http\Controllers\AddressController");
 Route::resource('/purchases', "App\Http\Controllers\PurchaseController");

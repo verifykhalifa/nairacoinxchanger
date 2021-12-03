@@ -3,21 +3,40 @@
 @section('content')
     
 <div class="col-xl-5 col-md-6">
+    @if(count($errors) > 0)
+    @foreach($errors->all() as $error)
+    <div class="alert alert-danger" style="width:92%; margin:auto">
+        {{$error}}</div>
+    @endforeach
+    @endif
+    @if(session('success'))
+    <div class="alert alert-success" style="width:92%; margin:auto">
+    {{session('success')}}</div>
+    @endif
+
+    @if(session('error'))
+    <div class="alert alert-danger" style="width:92%; margin:auto">
+    {{session('error')}}</div>
+    @endif
     <div class="auth-form card">
         <div class="card-header">
             <h4 class="card-title">Add Bank Account</h4>
         </div>
         <div class="card-body">
-            <form action="https://demo.quixlab.com/elaenia-html/verify-step-6.html" class="identity-upload">
+            <form method="POST" action="{{ route('linked.store') }}" enctype="multipart/form-data" class="identity-upload">
+                @csrf
                 <div class="row">
                     <div class="mb-3 col-xl-12">
-                        <label class="me-sm-2">Full Name </label>
-                        <input type="text" class="form-control" placeholder="Maria Pascle">
+                        <label class="me-sm-2">First Name </label>
+                        <input type="text" name="firstname" class="form-control" placeholder="Enter Your First Name">
                     </div>
-                    
+                    <div class="mb-3 col-xl-12">
+                        <label class="me-sm-2">Last Name </label>
+                        <input type="text" name="lastname" class="form-control" placeholder="Enter Your Last Name">
+                    </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Bank Name </label>
-                        <select class="form-control" name="country">
+                        <select class="form-control" name="bankname">
                             <option value="">Select Bank</option>
                             <option value="Access Bank|044|ABP">Access Bank</option>
                             <option value="Citi Bank Nigeria|023|CITI">Citi Bank Nigeria</option>
@@ -43,7 +62,7 @@
                     </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Account Number </label>
-                        <input type="text" class="form-control" placeholder="5658 4258 6358 4756">
+                        <input type="text" class="form-control" name="acctnumber" placeholder="Enter Your Account Number">
                     </div>
                     
 
