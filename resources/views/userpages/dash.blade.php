@@ -11,6 +11,13 @@
                 <div style="color: #7b6fff">
                 <h4>Welcome Back,  <span style="color: rgb(233, 236, 16)">{{ Auth::user()->name }}</span></h4>
                 </div>
+                <br>
+                <div class="text-right">
+                     @if(session('error'))
+                        <div class="alert alert-danger" style="width:92%; margin:auto">
+                       <b>{{session('error')}}</b></div>
+                    @endif
+                </div>
                 {{-- <h1 style="font-size: 40px; padding-left:100px;" ></h1> --}}
             </div>
         </div>
@@ -201,6 +208,7 @@
                                             class="btn btn-success btn-block">Submit
                                         </button>
                                         </div>
+                                        <br>
                                     </form>
                                 </div>
                             </div>

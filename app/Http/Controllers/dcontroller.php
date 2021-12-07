@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rate;
 use App\Models\Linked;
+use App\Models\History;
 
 class dcontroller extends Controller
 {
@@ -14,8 +15,8 @@ class dcontroller extends Controller
         public function dashboard()
         {
             if(Auth::user()->hasRole('admin')){
-                
-                return view('adminpages.admindash');
+                $historyies = History::orderBy('created_at','desc')->get();
+                return view('adminpages.admindash')->with('historyies', $historyies);
             }elseif(Auth::user()->hasRole('user')){
                 $rates = Rate::orderBy('created_at','asc')->get();
                 return view('userpages.dash')->with('rates', $rates);
@@ -36,7 +37,10 @@ class dcontroller extends Controller
         }
 
         public function transaction(){
-            return view('userpages.transaction');
+
+            $historyies = History::orderBy('created_at','asc')->get();
+            //dd($historyies);
+            return view('userpages.transaction')->with('historyies', $historyies);
         }
 
         public function verification(){
@@ -94,5 +98,11 @@ class dcontroller extends Controller
             return view('userpages.addbk')->with('adminds', $adminds);
             
         }
+
+        public function acceptPayment($id){
+            History::find($id)->update(['status'=> 1]);
+            return back()->with('success','Payment Confirmed');
+        }
+        
 
 }

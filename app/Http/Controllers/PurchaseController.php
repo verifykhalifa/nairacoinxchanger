@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Purchase;
 use App\Models\Rate;
+use App\Models\History;
+use App\Models\Linked;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Uuid;
 
 class PurchaseController extends Controller
@@ -50,9 +53,8 @@ class PurchaseController extends Controller
         ]);
 
         $rateName = Rate::where('buy', $request->rate)->pluck('id','coin');
-        //dd($rateName);
 
-        $orderId = Uuid::generate();
+        $orderId = IdGenerator::generate(['table' => 'purchases','field'=>'orderId','length' => 10, 'prefix' =>'INV-']);
 
         foreach($rateName as $coin => $id){
 
@@ -61,13 +63,33 @@ class PurchaseController extends Controller
             $purchases->value = $request->value;
             $purchases->orderId = $orderId;
             $purchases->rate = $coin;
+            $purchases->type = 'Purchase';
+            $purchases->status = 0;
             $purchases->method = $request->method;
             $purchases->total = $request->total;
             $purchases->user_id = auth()->user()->id;
 
         }
         
-        if($purchases->save()){
+        $register = Linked::where('userid', $purchases->user_id)->first();
+
+        if(is_null($register)){
+
+            return back()->with('error','Please click on VERIFICATION PAGE to update your bank details. It is required for refunds if we dont have stocks, and when you sell to us.');
+
+        }elseif($register){
+
+            $purchases->save();
+
+            $data = [
+                'orderId'  => $purchases->orderId,
+                'type'     => $purchases->type,
+                'coin'     => $purchases->rate,
+                'status'   => $purchases->status,
+                'user_id'  => $purchases->user_id
+            ];
+
+            History::create($data);
 
             return redirect()->route('purchases.show', $purchases->id);
         }

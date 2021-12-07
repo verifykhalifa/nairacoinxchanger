@@ -13,6 +13,8 @@ class Sale extends Model
         'value', 
         'rate',  
         'total',
+        'type',
+        'status',
         'orderId',
         'user_id'
     ];
@@ -32,4 +34,5 @@ class Sale extends Model
     {
         return $this->hasMany('App\Models\SalePayment');
     }
+
 }

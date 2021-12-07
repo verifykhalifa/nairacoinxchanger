@@ -13,7 +13,12 @@
             <form method="POST" action="{{url('linked/'.$linked['id'])}}" enctype="multipart/form-data" class="identity-upload">
                 @csrf
                 @method('PUT')
-                <div class="row">
+                <div class="text-center">
+                    @if(session('success'))
+                    <div class="alert alert-success" style="width:92%; margin:auto">
+                    {{session('success')}}</div>
+                    @endif
+                </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">First Name </label>
                         <input type="text" name="firstname" class="form-control" value="">

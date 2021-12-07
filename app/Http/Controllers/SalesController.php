@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Sale;
 use App\Models\Rate;
 use App\Models\Address;
+use App\Models\History;
+use App\Models\Linked;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Uuid;
 
 class SalesController extends Controller
@@ -40,6 +43,8 @@ class SalesController extends Controller
     {
         //dd($request->all());
 
+
+
         $this->validate($request,[
 
             'value_sell' => 'required',
@@ -49,7 +54,9 @@ class SalesController extends Controller
 
         $rateName = Rate::where('sell', $request->rate_sell)->pluck('id','coin');
 
-        $orderId = Uuid::generate();
+        // $orderId = Uuid::generate();
+
+        $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 10, 'prefix' =>'INV-']);
 
         foreach($rateName as $coin => $id){
 
@@ -57,11 +64,31 @@ class SalesController extends Controller
             $sale->value = $request->value_sell;
             $sale->orderId = $orderId;
             $sale->rate = $coin;
+            $sale->type = 'Sale';
+            $sale->status = 0;
             $sale->total = $request->total;
             $sale->user_id = auth()->user()->id;
         }
 
-        if($sale->save()){
+        $register = Linked::where('userid', $sale->user_id)->first();
+        
+        if(is_null($register)){
+            
+            return back()->with('error','Please click on VERIFICATION PAGE to update your bank details. It is required for refunds if we dont have stocks, and when you sell to us.');
+
+        }elseif($register){
+
+            $sale->save();
+            
+            $data = [
+                'orderId'  => $sale->orderId,
+                'type'     => $sale->type,
+                'coin'     => $sale->rate,
+                'status'   => $sale->status,
+                'user_id'  => $sale->user_id
+            ];
+
+            History::create($data);
 
             return redirect()->route('sales.show', $sale->id);
         }

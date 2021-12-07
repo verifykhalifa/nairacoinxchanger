@@ -36,32 +36,38 @@
                                         <tr>
                                             <th></th>
                                             <th>Date</th>
+                                            <th>Customer</th>
                                             <th>Order #</th>
+                                            <th>Transaction</th>
                                             <th>Type</th>
                                             <th class="text-center">Action</th>
                                           
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($historyies as $history)
                                         <tr class="cell-1">
                                             <td></td>
-                                            <td>2021-11-27</td>
-                                            <td>#SO-13487</td>
-                                            <td>Buy</td>
-                                            <td class="text-center"><a class='btn-sm btn-info' href="#"><i class="fa fa-eye" aria-hidden="true"></i> View</a> <a href="#" class="btn-sm btn-success"><i class="fa fa-check" aria-hidden="true"></i> Mark as Paid</a></td>
-                                            
+                                            <td>{{ $history['created_at']->toFormattedDateString() }}</td>
+                                            <td>{{ $history->users->name}}&nbsp;&nbsp;{{ $history->users->last_name}}</td>
+                                            <td>{{ $history->orderId}}</td>
+                                            <td>{{ $history->coin}}</td>
+                                            <td>{{ $history->type}}</td>
+                                            <td class="text-center">
+                                            <a class='btn-sm btn-primary' href="#"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                            @if($history->status == 0)
+                                             <a href="{{ route('accept_payment', $history->id) }}" class="btn-sm btn-danger"><i class="fa fa-check" aria-hidden="true">
+                                            </i> Mark as Paid</a>
+                                            @else
+                                            <a href="#" class="btn-sm btn-success"><i class="fa fa-check" aria-hidden="true">
+                                            </i>Paid</a>
+                                            @endif
+                                        </td>    
                                         </tr>
-                                        <tr class="cell-1">
-                                            <td></td>
-                                            <td>2021-11-27</td>
-                                            <td>#SO-13487</td>
-                                            <td>Sell</td>
-                                            <td class="text-center"><a class='btn-sm btn-info' href="#"><i class="fa fa-eye" aria-hidden="true"></i> View</a> <a href="#" class="btn-sm btn-success"><i class="fa fa-check" aria-hidden="true"></i> Mark as Paid</a></td>
-                                            
-                                        </tr>
-                                        
+                                        @endforeach    
                                     </tbody>
                                 </table>
+                                {{-- {{$historyies->links()}} --}}
                             </div>
                         </div>
                     </div>

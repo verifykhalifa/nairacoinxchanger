@@ -20,33 +20,30 @@
                                             <th></th>
                                             <th>Date</th>
                                             <th>Order #</th>
+                                            <th>Coin</th>
                                             <th>Type</th>
                                             <th>status</th>
                                           
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach ($historyies as $history)
                                         <tr class="cell-1">
                                             <td></td>
-                                            <td>2021-11-27</td>
-                                            <td>#SO-13487</td>
-                                            <td>Buy</td>
+                                            <td>{{$history['created_at']->toFormattedDateString()}}</td>
+                                            <td>{{$history->orderId}}</td>
+                                            <td>{{$history->coin}}</td>
+                                            <td>{{$history->type}}</td>
+                                            @if($history->status == 0)
+                                            <td><i class="btn-sm btn-danger">Pending</i> 
+                                            </td>
+                                            @else
                                             <td>
-                                                <i class="btn-sm btn-danger">Pending</i> 
-                                             </td>
-                                           
-                                        </tr>
-                                        <tr class="cell-1">
-                                            <td></td>
-                                            <td>2021-11-27</td>
-                                            <td>#SO-13487</td>
-                                            <td>Sell</td>
-                                            <td>
-                                                <i class="btn-sm btn-success">Completed</i> 
-                                             </td>
-                                            
-                                        </tr>
-                                        
+                                                <i class="btn-sm btn-success">Completed</i>
+                                            </td>
+                                            @endif   
+                                        </tr>  
+                                        @endforeach    
                                     </tbody>
                                 </table>
                             </div>

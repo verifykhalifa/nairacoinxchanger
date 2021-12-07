@@ -18,6 +18,8 @@ class CreateSalesTable extends Migration
             $table->string('user_id');
             $table->bigInteger('value');
             $table->string('rate');
+            $table->string('type');
+            $table->integer('status');
             $table->bigInteger('total');
             $table->string('orderId');
             $table->timestamps();

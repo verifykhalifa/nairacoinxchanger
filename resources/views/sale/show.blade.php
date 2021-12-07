@@ -15,8 +15,8 @@
                                         <div class="d-flex align-items-center">
                                             
                                             <div class="flex-grow-1">
-                                                <h3>Order Id: #{{ $sale->orderId }}</h3>
-                                                <h3>Transaction: #{{ $barcode->coin }}</h3> 
+                                                <h3>Order Id: {{ $sale->orderId }}</h3>
+                                                <h3>Transaction: {{ $barcode->coin }} Sales</h3> 
                                             </div>
                                         </div>
                                     </div>

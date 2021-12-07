@@ -44,6 +44,7 @@ Route::resource('/linked', "App\Http\Controllers\linkedController");
 Route::resource('/address', "App\Http\Controllers\AddressController");
 Route::resource('/purchases', "App\Http\Controllers\PurchaseController");
 Route::resource('/sales', "App\Http\Controllers\SalesController");
+Route::get('/accept_payment/{id}', "App\Http\Controllers\dController@acceptPayment")->name('accept_payment');
 
 
 

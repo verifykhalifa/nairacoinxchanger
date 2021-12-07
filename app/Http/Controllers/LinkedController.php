@@ -59,7 +59,7 @@ class LinkedController extends Controller
 
         if($save->save()){
 
-            return redirect()->back();
+            return back()->with('success','Bank account added.');
         }
     }
 
