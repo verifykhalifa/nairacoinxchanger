@@ -30,4 +30,15 @@ class HomeController extends Controller
         return view('userpages.terms');
     }
 
+    public function econfirmation(){
+        return view('emails.econfirmation');
+    }
+
+    public function sellorder(){
+        return view('emails.sellorder');
+    }
+    public function buyorder(){
+        return view('emails.buyorder');
+    }
+
 }
