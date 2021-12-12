@@ -88,7 +88,11 @@ class AddressController extends Controller
      */
     public function edit($id)
     {
-        //
+        $address = Address::findorfail($id);
+        //dd($address);
+        $rates = Rate::all();
+        return view('address.edit')->with('address', $address)
+                                   ->with('rates', $rates); 
     }
 
     /**

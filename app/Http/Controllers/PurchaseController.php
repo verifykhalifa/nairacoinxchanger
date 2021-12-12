@@ -7,6 +7,7 @@ use App\Models\Purchase;
 use App\Models\Rate;
 use App\Models\History;
 use App\Models\Linked;
+use App\Models\User;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Uuid;
 
@@ -104,8 +105,13 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
+        $authEmail = auth()->user()->email;
+        $users = User::whereRoleIs('admin')->first();
+        $adminBank = Linked::where('userid', $users->id)->first();
         $purchase = Purchase::findorfail($id);
-        return view('purchase.show')->with('purchase', $purchase);
+        return view('purchase.show')->with('purchase', $purchase)
+                                    ->with('adminBank', $adminBank)
+                                    ->with('authEmail', $authEmail);
     }
 
     /**

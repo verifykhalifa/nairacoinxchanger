@@ -38,7 +38,7 @@ class dcontroller extends Controller
 
         public function transaction(){
 
-            $historyies = History::orderBy('created_at','asc')->get();
+            $historyies = History::orderBy('created_at','desc')->get();
             //dd($historyies);
             return view('userpages.transaction')->with('historyies', $historyies);
         }

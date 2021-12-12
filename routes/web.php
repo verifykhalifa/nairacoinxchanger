@@ -21,6 +21,7 @@ Route::get('/about', "App\Http\Controllers\HomeController@about");
 Route::get('/howtobuy', "App\Http\Controllers\HomeController@howtobuy");
 Route::get('/howtosell', "App\Http\Controllers\HomeController@howtosell");
 Route::get('/terms', "App\Http\Controllers\HomeController@terms");
+Route::post('/sellMail', "App\Http\Controllers\MailsController@sellMail")->name('sellMail');
 
 
 /** Dashboard  */

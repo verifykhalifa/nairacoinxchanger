@@ -9,6 +9,8 @@
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-body">
+                            <form action="{{route('sellMail')}}" method="POST">
+                                @csrf
                             <div class="buyer-seller">
                                 <div class="d-flex justify-center">
                                     <div class="buyer-info">
@@ -36,7 +38,7 @@
                                             </tr>
                                             <tr>
                                                 <td>Account To Fund</td>
-                                                <td align="center">Bank Name:       Acct Number:      Acct Name:    </td>
+                                                <td align="center">Bank Name: {{ $adminBank->bankname}}<br>Acct Number: {{ $adminBank->acctnumber}}<br>Acct Name: {{ $adminBank->firstname}}&nbsp;{{ $adminBank->lastname}}</td>
                                             </tr>
                                             <tr>
                                                 <td></td>
@@ -60,11 +62,16 @@
                                         </tbody>
                                     </table>
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn btn-primary px-4 me-3">Confirm</a>
-                                        
+                                        <input type="text" name="orderId" value="{{ $purchase->orderId }}" hidden='hidden'>
+                                        <input type="text" name="total" value="{{ $purchase->total }}" hidden='hidden'>
+                                        <input type="text" name="value" value="{{ $purchase->value }}" hidden='hidden'>
+                                        <input type="text" name="btcaddress" value="{{ $purchase->btcaddress }}" hidden='hidden'>
+                                        <input type="text" name="email" value="{{ $authEmail }}" hidden='hidden'>
+                                        <input type="submit" class="btn btn-primary px-4 me-3" value="Confirm"> 
                                     </div>
                                 </div>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>

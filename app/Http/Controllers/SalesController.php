@@ -10,6 +10,8 @@ use App\Models\History;
 use App\Models\Linked;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Uuid;
+use App\Mail\saleMail;
+use Mail;
 
 class SalesController extends Controller
 {
