@@ -17,8 +17,11 @@ class CreateHistoriesTable extends Migration
             $table->id();
             $table->string('orderId');
             $table->string('type');
+            $table->string('coin');
             $table->integer('status');
             $table->integer('user_id');
+            $table->string('firstname');
+            $table->string('lastname');
             $table->timestamps();
         });
     }

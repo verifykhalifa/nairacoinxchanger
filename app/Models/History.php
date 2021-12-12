@@ -13,12 +13,14 @@ class History extends Model
         'orderId',
         'type',
         'coin',
+        'firstname',
+        'lastname',
         'status',
         'user_id'
     ];
 
     public function users()
     {
-        return $this->belongsTo('App\Models\User','id');
+        return $this->belongsTo('App\Models\User','id','name','last_name');
     }
 }

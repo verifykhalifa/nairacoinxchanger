@@ -58,7 +58,7 @@ class SalesController extends Controller
 
         // $orderId = Uuid::generate();
 
-        $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 10, 'prefix' =>'INV-']);
+        $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
 
         foreach($rateName as $coin => $id){
 
@@ -66,7 +66,7 @@ class SalesController extends Controller
             $sale->value = $request->value_sell;
             $sale->orderId = $orderId;
             $sale->rate = $coin;
-            $sale->type = 'Sale';
+            $sale->type = 'Sell';
             $sale->status = 0;
             $sale->total = $request->total;
             $sale->user_id = auth()->user()->id;
@@ -87,7 +87,9 @@ class SalesController extends Controller
                 'type'     => $sale->type,
                 'coin'     => $sale->rate,
                 'status'   => $sale->status,
-                'user_id'  => $sale->user_id
+                'user_id'  => $sale->user_id,
+                'firstname'  => auth()->user()->name,
+                'lastname'  => auth()->user()->last_name
             ];
 
             History::create($data);

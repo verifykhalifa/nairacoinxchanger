@@ -55,7 +55,7 @@ class PurchaseController extends Controller
 
         $rateName = Rate::where('buy', $request->rate)->pluck('id','coin');
 
-        $orderId = IdGenerator::generate(['table' => 'purchases','field'=>'orderId','length' => 10, 'prefix' =>'INV-']);
+        $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
 
         foreach($rateName as $coin => $id){
 
@@ -64,7 +64,7 @@ class PurchaseController extends Controller
             $purchases->value = $request->value;
             $purchases->orderId = $orderId;
             $purchases->rate = $coin;
-            $purchases->type = 'Purchase';
+            $purchases->type = 'Buy';
             $purchases->status = 0;
             $purchases->method = $request->method;
             $purchases->total = $request->total;
@@ -87,7 +87,9 @@ class PurchaseController extends Controller
                 'type'     => $purchases->type,
                 'coin'     => $purchases->rate,
                 'status'   => $purchases->status,
-                'user_id'  => $purchases->user_id
+                'user_id'  => $purchases->user_id,
+                'firstname'  => auth()->user()->name,
+                'lastname'  => auth()->user()->last_name,
             ];
 
             History::create($data);

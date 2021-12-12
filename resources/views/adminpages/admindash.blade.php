@@ -49,7 +49,7 @@
                                         <tr class="cell-1">
                                             <td></td>
                                             <td>{{ $history['created_at']->toFormattedDateString() }}</td>
-                                            <td>{{ $history->users->name}}&nbsp;&nbsp;{{ $history->users->last_name}}</td>
+                                            <td>{{ $history->firstname}}&nbsp;&nbsp;{{ $history->lastname}}</td>
                                             <td>{{ $history->orderId}}</td>
                                             <td>{{ $history->coin}}</td>
                                             <td>{{ $history->type}}</td>

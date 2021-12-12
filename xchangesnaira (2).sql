@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2021 at 01:08 PM
+-- Generation Time: Dec 12, 2021 at 05:45 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -76,6 +76,8 @@ CREATE TABLE `histories` (
   `coin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `firstname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lastname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -84,13 +86,11 @@ CREATE TABLE `histories` (
 -- Dumping data for table `histories`
 --
 
-INSERT INTO `histories` (`id`, `orderId`, `type`, `coin`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, '235fa9a0-54ff-11ec-a3d0-37a797d14294', 'buy', 'Bitcoin', 1, 6, '2021-12-04 11:38:53', '2021-12-04 14:16:26'),
-(2, '43e2d210-54ff-11ec-aca7-ad5ec076ca1b', 'sell', 'Perfect Money', 1, 6, '2021-12-04 11:39:47', '2021-12-04 14:16:38'),
-(3, 'eb4233a0-5515-11ec-8c08-d7cdaf61a5c8', 'sell', 'Bitcoin', 1, 6, '2021-12-04 14:21:57', '2021-12-04 14:24:19'),
-(4, 'CPT-000034', 'sell', 'Bitcoin', 1, 6, '2021-12-07 10:43:10', '2021-12-07 10:58:13'),
-(5, 'CPT-000002', 'buy', 'Bitcoin', 0, 6, '2021-12-07 10:52:52', '2021-12-07 10:52:52'),
-(6, 'INV-000034', 'sell', 'Bitcoin', 0, 6, '2021-12-07 10:55:12', '2021-12-07 10:55:12');
+INSERT INTO `histories` (`id`, `orderId`, `type`, `coin`, `status`, `user_id`, `firstname`, `lastname`, `created_at`, `updated_at`) VALUES
+(1, 'INV-000040', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:33:08', '2021-12-12 15:37:35'),
+(2, 'INV-000009', 'Buy', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:40:35', '2021-12-12 15:43:47'),
+(3, '210001', 'Buy', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:41:15', '2021-12-12 15:43:50'),
+(4, '210001', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:42:42', '2021-12-12 15:43:54');
 
 -- --------------------------------------------------------
 
@@ -145,8 +145,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (34, '2021_11_26_183242_create_addresses_table', 9),
 (35, '2021_11_10_113110_create_sales_table', 10),
 (36, '2021_11_10_113224_create_purchases_table', 10),
-(37, '2021_12_04_121841_create_histories_table', 10),
-(38, '2021_12_04_144537_add_coin_to_histories', 11);
+(38, '2021_12_04_144537_add_coin_to_histories', 11),
+(41, '2021_12_04_121841_create_histories_table', 12);
 
 -- --------------------------------------------------------
 
@@ -282,7 +282,15 @@ CREATE TABLE `purchases` (
 INSERT INTO `purchases` (`id`, `btcaddress`, `user_id`, `value`, `rate`, `type`, `status`, `method`, `total`, `orderId`, `created_at`, `updated_at`) VALUES
 (1, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, '235fa9a0-54ff-11ec-a3d0-37a797d14294', '2021-12-04 11:38:52', '2021-12-04 11:38:52'),
 (2, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, 'CPT-000001', '2021-12-07 10:47:58', '2021-12-07 10:47:58'),
-(3, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, 'CPT-000002', '2021-12-07 10:52:52', '2021-12-07 10:52:52');
+(3, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, 'CPT-000002', '2021-12-07 10:52:52', '2021-12-07 10:52:52'),
+(4, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000003', '2021-12-11 19:40:44', '2021-12-11 19:40:44'),
+(5, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000004', '2021-12-12 11:13:39', '2021-12-12 11:13:39'),
+(6, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000005', '2021-12-12 12:47:07', '2021-12-12 12:47:07'),
+(7, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000006', '2021-12-12 13:51:09', '2021-12-12 13:51:09'),
+(8, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000007', '2021-12-12 13:52:59', '2021-12-12 13:52:59'),
+(9, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000008', '2021-12-12 14:03:50', '2021-12-12 14:03:50'),
+(10, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, 'INV-000009', '2021-12-12 15:40:35', '2021-12-12 15:40:35'),
+(11, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, '210001', '2021-12-12 15:41:15', '2021-12-12 15:41:15');
 
 -- --------------------------------------------------------
 
@@ -354,7 +362,8 @@ INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
 (1, 3, 'App\\Models\\User'),
 (2, 4, 'App\\Models\\User'),
 (1, 5, 'App\\Models\\User'),
-(2, 6, 'App\\Models\\User');
+(2, 6, 'App\\Models\\User'),
+(2, 7, 'App\\Models\\User');
 
 -- --------------------------------------------------------
 
@@ -384,7 +393,14 @@ INSERT INTO `sales` (`id`, `user_id`, `value`, `rate`, `type`, `status`, `total`
 (2, '6', 20, 'Bitcoin', 'sell', 0, 11000, 'cf911680-5515-11ec-a716-31affcdbda2d', '2021-12-04 14:21:10', '2021-12-04 14:21:10'),
 (3, '6', 20, 'Bitcoin', 'sell', 0, 11000, 'eb4233a0-5515-11ec-8c08-d7cdaf61a5c8', '2021-12-04 14:21:57', '2021-12-04 14:21:57'),
 (4, '6', 20, 'Bitcoin', 'sell', 0, 11000, 'CPT-000034', '2021-12-07 10:43:10', '2021-12-07 10:43:10'),
-(5, '6', 20, 'Bitcoin', 'sell', 0, 11000, 'INV-000034', '2021-12-07 10:55:12', '2021-12-07 10:55:12');
+(5, '6', 20, 'Bitcoin', 'sell', 0, 11000, 'INV-000034', '2021-12-07 10:55:12', '2021-12-07 10:55:12'),
+(6, '6', 45, 'Bitcoin', 'Sale', 0, 24750, 'INV-000035', '2021-12-11 18:42:02', '2021-12-11 18:42:02'),
+(7, '6', 20, 'Bitcoin', 'Sale', 0, 11000, 'INV-000036', '2021-12-11 19:19:49', '2021-12-11 19:19:49'),
+(8, '6', 20, 'Bitcoin', 'Sell', 0, 11000, 'INV-000037', '2021-12-12 15:27:41', '2021-12-12 15:27:41'),
+(9, '6', 20, 'Bitcoin', 'Sell', 0, 11000, 'INV-000038', '2021-12-12 15:30:46', '2021-12-12 15:30:46'),
+(10, '6', 20, 'Bitcoin', 'Sell', 0, 11000, 'INV-000039', '2021-12-12 15:32:00', '2021-12-12 15:32:00'),
+(11, '6', 20, 'Bitcoin', 'Sell', 0, 11000, 'INV-000040', '2021-12-12 15:33:07', '2021-12-12 15:33:07'),
+(12, '6', 20, 'Bitcoin', 'Sell', 0, 11000, '210001', '2021-12-12 15:42:42', '2021-12-12 15:42:42');
 
 -- --------------------------------------------------------
 
@@ -415,10 +431,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `address`, `city`, `country`, `phone`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'hekdj', 'jdjdj', 'jdjdj@yahoo.com', 'hshfdh', 'jjdj', 'Bahamas', '2427288323', NULL, '$2y$10$LMbCW1g7z.HiphRqnq.suuj4LqF5C3YHetskYStJ9IgBztR7aA7LW', NULL, '2021-11-01 03:00:31', '2021-11-01 03:00:31'),
 (2, 'user', 'role', 'userrole1@yahoo.com', '728 yahoo street', 'kola', 'Bahrain', '8928388723', NULL, '$2y$10$qGtudGcq0EmVQxyIEsIgX.ZtjYMJo8C8ZSj/MYZXLuCy8HDsy57Se', NULL, '2021-11-01 03:13:12', '2021-11-01 03:13:12'),
-(3, 'Admin', 'Admin', 'admin@admin.com', 'admin address', 'admin city', 'Nigeria', '809282827', NULL, '$2y$10$gA3ZKp1rlwGNxs0aaQsMSudKtemt/gVPoAIeGyAqsvmojC/53yiHS', NULL, '2021-11-01 03:32:42', '2021-11-01 03:32:42'),
 (4, 'user', 'seconduser', 'user2@yahoo.com', 'user address', 'user2 city', 'Azerbaijan', '782739343', NULL, '$2y$10$5KqMshP9zpPvjeeyqP3AVeLVTL0dvDN2LyVNiZWOOSdqgRtiIzQ8m', NULL, '2021-11-01 03:34:34', '2021-11-01 03:34:34'),
 (5, 'Admin', 'Admin', 'admin@test.com', 'Kent', 'London', 'American Samoa', '09032345323', NULL, '$2y$10$/F7I/tEUo9enOvBZTIZ6su1tw6cN.GngLHnxyScUeLatrMcbvt/ye', NULL, '2021-11-13 18:01:53', '2021-11-13 18:01:53'),
-(6, 'Demo', 'User', 'user@test.com', 'Kent', 'London', 'American Samoa', '09012323456', NULL, '$2y$10$LQ4NocqsDJZiu0W7ao.3iOinru3hZqJGGmRPx8rLH7fo5h9sjomcG', NULL, '2021-11-13 18:29:23', '2021-11-13 18:29:23');
+(6, 'Demo', 'User', 'user@test.com', 'Kent', 'London', 'American Samoa', '09012323456', NULL, '$2y$10$LQ4NocqsDJZiu0W7ao.3iOinru3hZqJGGmRPx8rLH7fo5h9sjomcG', NULL, '2021-11-13 18:29:23', '2021-11-13 18:29:23'),
+(7, 'KanayoO', 'Kanayo', 'kanayookanyo@gmail.com', 'Mangu local government', 'JOS', 'Cocos (Keeling) Islands', '09017129050', NULL, '$2y$10$GowM/7B2Z7.Fw5B6ILhmwO9ijdBL8a2kp9RKC29/OCoFJnvMUiumW', NULL, '2021-12-07 11:16:20', '2021-12-07 11:16:20');
 
 --
 -- Indexes for dumped tables
@@ -549,7 +565,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `histories`
 --
 ALTER TABLE `histories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `linkeds`
@@ -561,7 +577,7 @@ ALTER TABLE `linkeds`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -579,7 +595,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `rates`
@@ -597,13 +613,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
