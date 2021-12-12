@@ -11,11 +11,18 @@
                         <div class="card-body">
                             <form action="{{route('sellMail')}}" method="POST">
                                 @csrf
+                                <div class="text-center">
+                                    @if(session('success'))
+                                    <div class="alert alert-success" style="width:92%; margin:auto">
+                                    {{session('success')}}</div>
+                                    @endif
+                                </div>
+                                <br>
                             <div class="buyer-seller">
                                 <div class="d-flex justify-center">
                                     <div class="buyer-info">
+                                        
                                         <div class="d-flex align-items-center">
-                                            
                                             <div class="flex-grow-1">
                                                 <h3>Order Id: {{ $purchase->orderId }}</h3>
                                             </div>
