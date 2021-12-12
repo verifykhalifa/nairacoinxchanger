@@ -24,6 +24,11 @@ Route::get('/terms', "App\Http\Controllers\HomeController@terms");
 Route::post('/sellMail', "App\Http\Controllers\MailsController@sellMail")->name('sellMail');
 
 
+/** EMAILS  */
+Route::get('/econfirmation', "App\Http\Controllers\HomeController@econfirmation");
+Route::get('/sellorder', "App\Http\Controllers\HomeController@sellorder");
+Route::get('/buyorder', "App\Http\Controllers\HomeController@buyorder");
+
 /** Dashboard  */
 Route::get('/dashboard', "App\Http\Controllers\dcontroller@dashboard");
 Route::get('/pref', "App\Http\Controllers\dcontroller@pref");
