@@ -125,7 +125,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                 <tr>
                     <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                        <h1 style="font-size: 48px; font-weight: 400; margin: 2;"></h1> <img src="/images/Nairacoinr.png" width="125" height="120" style="display: block; border: 0px;" />
+                        <h1 style="font-size: 48px; font-weight: 400; margin: 2;">WE'VE RECIEVED YOUR BUY ORDER</h1> 
                     </td>
                 </tr>
             </table>
@@ -134,62 +134,33 @@
     <tr>
         <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
+                
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">Dear Customer</p>
+                        <p style="margin: 0;">You have just initiated a transaction with Order Number:  <br> <br>In order to continue with your payment <br> Pay N730,8793  to our account details bellow; <br> Bank Name : <br>Bank Account Name : <br> Bank Account Number : </p>
                     </td>
                 </tr>
-                <tr>
-                    <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">We're sad as we couldn't satisfy you with our service. we will try our best to make our services better for customers like you. <br><br>Think once more if you want us to give one more try Just press the button below to reactivate your account</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td bgcolor="#ffffff" align="left">
-                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                            <tr>
-                                <td bgcolor="#ffffff" align="center" style="padding: 20px 30px 60px 30px;">
-                                    <table border="0" cellspacing="0" cellpadding="0">
-                                        <tr>
-                                            <td align="center" style="border-radius: 3px;" bgcolor="#ff880e"><a href="#" target="_blank" style="font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; border: 1px solid #ff880e; display: inline-block;">Reactivate Account</a></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr> <!-- COPY -->
+                
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">If you have any questions, just reply to this email—we're always happy to help out.</p>
+                        <p style="margin: 0;">NOTE: Write "575347 Order" in the remark or reference when sending</p>
                     </td>
                 </tr>
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">Thanks for choosing our service,<br>BBB Team</p>
+                        <p style="margin: 0;">Thanks for choosing our service</p>
                     </td>
                 </tr>
             </table>
         </td>
     </tr>
-    <tr>
-        <td bgcolor="#f4f4f4" align="center" style="padding: 30px 10px 0px 10px;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
-                <tr>
-                    <td bgcolor="#FFECD1" align="center" style="padding: 30px 30px 30px 30px; border-radius: 4px 4px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <h2 style="font-size: 20px; font-weight: 400; color: #111111; margin: 0;">Need more help?</h2>
-                        <p style="margin: 0;"><a href="#" target="_blank" style="color: #ff880e;">We’re here to help you out</a></p>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
+    
     <tr>
         <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                 <tr>
                     <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;"> <br>
-                        <p style="margin: 0;">If these emails get annoying, please feel free to <a href="#" target="_blank" style="color: #111111; font-weight: 700;">unsubscribe</a>.</p>
+                        <p style="margin: 0;">This email is sent automatically. Please do not reply, your request would not be executed. Contact us using the following email <a href="#" target="_blank" style="color: #111111; font-weight: 700;">info@nairacoinxchange.net</a>.</p>
                     </td>
                 </tr>
             </table>

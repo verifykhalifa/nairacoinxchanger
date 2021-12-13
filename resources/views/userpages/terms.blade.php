@@ -20,11 +20,11 @@
                 <div class="single-product-item">
                     <div class="list-group">
                         <a href="#" class="list-group-item list-group-item-action list-group-item-light"
-                          style="font-size: 130%">This Agreement sets forth the terms and conditions which SimXchanger will provide to all members of simxchanger. This Agreement is the right and obligation of members to use the services of SimXchanger. </a>
+                          style="font-size: 130%">This Agreement sets forth the terms and conditions which NairacoinXchange will provide to all members of NairacoinXchange. This Agreement is the right and obligation of members to use the services of NairacoinXchange. </a>
                           <a href="#" class="list-group-item list-group-item-action list-group-item-light"
                           style="font-size: 130%">Before using any of our services, you agree to these terms and conditions and guarantee to be bound by it. </a>
                           <a href="#" class="list-group-item list-group-item-action list-group-item-light"
-                          style="font-size: 130%">In this term, many phrases will be used to address us and you. Definitions "We" "Us" or "Provider" or "SimXchanger.net and her Web Sites" "You" "Your" "Client" "Customer" or "Member." </a>
+                          style="font-size: 130%">In this term, many phrases will be used to address us and you. Definitions "We" "Us" or "Provider" or "NairacoinXchange.net and her Web Sites" "You" "Your" "Client" "Customer" or "Member." </a>
                           <a href="#" class="list-group-item list-group-item-action list-group-item-light"
                           style="font-size: 130%">The internet is a very complex place. Sometimes, things may not go as expected. We do not give any guarantee or warranty for any service provided. However, we try our best to provide you with a better service at the shortest time possible. Anything you do on the internet is at your own risk and we’ll not be directly or indirectly responsible for any loss or unpleasant situations that might arise. </a>
                           <a href="#" class="list-group-item list-group-item-action list-group-item-light"

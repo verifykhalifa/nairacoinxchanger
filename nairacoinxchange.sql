@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2021 at 05:45 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Dec 13, 2021 at 07:33 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `xchangesnaira`
+-- Database: `nairacoinxchange`
 --
 
 -- --------------------------------------------------------
@@ -60,7 +59,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -90,7 +89,9 @@ INSERT INTO `histories` (`id`, `orderId`, `type`, `coin`, `status`, `user_id`, `
 (1, 'INV-000040', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:33:08', '2021-12-12 15:37:35'),
 (2, 'INV-000009', 'Buy', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:40:35', '2021-12-12 15:43:47'),
 (3, '210001', 'Buy', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:41:15', '2021-12-12 15:43:50'),
-(4, '210001', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:42:42', '2021-12-12 15:43:54');
+(4, '210001', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:42:42', '2021-12-12 15:43:54'),
+(5, '210001', 'Buy', 'Binance Coin BNB', 0, 2, 'user', 'role', '2021-12-13 02:44:24', '2021-12-13 02:44:24'),
+(6, '210001', 'Buy', 'Binance Coin BNB', 0, 2, 'user', 'role', '2021-12-13 02:46:16', '2021-12-13 02:46:16');
 
 -- --------------------------------------------------------
 
@@ -115,7 +116,8 @@ CREATE TABLE `linkeds` (
 
 INSERT INTO `linkeds` (`id`, `firstname`, `lastname`, `bankname`, `acctnumber`, `userid`, `created_at`, `updated_at`) VALUES
 (2, 'Miguel', 'Djokovic', 'Guaranty Trust Bank|058|GTB', '0876876545', '5', '2021-11-26 17:22:46', '2021-11-26 17:22:46'),
-(3, 'Ayodeji', 'Adekunle', 'Keystone Bank|082|KEYSTONE', '0876876545', '6', '2021-12-07 10:28:23', '2021-12-07 10:28:23');
+(3, 'Ayodeji', 'Adekunle', 'Keystone Bank|082|KEYSTONE', '0876876545', '6', '2021-12-07 10:28:23', '2021-12-07 10:28:23'),
+(4, 'taiwo', 'kunle', 'Stanbic IBTC Bank|221|STANBIC', '782739372', '2', '2021-12-13 02:44:05', '2021-12-13 02:44:05');
 
 -- --------------------------------------------------------
 
@@ -159,6 +161,13 @@ CREATE TABLE `password_resets` (
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `password_resets`
+--
+
+INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+('userrole1@yahoo.com', '$2y$10$CMvA6VO2aifVs5dT2H3G6eY2yXvQab2xook.ebjSgLO6Wmoqo44Ce', '2021-12-13 01:14:55');
 
 -- --------------------------------------------------------
 
@@ -248,7 +257,7 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -290,7 +299,9 @@ INSERT INTO `purchases` (`id`, `btcaddress`, `user_id`, `value`, `rate`, `type`,
 (8, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000007', '2021-12-12 13:52:59', '2021-12-12 13:52:59'),
 (9, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000008', '2021-12-12 14:03:50', '2021-12-12 14:03:50'),
 (10, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, 'INV-000009', '2021-12-12 15:40:35', '2021-12-12 15:40:35'),
-(11, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, '210001', '2021-12-12 15:41:15', '2021-12-12 15:41:15');
+(11, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, '210001', '2021-12-12 15:41:15', '2021-12-12 15:41:15'),
+(12, 'jksj8w73', '2', 34, 'Binance Coin BNB', 'Buy', 0, 'bank', 19278, '210001', '2021-12-13 02:44:23', '2021-12-13 02:44:23'),
+(13, 'jksj8w73', '2', 34, 'Binance Coin BNB', 'Buy', 0, 'bank', 19278, '210001', '2021-12-13 02:46:16', '2021-12-13 02:46:16');
 
 -- --------------------------------------------------------
 
@@ -313,10 +324,11 @@ CREATE TABLE `rates` (
 --
 
 INSERT INTO `rates` (`id`, `coin_image`, `coin`, `buy`, `sell`, `created_at`, `updated_at`) VALUES
-(1, '/CoinImages/xs581637674267images (11).jfif', 'Bitcoin', 570, 550, '2021-11-23 12:31:07', '2021-11-23 12:31:07'),
-(2, '/CoinImages/TobN1637674359download (64).png', 'Perfect Money', 565, 510, '2021-11-23 12:32:39', '2021-11-23 12:32:39'),
-(3, '/CoinImages/Dq3R1637674404qhglut5m3ovzm92frajd.png', 'Bitcoin Cash', 600, NULL, '2021-11-23 12:33:24', '2021-11-23 12:33:24'),
-(4, '/CoinImages/YjDI1637674424800px-Ethereum-icon-purple.svg.png', 'Ethereum', 500, NULL, '2021-11-23 12:33:44', '2021-11-23 12:33:44');
+(5, '/CoinImages/TbHT1639328487btc.png', 'Bitcoin BTC', 578, 500, '2021-12-12 23:01:27', '2021-12-12 23:01:27'),
+(6, '/CoinImages/fW4d1639328566bnb.png', 'Binance Coin BNB', 567, 580, '2021-12-12 23:02:46', '2021-12-12 23:02:46'),
+(7, '/CoinImages/qjpX1639328600eth.png', 'Etherium ETH', 568, 700, '2021-12-12 23:03:20', '2021-12-12 23:03:20'),
+(8, '/CoinImages/TXR71639328627bch.png', 'Bitcoin Cash BCH', 450, 600, '2021-12-12 23:03:47', '2021-12-12 23:03:47'),
+(9, '/CoinImages/6Ihj1639328662usdt.png', 'Tether USDT', 568, 432, '2021-12-12 23:04:22', '2021-12-12 23:04:22');
 
 -- --------------------------------------------------------
 
@@ -565,13 +577,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `histories`
 --
 ALTER TABLE `histories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `linkeds`
 --
 ALTER TABLE `linkeds`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -595,13 +607,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `rates`
 --
 ALTER TABLE `rates`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `roles`

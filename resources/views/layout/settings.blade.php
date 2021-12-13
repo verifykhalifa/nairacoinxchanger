@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nairacoinxchange </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="admin/images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="log/images/Nairacoinr.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="admin/vendor/waves/waves.min.css">
     <link rel="stylesheet" href="admin/vendor/toastr/toastr.min.css">

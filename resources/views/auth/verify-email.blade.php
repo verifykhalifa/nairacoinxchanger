@@ -1,39 +1,51 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-        </div>
-
-        @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-            </div>
-        @endif
-
-        <div class="mt-4 flex items-center justify-between">
-            <form method="POST" action="{{ route('verification.send') }}">
-                @csrf
-
-                <div>
-                    <x-button>
-                        {{ __('Resend Verification Email') }}
-                    </x-button>
+<!-- Mirrored from brandio.io/envato/iofrm/html/login14.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Jul 2021 15:58:30 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NairacoinXchange</title>
+    <link rel="shortcut icon" type="image/png" href="log/images/Nairacoinr.png">
+    <link rel="stylesheet" type="text/css" href="log/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="log/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="log/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="log/css/iofrm-theme14.css">
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <div class="website-logo-inside">
+                            <a href="/">
+                                <div >
+                                    <img  src="log/images/Nairacoinr.png" style="width: 80px; height: 95px;">
+                                </div>
+                            </a>
+                        </div>
+                        <h3>Activate Account</h3>
+                        <p>Enter the verification code in your email</p>
+                        <form method="POST" action="{{ route('password.email') }}">
+                            @csrf
+                            <input class="form-control" type="text" name="email" placeholder="E-mail Verification Code" required>
+                            <div class="form-button">
+                                <button id="submit" type="{{ __('Email Password Reset Link') }}}" class="ibtn">Activate</button>
+                                
+                            </div>
+                        </form>
+                        
+                    </div>
                 </div>
-            </form>
-
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-                    {{ __('Log Out') }}
-                </button>
-            </form>
+            </div>
         </div>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+<script src="log/js/jquery.min.js"></script>
+<script src="log/js/popper.min.js"></script>
+<script src="log/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+<!-- Mirrored from brandio.io/envato/iofrm/html/login14.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Jul 2021 15:58:31 GMT -->
+</html>

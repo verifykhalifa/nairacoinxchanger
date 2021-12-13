@@ -30,8 +30,8 @@ class HomeController extends Controller
         return view('userpages.terms');
     }
 
-    public function econfirmation(){
-        return view('emails.econfirmation');
+    public function econfirmcode(){
+        return view('emails.econfirmcode');
     }
 
     public function sellorder(){
@@ -40,5 +40,12 @@ class HomeController extends Controller
     public function buyorder(){
         return view('emails.buyorder');
     }
+    
+    public function ewelcome(){
+        return view('emails.ewelcome');
+    }
 
+    public function everifysuccess(){
+        return view('emails.everifysuccess');
+    }
 }
