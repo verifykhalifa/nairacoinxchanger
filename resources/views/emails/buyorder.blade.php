@@ -137,13 +137,13 @@
                 
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">You have just initiated a transaction with Order Number:  <br> <br>In order to continue with your payment <br> Pay N730,8793  to our account details bellow; <br> Bank Name : <br>Bank Account Name : <br> Bank Account Number : </p>
+                        <p style="margin: 0;">You have just initiated a transaction with Order Number: #{{ $orderId }} <br> <br>In order to continue with your payment <br> Pay <span>&#x20A6;</span> @money($total) to our account details bellow; <br> Bank Name : {{ $bankname }} <br>Bank Account Name : {{ $firstname }} - {{ $lastname }} <br> Bank Account Number : {{ $acctnumber }} </p>
                     </td>
                 </tr>
                 
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">NOTE: Write "575347 Order" in the remark or reference when sending</p>
+                        <p style="margin: 0;">NOTE: Write "#{{ $orderId }} Order" in the remark or reference when sending</p>
                     </td>
                 </tr>
                 <tr>

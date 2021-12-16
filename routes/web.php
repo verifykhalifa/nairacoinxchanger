@@ -22,6 +22,7 @@ Route::get('/howtobuy', "App\Http\Controllers\HomeController@howtobuy");
 Route::get('/howtosell', "App\Http\Controllers\HomeController@howtosell");
 Route::get('/terms', "App\Http\Controllers\HomeController@terms");
 Route::post('/sellMail', "App\Http\Controllers\MailsController@sellMail")->name('sellMail');
+Route::post('/buyMail', "App\Http\Controllers\MailsController@buyMail")->name('buyMail');
 
 
 /** EMAILS  */

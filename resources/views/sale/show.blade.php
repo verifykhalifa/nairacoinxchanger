@@ -9,6 +9,15 @@
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-body">
+                            <form action="{{route('buyMail')}}" method="POST">
+                                @csrf
+                                <div class="text-center">
+                                    @if(session('success'))
+                                    <div class="alert alert-success" style="width:92%; margin:auto">
+                                    {{session('success')}}</div>
+                                    @endif
+                                </div>
+                                <br>
                             <div class="buyer-seller">
                                 <div class="d-flex justify-center">
                                     <div class="buyer-info">
@@ -65,18 +74,17 @@
                                             <tr>
                                                 <td></td>
                                                 <td align="center">Click on "CONFIRM" after payment. We will recieve a notification and check the receipt of funds</td>
-                                            </tr>
-                                        
-                                          
-                                            
+                                            </tr>    
                                         </tbody>
                                     </table>
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn btn-primary px-4 me-3">Confirm</a>
-                                        
+                                        <input type="text" name="linkId" value="{{ $sale->id }}" hidden='hidden'>
+                                        <input type="text" name="orderId" value="{{ $sale->orderId }}" hidden='hidden'>
+                                        <input type="submit" class="btn btn-primary px-4 me-3" value="Confirm">
                                     </div>
                                 </div>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>

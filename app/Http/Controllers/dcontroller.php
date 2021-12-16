@@ -56,8 +56,7 @@ class dcontroller extends Controller
         }
 
         public function adminsettings(){
-            $auth = auth()->user()->id;
-            $linked = Linked::where('userid',$auth)->get();
+            $linked = Linked::orderBy('created_at', 'asc')->get();
             //dd($linked);
             return view('adminpages.adminsettings', compact('linked'));
         }
