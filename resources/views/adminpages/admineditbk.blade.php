@@ -10,7 +10,7 @@
             <h4 class="card-title">Add Bank Account</h4>
         </div>
         <div class="card-body">
-            <form method="POST" action="{{url('linked/'.$linked['id'])}}" enctype="multipart/form-data" class="identity-upload">
+            <form method="POST" action="{{route('linked.update', $linked->id)}}" enctype="multipart/form-data" class="identity-upload">
                 @csrf
                 @method('PUT')
                 <div class="text-center">
@@ -21,16 +21,16 @@
                 </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">First Name </label>
-                        <input type="text" name="firstname" class="form-control" value="">
+                        <input type="text" name="firstname" class="form-control" value="{{$linked->firstname}}">
                     </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Last Name </label>
-                        <input type="text" name="lastname" class="form-control" value="">
+                        <input type="text" name="lastname" class="form-control" value="{{$linked->lastname}}">
                     </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Bank Name </label>
                         <select class="form-control" name="bankname">
-                            <option value="{{$linked['bankname']}}}">Select Bank</option>
+                            <option value="{{$linked->bankname}}">{{$linked->bankname}}</option>
                             <option value="Access Bank|044|ABP">Access Bank</option>
                             <option value="Citi Bank Nigeria|023|CITI">Citi Bank Nigeria</option>
                             <option value="Diamond Bank|063|DBP">Diamond Bank</option>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="mb-3 col-xl-12">
                         <label class="me-sm-2">Account Number </label>
-                        <input type="text" class="form-control" name="acctnumber" value="">
+                        <input type="text" class="form-control" name="acctnumber" value="{{$linked->acctnumber}}">
                     </div>
                     
 

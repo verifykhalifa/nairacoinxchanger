@@ -104,7 +104,22 @@ class AddressController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except(['_method','_token']);
+
+        if ($request->has('barcode')) {
+            $name = Str::random(4).time().$request->file('barcode')->getClientOriginalName();
+            $extension = $request->file('barcode')->getClientOriginalExtension();
+            $destination = public_path().'/Barcodes';
+            $path='/Barcodes/'.$name;
+            $request->file('barcode')->move($destination, $name);
+            $data['barcode'] = $path;
+        }
+
+        $address = Address::find($id);
+
+        $address->update($data);
+
+        return back()->with('success','Address credentials Updated');
     }
 
     /**

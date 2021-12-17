@@ -12,7 +12,7 @@
                 <h4>Welcome Back,  <span style="color: rgb(233, 236, 16)">{{ Auth::user()->name }}</span></h4>
                 </div>
                 <br>
-                <div class="text-right">
+                <div class="text-center">
                      @if(session('error'))
                         <div class="alert alert-danger" style="width:92%; margin:auto">
                        <b>{{session('error')}}</b></div>
@@ -168,6 +168,7 @@
                                     <br>
                                     <form action="{{ route('sales.store')}}" method="post" class="currency2_validate">
                                         @csrf
+                                        <input type="text" hidden="hidden" name="rate_id" value="{{ $rate->id}}">
                                         <div class="mb-3">
                                             {{-- <label class="me-sm-2">Currency</label> --}}
                                             <div class="input-group mb-3">
@@ -180,12 +181,10 @@
                                                     @foreach ($rates as $rate)
                                                     <option value="{{$rate->sell}}">{{$rate->coin}}</option>
                                                     @endforeach
-                                                    <input type="text" id="InputSell" hidden="hidden" name="rate_id" 
-                                                    value="{{ $rate->id}}">
                                                 </select>
                                             </div>
                                         </div>
-
+                                        
                                         <div class="mb-3">
                                             {{-- <label class="me-sm-2">Enter your amount</label> --}}
                                             <div class="input-group">

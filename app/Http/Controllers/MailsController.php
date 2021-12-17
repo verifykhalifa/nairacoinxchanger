@@ -9,19 +9,33 @@ class MailsController extends Controller
 {
 
     public function sellMail(Request $request){
-       
-        $email = 'ayodejiadekunle@gmail.com';
 
-        \Mail::send('emails.saleMail', array(
+        \Mail::send('emails.adminMail', array(
+
+            'orderId'  => $request->get('orderId')
+        
+        ), function($message) use ($request)
+        {
+            $email = 'ayodejiadekunle@gmail.com';
+            $message->from('ayodejiadekunle@gmail.com', "New Transaction Alert!");
+            $message->to('ayodejiadekunle@gmail.com');
+            $message->subject('New Transaction!');
+        });
+
+        \Mail::send('emails.buyorder', array(
 
             'orderId'      => $request->get('orderId'),
             'total'        => $request->get('total'),
             'value'        => $request->get('value'),
-            'btcaddress'   => $request->get('btcaddress')
+            'btcaddress'   => $request->get('btcaddress'),
+            'bankname'     => $request->get('bankname'),
+            'acctnumber'   => $request->get('acctnumber'),
+            'firstname'    => $request->get('firstname'),
+            'lastname'     => $request->get('lastname')
 
         ), function($message) use ($request)
         {
-        $email = 'ayodejiadekunle@gmail.com';
+            $email = 'ayodejiadekunle@gmail.com';
             $message->from('ayodejiadekunle@gmail.com', "New Message From your Website!");
             $message->to('ayodejiadekunle@gmail.com');
             $message->subject('Order Received!');
@@ -31,9 +45,34 @@ class MailsController extends Controller
 
     }
 
-    public function buyMail(){
-        
+    public function buyMail(Request $request){
 
+        \Mail::send('emails.adminMail', array(
+
+            'orderId'  => $request->get('orderId')
+        
+        ), function($message) use ($request)
+        {
+            $email = 'ayodejiadekunle@gmail.com';
+            $message->from('ayodejiadekunle@gmail.com', "New Transaction Alert!");
+            $message->to('ayodejiadekunle@gmail.com');
+            $message->subject('New Transaction!');
+        });
+
+        \Mail::send('emails.sellorder', array(
+
+            'linkId'       => $request->get('linkId'),
+            'orderId'      => $request->get('orderId'),
+
+        ), function($message) use ($request)
+        {
+            $email = 'ayodejiadekunle@gmail.com';
+            $message->from('ayodejiadekunle@gmail.com', "New Message From your Website!");
+            $message->to('ayodejiadekunle@gmail.com');
+            $message->subject('Confirm your Order!');
+        });
+
+        return back()->with('success','Check your email for order confirmation');
     }
 
 }

@@ -18,6 +18,6 @@ class Address extends Model
 
     public function rate()
     {
-        return $this->belongsTo('App\Models\Rate')->orderBy('id', 'DESC');
+        return $this->belongsTo('App\Models\Rate','id')->orderBy('id', 'DESC');
     }
 }

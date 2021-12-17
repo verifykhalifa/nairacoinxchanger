@@ -83,7 +83,7 @@ class LinkedController extends Controller
     public function edit($id)
     {
         $linked = Linked::find($id);
-
+        //dd($linked);
         return view('adminpages.admineditbk', compact('linked'));
     }
 

@@ -21,6 +21,7 @@
     <br>
         <form action="{{route('address.update', $address->id )}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12">
                         <div class="card-body pt-0">
@@ -32,11 +33,11 @@
                     <div class="card-body pt-0">
                         <label>Select Coin</label>
                         <select name="coin" class="form-control">
-                            <option value="">------</option>
+                            <option value="">Coin</option>
                             @foreach ($rates as $rate)
-                            <option value="{{ old('id',$rate->id)}}" 
-                                {{ $rate->id = old('id', $rate->id) ? 'selected' : '' }}>
-                                {{ old('id',$rate->coin)}}</option>
+                            <option value="{{$rate->id}}">
+                                {{$rate->coin}}
+                            </option>
                             @endforeach
                         </select>
                     </div>
@@ -48,7 +49,7 @@
                         <label>Barcode</label>
                         <input type="file" id="barcode" name="barcode" accept="Barcode/*" onchange="document.getElementById('output').src = window.URL.createObjectURL(this.files[0])">
                     </div>
-                    <div><img id="output" style="width:100px"></div>
+                    <div><img id="output" style="width:100px" src="{{$address->barcode}}"></div>
             </div>
             <div class="col-xl-3 col-lg-6 col-md-12">
                 <div class="card-body">

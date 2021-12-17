@@ -11,7 +11,8 @@ class Sale extends Model
 
     protected $fillable = [
         'value', 
-        'rate',  
+        'rate',
+        'rate_id',  
         'total',
         'type',
         'status',

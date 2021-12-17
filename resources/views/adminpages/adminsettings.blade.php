@@ -21,7 +21,7 @@
                                         <p>{{$items->firstname}}&nbsp; {{$items->lastname}}</p>
                                     </div>
                                     <div class="edit-option">
-                                        <a href="{{('linked/'.$items->id.'/edit')}}"><i class="fa fa-pencil"></i></a>
+                                        <a href="{{route('linked.edit', $items->id)}}"><i class="fa fa-pencil"></i></a>
                                         &nbsp;
                                         <a href="/banks/kill/{{$items->id}}">
                                         <i class="fa fa-trash" onclick="return confirm_delete()"></i></a>

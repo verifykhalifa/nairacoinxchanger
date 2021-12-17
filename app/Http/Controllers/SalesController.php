@@ -44,18 +44,15 @@ class SalesController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-
-
-
         $this->validate($request,[
 
             'value_sell' => 'required',
             'rate_sell' => 'required',
+            'rate_id' => 'required',
             'total' => 'required'
         ]);
 
         $rateName = Rate::where('sell', $request->rate_sell)->pluck('id','coin');
-
         // $orderId = Uuid::generate();
 
         $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
@@ -66,12 +63,13 @@ class SalesController extends Controller
             $sale->value = $request->value_sell;
             $sale->orderId = $orderId;
             $sale->rate = $coin;
+            $sale->rate_id = $id;
             $sale->type = 'Sell';
             $sale->status = 0;
             $sale->total = $request->total;
             $sale->user_id = auth()->user()->id;
         }
-
+        
         $register = Linked::where('userid', $sale->user_id)->first();
         
         if(is_null($register)){
@@ -108,9 +106,15 @@ class SalesController extends Controller
     public function show($id)
     {
         $sale = Sale::findorfail($id);
-        $barcode = Address::where('coin', $sale->rate)->first();
-        return view('sale.show')->with('sale', $sale)
-                                ->with('barcode',$barcode);
+        $barcode = Address::where('coin', $sale['rate_id'])->first();
+        if(is_null($barcode)){
+            return back()->with('error','Oops... something went wrong contact support.');
+        }else{
+            $usAct = Linked::where('userid', $barcode['user_id'])->first();
+            return view('sale.show')->with('sale', $sale)
+                                    ->with('barcode',$barcode)
+                                    ->with('usAct',$usAct);
+        }
     }
 
     /**

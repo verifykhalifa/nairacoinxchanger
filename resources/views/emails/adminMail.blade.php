@@ -125,7 +125,7 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px;">
                 <tr>
                     <td bgcolor="#ffffff" align="center" valign="top" style="padding: 40px 20px 20px 20px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
-                        <h1 style="font-size: 48px; font-weight: 400; margin: 2;">WE'VE RECIEVED YOUR BUY ORDER</h1> 
+                        <h1 style="font-size: 48px; font-weight: 400; margin: 2;">A NEW ORDER HAS BEEN MADE</h1> 
                     </td>
                 </tr>
             </table>
@@ -137,15 +137,15 @@
                 
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">You have just initiated a transaction with Order Number: #{{ $orderId }} <br> <br>In order to continue with your payment <br> Pay <span>&#x20A6;</span> @money($total) to our account details bellow; <br> Bank Name : {{ $bankname }} <br>Bank Account Name : {{ $firstname }} - {{ $lastname }} <br> Bank Account Number : {{ $acctnumber }} </p>
+                        <p style="margin: 0;">A transaction with Order Number: #{{ $orderId }} has been made on the website Kindly approve! 
                     </td>
                 </tr>
-                
+{{--                 
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                         <p style="margin: 0;">NOTE: Write "#{{ $orderId }} Order" in the remark or reference when sending</p>
                     </td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
                         <p style="margin: 0;">Thanks for choosing our service</p>
