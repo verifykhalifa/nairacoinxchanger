@@ -38,7 +38,7 @@
                             <a class="navbar-brand" href="index.html"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
                                 </a>
 
-
+                            @auth
                             <div class="dashboard_log my-2">
                                 <div class="d-flex align-items-center">
                                     
@@ -70,12 +70,14 @@
                                     </div>
                                 </div>
                             </div>
+                            @endauth
                         </nav>
                     </div>
                 </div>
             </div>
         </div>
 
+        @auth
         <div class="sidebar">
             <div class="menu">
                 <ul>
@@ -94,10 +96,9 @@
                     </li>
                 </ul>
             </div>
-        </div>
-
-        
-
+        </div> 
+        @endauth
+    
         <div class="page_title" style="height: 0%">
             <div class="container-fluid">
                 <div class="row">

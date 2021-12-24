@@ -25,39 +25,15 @@
                                 </div>
                             </a>
                         </div>
-                        @if(count($errors) > 0)
-                        @foreach($errors->all() as $error)
-                        <div class="alert alert-danger" style="width:92%; margin:auto">
-                            {{$error}}</div>
-                        @endforeach
-                        @endif
-                        @if(session('success'))
-                        <div class="alert alert-success" style="width:92%; margin:auto">
-                        {{session('success')}}</div>
-                        @endif
-
-                        @if(session('error'))
-                        <div class="alert alert-danger" style="width:92%; margin:auto">
-                        {{session('error')}}</div>
-                        @endif
-                        <br>
-                        <h3>Login to account</h3>
-                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
-                        
-                        <form method="POST" action="{{ route('login') }}">
+                        <h3>Activate Account</h3>
+                        <p><span style="color: greenyellow">Enter the verification code in your email</span></p>
+                        <form method="POST" action="{{route('verify_user')}}">
                             @csrf
-                            <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
-                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <input class="form-control" type="text" name="code" placeholder="E-mail Verification Code">
                             <div class="form-button">
-                                <button id="submit" type="{{ __('Log in') }}" class="ibtn">Login</button>
-                                @if (Route::has('password.request'))
-                                 <a href="{{ route('password.request') }}">Forget password?</a>
-                                 @endif
+                                <input type="submit" value="Activate" class="ibtn text-center">
                             </div>
                         </form>
-                        <div class="page-links">
-                            <a href="/register">Register new account</a>
-                        </div>
                     </div>
                 </div>
             </div>

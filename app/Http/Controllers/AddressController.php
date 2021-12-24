@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Address;
 use App\Models\Rate;
 use Illuminate\Support\Str;
+use DB;
 
 class AddressController extends Controller
 {
@@ -16,9 +17,20 @@ class AddressController extends Controller
      */
     public function index()
     {
-        $address = Address::orderBy('created_at','asc')->get();
-        //dd($address);
-        return view('address.index')->with('address', $address);
+        $coin_arr = array();
+        $address = DB::table('addresses')->select("id","address","barcode","coin")->get();
+        foreach($address as $addy){
+            $rates = Rate::where('id',$addy->coin)->get();
+            if(!empty($rates[0])){
+                $rates_arr["id"]      =  $addy->id;
+                $rates_arr["address"] =  $addy->address;
+                $rates_arr["barcode"] =  $addy->barcode;
+                $rates_arr["coin"]    =  $rates[0]->coin;
+                array_push($coin_arr,$rates_arr);
+            }
+        }
+
+        return view('address.index')->with('coin_arr', $coin_arr);
     }
 
     /**
@@ -88,11 +100,14 @@ class AddressController extends Controller
      */
     public function edit($id)
     {
+        $coin_edt = array();
         $address = Address::findorfail($id);
-        //dd($address);
         $rates = Rate::all();
+        $coin_name = Rate::where('id',$address->coin)->first();
+        $c_name = $coin_name['coin'];
         return view('address.edit')->with('address', $address)
-                                   ->with('rates', $rates); 
+                                   ->with('rates', $rates)
+                                   ->with('c_name', $c_name);
     }
 
     /**

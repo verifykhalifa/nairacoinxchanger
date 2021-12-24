@@ -54,7 +54,7 @@
                                             <td>{{ $history->coin}}</td>
                                             <td>{{ $history->type}}</td>
                                             <td class="text-center">
-                                            <a class='btn-sm btn-primary' href="#"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                            <a class='btn-sm btn-primary' href="{{route('histories.show', $history->id )}}"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
                                             @if($history->status == 0)
                                              <a href="{{ route('accept_payment', $history->id) }}" class="btn-sm btn-danger"><i class="fa fa-check" aria-hidden="true">
                                             </i> Mark as Paid</a>

@@ -15,8 +15,12 @@ class History extends Model
         'coin',
         'firstname',
         'lastname',
+        'bankname',
+        'acctnumber',
         'status',
-        'user_id'
+        'user_id',
+        'value',
+        'total'
     ];
 
     public function users()

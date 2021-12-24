@@ -33,6 +33,11 @@ class PurchaseController extends Controller
         //
     }
 
+    public function generateUniqueCode()
+    {
+        $randomNumber = random_int(100000, 999999);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -55,14 +60,15 @@ class PurchaseController extends Controller
 
         $rateName = Rate::where('buy', $request->rate)->pluck('id','coin');
 
-        $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
+        $randomNumber = random_int(100000, 999999);
+        // $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
 
         foreach($rateName as $coin => $id){
 
             $purchases = new Purchase;
             $purchases->btcaddress = $request->btcaddress;
             $purchases->value = $request->value;
-            $purchases->orderId = $orderId;
+            $purchases->orderId = $randomNumber;
             $purchases->rate = $coin;
             $purchases->type = 'Buy';
             $purchases->status = 0;
@@ -85,11 +91,15 @@ class PurchaseController extends Controller
             $data = [
                 'orderId'  => $purchases->orderId,
                 'type'     => $purchases->type,
+                'total'    => $purchases->total,
+                'value'    => $purchases->value,
                 'coin'     => $purchases->rate,
                 'status'   => $purchases->status,
                 'user_id'  => $purchases->user_id,
-                'firstname'  => auth()->user()->name,
-                'lastname'  => auth()->user()->last_name,
+                'bankname'   => $register->bankname,
+                'acctnumber'  => $register->acctnumber,
+                'firstname'=> auth()->user()->name,
+                'lastname' => auth()->user()->last_name
             ];
 
             History::create($data);

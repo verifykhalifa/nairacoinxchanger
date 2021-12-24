@@ -9,6 +9,8 @@
                 <div class="col-md-9">
                     <div class="card">
                         <div class="card-body">
+                            <form action="{{route('buyMail')}}" method="POST">
+                                @csrf
                             <div class="buyer-seller">
                                 <div class="d-flex justify-center">
                                     <div class="buyer-info">
@@ -73,12 +75,25 @@
                                             
                                         </tbody>
                                     </table>
+                                    @auth
+                                    @role('admin')
                                     <div class="d-flex justify-content-center align-items-center">
-                                        <a href="#" class="btn btn-primary px-4 me-3">Confirm</a>
-                                        
+                                        <input type="text" name="orderId" value="{{ $sale->orderId }}" hidden='hidden'>
+                                        <input type="text" name="linkId" value="{{ $sale->id }}" hidden='hidden'>
+                                        {{-- <input type="submit" class="btn btn-primary px-4 me-3" value="Confirm" hidden='hidden'>  --}}
                                     </div>
+                                    @endrole
+                                    @role('user')
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <input type="text" name="orderId" value="{{ $sale->orderId }}" hidden='hidden'>
+                                        <input type="text" name="linkId" value="{{ $sale->id }}" hidden='hidden'>
+                                        <input type="submit" class="btn btn-primary px-4 me-3" value="Confirm"> 
+                                    </div>
+                                    @endrole
+                                    @endauth
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>

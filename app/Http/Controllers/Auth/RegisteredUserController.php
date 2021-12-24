@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Verify;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -44,22 +45,46 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $random = random_int(100000, 999999);
+
         $user = User::create([
             'name' => $request->name,
             'last_name' => $request->last_name,
             'email' => $request->email,
             'address' => $request->address,
             'city' => $request->city,
+            'verify_user' => 0,
+            'code' => $random,
             'country' => $request->country,
             'phone' => $request->phone,
             'password' => Hash::make($request->password),
         ]);
 
         $user->attachRole('2');
-        event(new Registered($user));
 
-        Auth::login($user);
+        Verify::create([
+            'user_id'   => $user->id,
+            'token'     => $user->code
+        ]);
 
-        return redirect(RouteServiceProvider::HOME);
+        $zuggs = $user->code;
+
+        \Mail::send('emails.econfirmcode', array(
+
+            'confirm_code' => $user['code'],
+
+        ), function($message) use ($request)
+        {
+            $email = 'ayodejiadekunle@gmail.com';
+            $message->from('ayodejiadekunle@gmail.com', "Nairacoin Exchange!");
+            $message->to('ayodejiadekunle@gmail.com');
+            $message->subject('Activate your account!');    
+        });
+
+        return view('auth.verify_code',['zuggs'=> $zuggs]);
+
+        // event(new Registered($user));
+        // Auth::login($user);
+        // return redirect(RouteServiceProvider::HOME);
     }
 }

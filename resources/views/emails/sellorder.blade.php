@@ -137,7 +137,7 @@
                 
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">You have just initiated a transaction with Order Number:  <br> <br> In order to continue with your payment <br><br> Please follow this link below: <br> https://google.com</p>
+                        <p style="margin: 0;">You have just initiated a transaction with Order Number: {{ $orderId }}  <br> <br> In order to continue with your payment <br><br> Please follow this link below: <br> <a href="http://127.0.0.1:8000/sales/{{ $linkId }}">Click here</a></p>
                     </td>
                 </tr>
                 

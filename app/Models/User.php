@@ -24,6 +24,8 @@ class User extends Authenticatable
         'last_name',
         'email',
         'address',
+        'verify_user',
+        'code',
         'city',
         'country',
         'phone',
@@ -57,5 +59,10 @@ class User extends Authenticatable
     public function histories()
     {
         return $this->hasMany('App\Models\History','user_id');
+    }
+
+    public function verifies()
+    {
+        return $this->hasOne('App\Models\Verify');
     }
 }

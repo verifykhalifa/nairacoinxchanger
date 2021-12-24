@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rate;
+use App\Models\User;
 use App\Models\Linked;
 use App\Models\History;
 
@@ -21,7 +22,6 @@ class dcontroller extends Controller
                 $rates = Rate::orderBy('created_at','asc')->get();
                 return view('userpages.dash')->with('rates', $rates);
             }
-            
         }
 
         public function pref(){
@@ -104,6 +104,13 @@ class dcontroller extends Controller
             History::find($id)->update(['status'=> 1]);
             return back()->with('success','Payment Confirmed');
         }
-        
 
+        public function verifyUser(Request $request){
+            $token = User::where('code', $request->code)->update(['verify_user'=> 1]);
+            return redirect()->route('login')->with('success','Your account has been verified, you can now login.');
+        } 
+        
+        public function verifyPage(){   
+            return view('auth.verify_code');
+        }
 }

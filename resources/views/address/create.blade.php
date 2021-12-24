@@ -24,15 +24,15 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12">
                         <div class="card-body pt-0">
-                            <label>Wallet Address</label>
-                            <input type="text" id="address" name="address" placeholder="bc1qxy2kgdygjrsqtzq2n0y" class="form-control mb-3">
+                            <label>Address</label>
+                            <input type="text" id="address" name="address" placeholder="Enter your wallet address" class="form-control mb-3">
                         </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12">
                     <div class="card-body pt-0">
-                        <label>Select Coin</label>
+                        <label>Coin</label>
                         <select name="coin" class="form-control">
-                            <option value="">------</option>
+                            <option value="">Select coin</option>
                             @foreach ($rates as $rate)
                             <option value="{{$rate->id}}">{{$rate->coin}}</option>
                             @endforeach

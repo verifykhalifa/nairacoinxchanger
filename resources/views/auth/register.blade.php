@@ -352,10 +352,10 @@
                             <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" name="password" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" name="password_confirmation" placeholder="Confirm Password">
+                                    <input type="password" class="form-control" name="password_confirmation" placeholder="Confirm Password">
                                 </div>
                             </div>
                             

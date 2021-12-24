@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\History;
 
-class HistoryController extends Controller
+class VerifyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -35,7 +34,15 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+
+        $data = [
+            'token' => $request->token
+        ];
+
+        Verify::create($data);
+
+        return view('auth.login')->with('success','You can now login to your dashboard');
     }
 
     /**
@@ -46,9 +53,7 @@ class HistoryController extends Controller
      */
     public function show($id)
     {
-        $history = History::findorfail($id);  
-        //dd($history);  
-        return view('history.show')->with('history', $history);
+        //
     }
 
     /**

@@ -72,7 +72,10 @@
                                         <input type="text" name="orderId" value="{{ $purchase->orderId }}" hidden='hidden'>
                                         <input type="text" name="total" value="{{ $purchase->total }}" hidden='hidden'>
                                         <input type="text" name="value" value="{{ $purchase->value }}" hidden='hidden'>
-                                        <input type="text" name="btcaddress" value="{{ $purchase->btcaddress }}" hidden='hidden'>
+                                        <input type="text" name="bankname" value="{{ $adminBank->bankname }}" hidden='hidden'>
+                                        <input type="text" name="acctnumber" value="{{ $adminBank->acctnumber }}" hidden='hidden'>
+                                        <input type="text" name="firstname" value="{{ $adminBank->firstname }}" hidden='hidden'>
+                                        <input type="text" name="lastname" value="{{ $adminBank->lastname }}" hidden='hidden'>
                                         <input type="text" name="email" value="{{ $authEmail }}" hidden='hidden'>
                                         <input type="submit" class="btn btn-primary px-4 me-3" value="Confirm"> 
                                     </div>

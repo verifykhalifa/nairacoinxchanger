@@ -22,6 +22,7 @@ Route::get('/howtobuy', "App\Http\Controllers\HomeController@howtobuy");
 Route::get('/howtosell', "App\Http\Controllers\HomeController@howtosell");
 Route::get('/terms', "App\Http\Controllers\HomeController@terms");
 Route::post('/sellMail', "App\Http\Controllers\MailsController@sellMail")->name('sellMail');
+Route::post('/buyMail', "App\Http\Controllers\MailsController@buyMail")->name('buyMail');
 
 
 /** EMAILS  */
@@ -52,8 +53,10 @@ Route::resource('/linked', "App\Http\Controllers\linkedController");
 Route::resource('/address', "App\Http\Controllers\AddressController");
 Route::resource('/purchases', "App\Http\Controllers\PurchaseController");
 Route::resource('/sales', "App\Http\Controllers\SalesController");
+Route::resource('/histories', "App\Http\Controllers\HistoryController");
 Route::get('/accept_payment/{id}', "App\Http\Controllers\dController@acceptPayment")->name('accept_payment');
-
+Route::post('/verify_user', "App\Http\Controllers\dController@verifyUser")->name('verify_user');
+Route::get('/verify_page', "App\Http\Controllers\dController@verifyPage")->name('verify_page');
 
 
 /**Auth Route Both */

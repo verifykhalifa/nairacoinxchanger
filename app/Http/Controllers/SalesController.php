@@ -53,15 +53,16 @@ class SalesController extends Controller
         ]);
 
         $rateName = Rate::where('sell', $request->rate_sell)->pluck('id','coin');
+        
+        $randomNumber = random_int(100000, 999999);
         // $orderId = Uuid::generate();
-
-        $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
+        // $orderId = IdGenerator::generate(['table' => 'sales','field'=>'orderId','length' => 6, 'prefix' => date('y')]);
 
         foreach($rateName as $coin => $id){
 
             $sale = new Sale;
             $sale->value = $request->value_sell;
-            $sale->orderId = $orderId;
+            $sale->orderId = $randomNumber;
             $sale->rate = $coin;
             $sale->rate_id = $id;
             $sale->type = 'Sell';
@@ -72,6 +73,8 @@ class SalesController extends Controller
         
         $register = Linked::where('userid', $sale->user_id)->first();
         
+        //dd($register);
+
         if(is_null($register)){
             
             return back()->with('error','Please click on VERIFICATION PAGE to update your bank details. It is required for refunds if we dont have stocks, and when you sell to us.');
@@ -83,11 +86,15 @@ class SalesController extends Controller
             $data = [
                 'orderId'  => $sale->orderId,
                 'type'     => $sale->type,
+                'total'    => $sale->total,
+                'value'    => $sale->value,
                 'coin'     => $sale->rate,
                 'status'   => $sale->status,
                 'user_id'  => $sale->user_id,
-                'firstname'  => auth()->user()->name,
-                'lastname'  => auth()->user()->last_name
+                'bankname'   => $register->bankname,
+                'acctnumber'  => $register->acctnumber,
+                'firstname'=> auth()->user()->name,
+                'lastname' => auth()->user()->last_name
             ];
 
             History::create($data);
@@ -110,7 +117,7 @@ class SalesController extends Controller
         if(is_null($barcode)){
             return back()->with('error','Oops... something went wrong contact support.');
         }else{
-            $usAct = Linked::where('userid', $barcode['user_id'])->first();
+            $usAct = Linked::where('userid', $sale['user_id'])->first();
             return view('sale.show')->with('sale', $sale)
                                     ->with('barcode',$barcode)
                                     ->with('usAct',$usAct);

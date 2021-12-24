@@ -33,7 +33,7 @@
                     <div class="card-body pt-0">
                         <label>Select Coin</label>
                         <select name="coin" class="form-control">
-                            <option value="">Coin</option>
+                            <option value="">{{$c_name}}</option>
                             @foreach ($rates as $rate)
                             <option value="{{$rate->id}}">
                                 {{$rate->coin}}
