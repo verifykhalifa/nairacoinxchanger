@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2021 at 09:50 PM
+-- Generation Time: Dec 24, 2021 at 07:59 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -43,7 +43,7 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`id`, `address`, `barcode`, `coin`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'jkjakhyrqwyy841841987', '/Barcodes/yIM61639761583QR-Code-to-clear-vinyl-page.png', '5', '5', '2021-11-30 10:25:20', '2021-12-17 16:19:43'),
+(1, 'jkjakhyrqwyy84184198', '/Barcodes/yIM61639761583QR-Code-to-clear-vinyl-page.png', '5', '5', '2021-11-30 10:25:20', '2021-12-17 20:28:27'),
 (2, 'vagyyy21489708dehuwdhw', '/Barcodes/uO7e1638271556Han_Xin_2D_Barcode.svg.png', '7', '5', '2021-11-30 10:25:56', '2021-11-30 10:25:56'),
 (3, 'fhgffguugwqq81881941', '/Barcodes/62hw1638271574Han_Xin_2D_Barcode.svg.png', '8', '5', '2021-11-30 10:26:14', '2021-11-30 10:26:14');
 
@@ -73,8 +73,12 @@ CREATE TABLE `histories` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `orderId` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total` bigint(20) NOT NULL,
   `coin` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
+  `bankname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `acctnumber` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `firstname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lastname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -86,25 +90,10 @@ CREATE TABLE `histories` (
 -- Dumping data for table `histories`
 --
 
-INSERT INTO `histories` (`id`, `orderId`, `type`, `coin`, `status`, `user_id`, `firstname`, `lastname`, `created_at`, `updated_at`) VALUES
-(1, 'INV-000040', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:33:08', '2021-12-12 15:37:35'),
-(2, 'INV-000009', 'Buy', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:40:35', '2021-12-12 15:43:47'),
-(3, '210001', 'Buy', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:41:15', '2021-12-12 15:43:50'),
-(4, '210001', 'Sell', 'Bitcoin', 1, 6, 'Demo', 'User', '2021-12-12 15:42:42', '2021-12-12 15:43:54'),
-(5, '210001', 'Buy', 'Binance Coin BNB', 0, 2, 'user', 'role', '2021-12-13 02:44:24', '2021-12-13 02:44:24'),
-(6, '210001', 'Buy', 'Binance Coin BNB', 0, 2, 'user', 'role', '2021-12-13 02:46:16', '2021-12-13 02:46:16'),
-(7, '210001', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 13:30:52', '2021-12-17 13:30:52'),
-(8, '210001', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 14:31:33', '2021-12-17 14:31:33'),
-(9, '210001', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 14:42:02', '2021-12-17 14:42:02'),
-(10, '210001', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 15:06:50', '2021-12-17 15:06:50'),
-(11, '210002', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 15:30:37', '2021-12-17 15:30:37'),
-(12, '210003', 'Sell', 'Binance Coin BNB', 0, 6, 'Demo', 'User', '2021-12-17 15:32:31', '2021-12-17 15:32:31'),
-(13, '210004', 'Sell', 'Binance Coin BNB', 0, 6, 'Demo', 'User', '2021-12-17 15:33:10', '2021-12-17 15:33:10'),
-(14, '210005', 'Sell', 'Etherium ETH', 0, 6, 'Demo', 'User', '2021-12-17 15:37:45', '2021-12-17 15:37:45'),
-(15, '210006', 'Buy', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 15:39:50', '2021-12-17 15:39:50'),
-(16, '210006', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 15:42:02', '2021-12-17 15:42:02'),
-(17, '210007', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 15:44:26', '2021-12-17 15:44:26'),
-(18, '210008', 'Sell', 'Bitcoin BTC', 0, 6, 'Demo', 'User', '2021-12-17 15:45:23', '2021-12-17 15:45:23');
+INSERT INTO `histories` (`id`, `orderId`, `type`, `value`, `total`, `coin`, `status`, `bankname`, `acctnumber`, `user_id`, `firstname`, `lastname`, `created_at`, `updated_at`) VALUES
+(1, '159024', 'Sell', '20', 10000, 'Bitcoin BTC', 0, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-20 19:40:08', '2021-12-20 19:40:08'),
+(2, '286865', 'Buy', '123', 71094, 'Bitcoin BTC', 0, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-20 20:15:27', '2021-12-20 20:15:27'),
+(3, '435733', 'Sell', '20', 10000, 'Bitcoin BTC', 0, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-21 06:23:06', '2021-12-21 06:23:06');
 
 -- --------------------------------------------------------
 
@@ -128,7 +117,7 @@ CREATE TABLE `linkeds` (
 --
 
 INSERT INTO `linkeds` (`id`, `firstname`, `lastname`, `bankname`, `acctnumber`, `userid`, `created_at`, `updated_at`) VALUES
-(2, 'Miguel', 'Djokovic', 'Guaranty Trust Bank|058|GTB', '0876876545', '5', '2021-11-26 17:22:46', '2021-12-17 16:01:22'),
+(2, 'Miguel', 'Djokovic', 'Guaranty Trust Bank|058|GTB', '0876876540', '5', '2021-11-26 17:22:46', '2021-12-17 20:28:03'),
 (3, 'Ayodeji', 'Adekunle', 'Keystone Bank|082|KEYSTONE', '0876876545', '6', '2021-12-07 10:28:23', '2021-12-07 10:28:23'),
 (4, 'taiwo', 'kunle', 'Stanbic IBTC Bank|221|STANBIC', '782739372', '2', '2021-12-13 02:44:05', '2021-12-13 02:44:05');
 
@@ -158,10 +147,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (25, '2021_11_13_115652_create_rates_table', 4),
 (26, '2021_11_23_001207_create_linkeds_table', 5),
 (34, '2021_11_26_183242_create_addresses_table', 9),
-(36, '2021_11_10_113224_create_purchases_table', 10),
 (38, '2021_12_04_144537_add_coin_to_histories', 11),
-(41, '2021_12_04_121841_create_histories_table', 12),
-(42, '2021_11_10_113110_create_sales_table', 13);
+(57, '2021_11_10_113110_create_sales_table', 12),
+(58, '2021_11_10_113224_create_purchases_table', 12),
+(60, '2021_12_04_121841_create_histories_table', 13),
+(62, '2021_12_21_102648_add_verify_user_to_users', 14),
+(63, '2021_12_21_102704_add_code_to_users', 14),
+(65, '2021_12_21_091032_create_verifies_table', 15);
 
 -- --------------------------------------------------------
 
@@ -302,20 +294,11 @@ CREATE TABLE `purchases` (
 --
 
 INSERT INTO `purchases` (`id`, `btcaddress`, `user_id`, `value`, `rate`, `type`, `status`, `method`, `total`, `orderId`, `created_at`, `updated_at`) VALUES
-(1, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, '235fa9a0-54ff-11ec-a3d0-37a797d14294', '2021-12-04 11:38:52', '2021-12-04 11:38:52'),
-(2, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, 'CPT-000001', '2021-12-07 10:47:58', '2021-12-07 10:47:58'),
-(3, 'hgjhgu878768', '6', 123, 'Bitcoin', 'buy', 0, 'bank', 70110, 'CPT-000002', '2021-12-07 10:52:52', '2021-12-07 10:52:52'),
-(4, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000003', '2021-12-11 19:40:44', '2021-12-11 19:40:44'),
-(5, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000004', '2021-12-12 11:13:39', '2021-12-12 11:13:39'),
-(6, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000005', '2021-12-12 12:47:07', '2021-12-12 12:47:07'),
-(7, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000006', '2021-12-12 13:51:09', '2021-12-12 13:51:09'),
-(8, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000007', '2021-12-12 13:52:59', '2021-12-12 13:52:59'),
-(9, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Purchase', 0, 'bank', 70110, 'INV-000008', '2021-12-12 14:03:50', '2021-12-12 14:03:50'),
-(10, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, 'INV-000009', '2021-12-12 15:40:35', '2021-12-12 15:40:35'),
-(11, 'hgjhgu878768', '6', 123, 'Bitcoin', 'Buy', 0, 'bank', 70110, '210001', '2021-12-12 15:41:15', '2021-12-12 15:41:15'),
-(12, 'jksj8w73', '2', 34, 'Binance Coin BNB', 'Buy', 0, 'bank', 19278, '210001', '2021-12-13 02:44:23', '2021-12-13 02:44:23'),
-(13, 'jksj8w73', '2', 34, 'Binance Coin BNB', 'Buy', 0, 'bank', 19278, '210001', '2021-12-13 02:46:16', '2021-12-13 02:46:16'),
-(14, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '210006', '2021-12-17 15:39:50', '2021-12-17 15:39:50');
+(1, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '631852', '2021-12-18 22:10:23', '2021-12-18 22:10:23'),
+(2, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '263591', '2021-12-18 22:10:45', '2021-12-18 22:10:45'),
+(3, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '363726', '2021-12-20 20:13:55', '2021-12-20 20:13:55'),
+(4, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '103884', '2021-12-20 20:14:57', '2021-12-20 20:14:57'),
+(5, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '286865', '2021-12-20 20:15:27', '2021-12-20 20:15:27');
 
 -- --------------------------------------------------------
 
@@ -390,7 +373,43 @@ INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
 (1, 5, 'App\\Models\\User'),
 (2, 6, 'App\\Models\\User'),
 (2, 7, 'App\\Models\\User'),
-(2, 8, 'App\\Models\\User');
+(2, 8, 'App\\Models\\User'),
+(2, 9, 'App\\Models\\User'),
+(2, 10, 'App\\Models\\User'),
+(2, 11, 'App\\Models\\User'),
+(2, 12, 'App\\Models\\User'),
+(2, 13, 'App\\Models\\User'),
+(2, 14, 'App\\Models\\User'),
+(2, 15, 'App\\Models\\User'),
+(2, 16, 'App\\Models\\User'),
+(2, 17, 'App\\Models\\User'),
+(2, 18, 'App\\Models\\User'),
+(2, 19, 'App\\Models\\User'),
+(2, 20, 'App\\Models\\User'),
+(2, 21, 'App\\Models\\User'),
+(2, 22, 'App\\Models\\User'),
+(2, 23, 'App\\Models\\User'),
+(2, 24, 'App\\Models\\User'),
+(2, 25, 'App\\Models\\User'),
+(2, 26, 'App\\Models\\User'),
+(2, 27, 'App\\Models\\User'),
+(2, 28, 'App\\Models\\User'),
+(2, 29, 'App\\Models\\User'),
+(2, 30, 'App\\Models\\User'),
+(2, 31, 'App\\Models\\User'),
+(2, 32, 'App\\Models\\User'),
+(2, 33, 'App\\Models\\User'),
+(2, 34, 'App\\Models\\User'),
+(2, 35, 'App\\Models\\User'),
+(2, 36, 'App\\Models\\User'),
+(2, 37, 'App\\Models\\User'),
+(2, 38, 'App\\Models\\User'),
+(2, 39, 'App\\Models\\User'),
+(2, 40, 'App\\Models\\User'),
+(2, 41, 'App\\Models\\User'),
+(2, 42, 'App\\Models\\User'),
+(2, 43, 'App\\Models\\User'),
+(2, 44, 'App\\Models\\User');
 
 -- --------------------------------------------------------
 
@@ -417,14 +436,15 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`id`, `user_id`, `value`, `rate`, `rate_id`, `type`, `status`, `total`, `orderId`, `created_at`, `updated_at`) VALUES
-(1, '6', 20, 'Bitcoin BTC', '9', 'Sell', 0, 10000, '210001', '2021-12-17 15:06:50', '2021-12-17 15:06:50'),
-(2, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '210002', '2021-12-17 15:30:37', '2021-12-17 15:30:37'),
-(3, '6', 20, 'Binance Coin BNB', '6', 'Sell', 0, 11600, '210003', '2021-12-17 15:32:31', '2021-12-17 15:32:31'),
-(4, '6', 20, 'Binance Coin BNB', '6', 'Sell', 0, 11600, '210004', '2021-12-17 15:33:10', '2021-12-17 15:33:10'),
-(5, '6', 20, 'Etherium ETH', '7', 'Sell', 0, 14000, '210005', '2021-12-17 15:37:45', '2021-12-17 15:37:45'),
-(6, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '210006', '2021-12-17 15:42:02', '2021-12-17 15:42:02'),
-(7, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '210007', '2021-12-17 15:44:26', '2021-12-17 15:44:26'),
-(8, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '210008', '2021-12-17 15:45:23', '2021-12-17 15:45:23');
+(1, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '586157', '2021-12-18 22:07:49', '2021-12-18 22:07:49'),
+(2, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '926121', '2021-12-18 22:08:37', '2021-12-18 22:08:37'),
+(3, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '787595', '2021-12-18 22:10:03', '2021-12-18 22:10:03'),
+(4, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '698064', '2021-12-19 20:53:28', '2021-12-19 20:53:28'),
+(5, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '376427', '2021-12-19 21:05:26', '2021-12-19 21:05:26'),
+(6, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '573144', '2021-12-20 19:37:40', '2021-12-20 19:37:40'),
+(7, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '714396', '2021-12-20 19:39:26', '2021-12-20 19:39:26'),
+(8, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '159024', '2021-12-20 19:40:08', '2021-12-20 19:40:08'),
+(9, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '435733', '2021-12-21 06:23:06', '2021-12-21 06:23:06');
 
 -- --------------------------------------------------------
 
@@ -441,6 +461,8 @@ CREATE TABLE `users` (
   `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `verify_user` bigint(20) NOT NULL,
+  `code` int(11) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -452,14 +474,49 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `address`, `city`, `country`, `phone`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'hekdj', 'jdjdj', 'jdjdj@yahoo.com', 'hshfdh', 'jjdj', 'Bahamas', '2427288323', NULL, '$2y$10$LMbCW1g7z.HiphRqnq.suuj4LqF5C3YHetskYStJ9IgBztR7aA7LW', NULL, '2021-11-01 03:00:31', '2021-11-01 03:00:31'),
-(2, 'user', 'role', 'userrole1@yahoo.com', '728 yahoo street', 'kola', 'Bahrain', '8928388723', NULL, '$2y$10$qGtudGcq0EmVQxyIEsIgX.ZtjYMJo8C8ZSj/MYZXLuCy8HDsy57Se', NULL, '2021-11-01 03:13:12', '2021-11-01 03:13:12'),
-(4, 'user', 'seconduser', 'user2@yahoo.com', 'user address', 'user2 city', 'Azerbaijan', '782739343', NULL, '$2y$10$5KqMshP9zpPvjeeyqP3AVeLVTL0dvDN2LyVNiZWOOSdqgRtiIzQ8m', NULL, '2021-11-01 03:34:34', '2021-11-01 03:34:34'),
-(5, 'Admin', 'Admin', 'admin@test.com', 'Kent', 'London', 'American Samoa', '09032345323', NULL, '$2y$10$/F7I/tEUo9enOvBZTIZ6su1tw6cN.GngLHnxyScUeLatrMcbvt/ye', NULL, '2021-11-13 18:01:53', '2021-11-13 18:01:53'),
-(6, 'Demo', 'User', 'user@test.com', 'Kent', 'London', 'American Samoa', '09012323456', NULL, '$2y$10$LQ4NocqsDJZiu0W7ao.3iOinru3hZqJGGmRPx8rLH7fo5h9sjomcG', NULL, '2021-11-13 18:29:23', '2021-11-13 18:29:23'),
-(7, 'KanayoO', 'Kanayo', 'kanayookanyo@gmail.com', 'Mangu local government', 'JOS', 'Cocos (Keeling) Islands', '09017129050', NULL, '$2y$10$GowM/7B2Z7.Fw5B6ILhmwO9ijdBL8a2kp9RKC29/OCoFJnvMUiumW', NULL, '2021-12-07 11:16:20', '2021-12-07 11:16:20'),
-(8, 'Ayodeji', 'Adekunle', 'ayodejiadekunle@gmail.com', 'No 11 lanlehin layout Moniya ibadan', 'Lagos', 'Nigeria', '07037949021', NULL, '$2y$10$WfzVruLW1ryBjnOk3bXgUO9uICJAYLeYqQ62KXOSbkjMtZoRezsvS', NULL, '2021-12-17 13:22:12', '2021-12-17 13:22:12');
+INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `address`, `city`, `country`, `phone`, `verify_user`, `code`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'hekdj', 'jdjdj', 'jdjdj@yahoo.com', 'hshfdh', 'jjdj', 'Bahamas', '2427288323', 0, 0, NULL, '$2y$10$LMbCW1g7z.HiphRqnq.suuj4LqF5C3YHetskYStJ9IgBztR7aA7LW', NULL, '2021-11-01 03:00:31', '2021-11-01 03:00:31'),
+(2, 'user', 'role', 'userrole1@yahoo.com', '728 yahoo street', 'kola', 'Bahrain', '8928388723', 0, 0, NULL, '$2y$10$qGtudGcq0EmVQxyIEsIgX.ZtjYMJo8C8ZSj/MYZXLuCy8HDsy57Se', NULL, '2021-11-01 03:13:12', '2021-11-01 03:13:12'),
+(4, 'user', 'seconduser', 'user2@yahoo.com', 'user address', 'user2 city', 'Azerbaijan', '782739343', 0, 0, NULL, '$2y$10$5KqMshP9zpPvjeeyqP3AVeLVTL0dvDN2LyVNiZWOOSdqgRtiIzQ8m', NULL, '2021-11-01 03:34:34', '2021-11-01 03:34:34'),
+(5, 'Admin', 'Admin', 'admin@test.com', 'Kent', 'London', 'American Samoa', '09032345323', 1, 0, NULL, '$2y$10$/F7I/tEUo9enOvBZTIZ6su1tw6cN.GngLHnxyScUeLatrMcbvt/ye', NULL, '2021-11-13 18:01:53', '2021-11-13 18:01:53'),
+(6, 'Demo', 'User', 'user@test.com', 'Kent', 'London', 'American Samoa', '09012323456', 1, 0, NULL, '$2y$10$LQ4NocqsDJZiu0W7ao.3iOinru3hZqJGGmRPx8rLH7fo5h9sjomcG', NULL, '2021-11-13 18:29:23', '2021-11-13 18:29:23'),
+(7, 'KanayoO', 'Kanayo', 'kanayookanyo@gmail.com', 'Mangu local government', 'JOS', 'Cocos (Keeling) Islands', '09017129050', 0, 0, NULL, '$2y$10$GowM/7B2Z7.Fw5B6ILhmwO9ijdBL8a2kp9RKC29/OCoFJnvMUiumW', NULL, '2021-12-07 11:16:20', '2021-12-07 11:16:20'),
+(8, 'Ayodeji', 'Adekunle', 'ayodejiadekunle@gmail.com', 'No 11 lanlehin layout Moniya ibadan', 'Lagos', 'Nigeria', '07037949021', 0, 0, NULL, '$2y$10$WfzVruLW1ryBjnOk3bXgUO9uICJAYLeYqQ62KXOSbkjMtZoRezsvS', NULL, '2021-12-17 13:22:12', '2021-12-17 13:22:12'),
+(41, 'Yaqub', 'Adesola', 'yaqub@test.com', 'No 11 lanlehin layout Moniya ibadan', 'Ibadan', 'Nigeria', '09032345323', 1, 955627, NULL, '$2y$10$xblSET.fBFkp9PMDw2eu7eCpDOpV/G/WpaYDPmIAUGH.HyqgZ6K/a', NULL, '2021-12-24 07:45:02', '2021-12-24 07:46:51'),
+(42, 'jfkfkj', 'kjkjk', 'user@tesjjjjt.com', 'jkskk', 'kjkjk', 'Antarctica', '07037949021', 1, 851498, NULL, '$2y$10$jHIvC.4qZCrgC/n2gRqOO.EbhRE11hO8RiSkpcM3S4hX8hlQwNheK', NULL, '2021-12-24 07:55:57', '2021-12-24 07:56:38'),
+(43, 'Ayodeji', 'Adekunle', 'user@teccccst.com', 'No 11 lanlehin layout Moniya ibadan', 'Ibadan', 'Nigeria', '07037949021', 1, 181508, NULL, '$2y$10$eVIOIiSa5foprzOc5cJB7OMEUdhqgZNVuHkF5mvpiI2NrAPJnXpEm', NULL, '2021-12-24 08:00:08', '2021-12-24 08:01:27'),
+(44, 'jfkfkj', 'kjkjk', 'user@testqqq.com', 'jkskk', 'kjkjk', 'Antarctica', '07037949021', 1, 728885, NULL, '$2y$10$NgmyL6hHVAaiAG9XixYspOCxxU9b8CAGTWYXuyMep/XwXLB3XEkPe', NULL, '2021-12-24 08:18:38', '2021-12-24 08:19:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `verifies`
+--
+
+CREATE TABLE `verifies` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `verifies`
+--
+
+INSERT INTO `verifies` (`id`, `user_id`, `token`, `created_at`, `updated_at`) VALUES
+(1, 34, '368215', '2021-12-24 06:55:45', '2021-12-24 06:55:45'),
+(2, 35, '174404', '2021-12-24 07:02:30', '2021-12-24 07:02:30'),
+(3, 36, '889289', '2021-12-24 07:05:38', '2021-12-24 07:05:38'),
+(4, 37, '745665', '2021-12-24 07:11:36', '2021-12-24 07:11:36'),
+(5, 38, '315408', '2021-12-24 07:14:13', '2021-12-24 07:14:13'),
+(6, 39, '668753', '2021-12-24 07:17:12', '2021-12-24 07:17:12'),
+(7, 40, '828432', '2021-12-24 07:22:03', '2021-12-24 07:22:03'),
+(8, 41, '955627', '2021-12-24 07:45:02', '2021-12-24 07:45:02'),
+(9, 42, '851498', '2021-12-24 07:55:57', '2021-12-24 07:55:57'),
+(10, 43, '181508', '2021-12-24 08:00:08', '2021-12-24 08:00:08'),
+(11, 44, '728885', '2021-12-24 08:18:38', '2021-12-24 08:18:38');
 
 --
 -- Indexes for dumped tables
@@ -571,6 +628,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `verifies`
+--
+ALTER TABLE `verifies`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -590,7 +653,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `histories`
 --
 ALTER TABLE `histories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `linkeds`
@@ -602,7 +665,7 @@ ALTER TABLE `linkeds`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -620,7 +683,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rates`
@@ -638,13 +701,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+
+--
+-- AUTO_INCREMENT for table `verifies`
+--
+ALTER TABLE `verifies`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
