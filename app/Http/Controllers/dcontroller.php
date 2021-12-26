@@ -8,6 +8,7 @@ use App\Models\Rate;
 use App\Models\User;
 use App\Models\Linked;
 use App\Models\History;
+use Mail;
 
 class dcontroller extends Controller
 {
@@ -24,6 +25,47 @@ class dcontroller extends Controller
             }
         }
 
+        public function addbk(){
+            $auth = auth()->user()->id;
+            $adminds = Linked::where('userid',$auth)->get();
+            //dd($adminds);
+            return view('userpages.addbk')->with('adminds', $adminds);
+            
+        }
+
+        public function acceptPayment($id){
+            History::find($id)->update(['status'=> 1]);
+            return back()->with('success','Payment Confirmed');
+        }
+
+        public function verifyUser(Request $request){
+            $token = User::where('code', $request->code)->update(['verify_user'=> 1]);
+    
+            if($token){
+                    \Mail::send('emails.ewelcome', array(), function($message)
+                {
+                    $email = 'ayodejiadekunle@gmail.com';
+                    $message->from('ayodejiadekunle@gmail.com', "New Message From NAIRACOINXCHANGE!");
+                    $message->to('ayodejiadekunle@gmail.com');
+                    $message->subject('Welcome to NAIRACOINXCHANGE!');
+                });
+            }
+            return redirect()->route('login')->with('success','Your account has been verified, you can now login.');
+        } 
+
+        public function transaction(){
+
+            $user_id = auth()->user()->id;
+            $historyies = History::where('user_id',$user_id)->get();
+            return view('userpages.transaction')->with('historyies', $historyies);
+        }
+
+        public function adminsettings(){
+            $auth = auth()->user()->id;
+            $linked = Linked::where('userid',$auth)->get();
+            return view('adminpages.adminsettings', compact('linked'));
+        }
+
         public function pref(){
             return view('userpages.pref');
         }
@@ -34,13 +76,6 @@ class dcontroller extends Controller
 
         public function settings(){
             return view('userpages.settings');
-        }
-
-        public function transaction(){
-
-            $historyies = History::orderBy('created_at','desc')->get();
-            //dd($historyies);
-            return view('userpages.transaction')->with('historyies', $historyies);
         }
 
         public function verification(){
@@ -55,18 +90,9 @@ class dcontroller extends Controller
             return view('adminpages.rate');
         }
 
-        public function adminsettings(){
-            $auth = auth()->user()->id;
-            $linked = Linked::where('userid',$auth)->get();
-            //dd($linked);
-            return view('adminpages.adminsettings', compact('linked'));
-        }
-
-
         public function addbtc(){
             return view('adminpages.addbtc');
         }
-
 
         public function editbtc(){
             return view('adminpages.editbtc');
@@ -91,24 +117,6 @@ class dcontroller extends Controller
         public function sellinvoice(){
             return view('userpages.sellinvoice');
         }
-
-        public function addbk(){
-            $auth = auth()->user()->id;
-            $adminds = Linked::where('userid',$auth)->get();
-            //dd($adminds);
-            return view('userpages.addbk')->with('adminds', $adminds);
-            
-        }
-
-        public function acceptPayment($id){
-            History::find($id)->update(['status'=> 1]);
-            return back()->with('success','Payment Confirmed');
-        }
-
-        public function verifyUser(Request $request){
-            $token = User::where('code', $request->code)->update(['verify_user'=> 1]);
-            return redirect()->route('login')->with('success','Your account has been verified, you can now login.');
-        } 
         
         public function verifyPage(){   
             return view('auth.verify_code');

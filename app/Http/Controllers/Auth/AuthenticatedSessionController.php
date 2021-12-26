@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
     {
         $user = User::where('email', $request->email)->first();
         if($user['verify_user'] == 0){
-            return redirect()->back()->with('error','You do not have an account, kindly register or check your mail for your activation code');
+            return redirect()->back()->with('error','Sorry your login credentials are invalid!');
         }else{
             $request->authenticate();
             $request->session()->regenerate();
