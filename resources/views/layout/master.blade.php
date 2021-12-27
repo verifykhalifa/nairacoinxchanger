@@ -9,12 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nairacoinxchange </title>
     <!-- Favicon icon -->
-    <link rel="shortcut icon" type="image/png" href="log/images/Nairacoinr.png">
+    <link rel="shortcut icon" type="image/png" href="/log/images/Nairacoinr.png">
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="admin/vendor/waves/waves.min.css">
-    <link rel="stylesheet" href="admin/vendor/toastr/toastr.min.css">
-    <link rel="stylesheet" href="admin/vendor/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="admin/css/style.css">
+    <link rel="stylesheet" href="/admin/vendor/waves/waves.min.css">
+    <link rel="stylesheet" href="/admin/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="/admin/vendor/owlcarousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/admin/css/style.css">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="index.html"><img src="images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
+                            <a class="navbar-brand" href="#"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
                                 </a>
 
 
@@ -48,13 +48,8 @@
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="/verification" class="dropdown-item">
-                                                <i class="la la-book"></i> Verification
-                                            </a>
-                                            <a href="/transaction" class="dropdown-item">
-                                                <i class="la la-book"></i> History
-                                            </a>
-                                            <a href="/settings" class="dropdown-item">
+                                            
+                                            <a href="/adminsettings" class="dropdown-item">
                                                 <i class="la la-cog"></i> Setting
                                             </a>
                                         
@@ -83,10 +78,7 @@
                             <span><i class="la la-igloo"></i></span>
                         </a>
                     </li>
-                    <li><a href="/rate" data-toggle="tooltip" data-placement="right" title="Changes Rates">
-                            <span><i class="la la-exchange-alt"></i></span>
-                        </a>
-                    </li>
+                   
                     <li><a href="/adminsettings" data-toggle="tooltip" data-placement="right" title="Settings">
                         <span><i class="la la-tools"></i></span>
                     </a>
@@ -143,27 +135,27 @@
 
 
 
-    <script src="admin/vendor/jquery/jquery.min.js"></script>
-    <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="admin/vendor/waves/waves.min.js"></script>
 
    
 
-    <script src="admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="admin/vendor/circle-progress/circle-progress-init.js"></script>
+    <script src="/admin/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="/admin/vendor/circle-progress/circle-progress-init.js"></script>
 
 
     <!--  flot-chart js -->
-    <script src="admin/vendor/apexchart/apexcharts.min.js"></script>
-    <script src="admin/vendor/apexchart/apexchart-init.js"></script>
+    <script src="/admin/vendor/apexchart/apexcharts.min.js"></script>
+    <script src="/admin/vendor/apexchart/apexchart-init.js"></script>
 
-    <script src="admin/js/dashboard.js"></script>
+    <script src="/admin/js/dashboard.js"></script>
 
 
-    <script src="admin/js/scripts.js"></script>
-    <script src="admin/js/settings.js"></script>
-    <script src="admin/js/quixnav-init.js"></script>
-    <script src="admin/js/styleSwitcher.js"></script>
+    <script src="/admin/js/scripts.js"></script>
+    <script src="/admin/js/settings.js"></script>
+    <script src="/admin/js/quixnav-init.js"></script>
+    <script src="/admin/js/styleSwitcher.js"></script>
 </body>
 
 

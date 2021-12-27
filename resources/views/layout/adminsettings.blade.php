@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Nairacoinxchange </title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="/image/png" sizes="16x16" href="/admin/images/favicon.png">
+     <!-- Favicon icon -->
+     <link rel="shortcut icon" type="image/png" href="/log/images/Nairacoinr.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/admin/vendor/waves/waves.min.css">
     <link rel="stylesheet" href="/admin/vendor/toastr/toastr.min.css">
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="index.html"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
+                            <a class="navbar-brand" href="#"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
                             </a>
                             <div class="dashboard_log my-2">
                                 <div class="d-flex align-items-center">
@@ -47,13 +47,8 @@
                                             <span class="arrow"><i class="la la-angle-down"></i></span>
                                         </div>
                                         <div class="dropdown-menu dropdown-menu-right">
-                                            <a href="/verification" class="dropdown-item">
-                                                <i class="la la-book"></i> Verification
-                                            </a>
-                                            <a href="/transaction" class="dropdown-item">
-                                                <i class="la la-book"></i> History
-                                            </a>
-                                            <a href="/settings" class="dropdown-item">
+                                           
+                                            <a href="/adminsettings" class="dropdown-item">
                                                 <i class="la la-cog"></i> Setting
                                             </a>
                                             <form method="POST" action="{{ route('logout') }}">
@@ -81,10 +76,7 @@
                             <span><i class="la la-igloo"></i></span>
                         </a>
                     </li>
-                    <li><a href="/rate" data-toggle="tooltip" data-placement="right" title="Changes Rates">
-                            <span><i class="la la-exchange-alt"></i></span>
-                        </a>
-                    </li>
+                    
                     <li><a href="/adminsettings" data-toggle="tooltip" data-placement="right" title="Settings">
                             <span><i class="la la-tools"></i></span>
                         </a>
@@ -119,17 +111,18 @@
                                             <span>Link Bank</span>
                                         </a>
                                     </li>
-                                
+                                    
                                     <li class="nav-item">
-                                        <a href="{{route('address.create')}}" class="nav-link">
-                                            <i class="la la-plus"></i>
-                                            <span>Add BTC Address</span>
+                                        <a href="/rateview" class="nav-link">
+                                            <i class="la la-edit"></i>
+                                            <span>Update All Coin Rate</span>
                                         </a>
                                     </li>
+                                   
                                     <li class="nav-item">
                                         <a href="{{route('address.index')}}" class="nav-link">
                                             <i class="la la-edit"></i>
-                                            <span>Edit BTC Address</span>
+                                            <span>Update All Coin Address</span>
                                         </a>
                                     </li>
                                 </ul>

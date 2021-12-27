@@ -15,7 +15,7 @@
                 <div class="text-center">
                      @if(session('error'))
                         <div class="alert alert-danger" style="width:92%; margin:auto">
-                       <b>{{session('error')}}</b></div>
+                       <b>{!!session('error')!!}</b></div>
                     @endif
                 </div>
                 {{-- <h1 style="font-size: 40px; padding-left:100px;" ></h1> --}}

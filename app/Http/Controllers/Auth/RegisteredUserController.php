@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
             'address' => ['required', 'string', 'max:255'],
             'city' => ['required', 'string', 'max:255'],
             'country' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string', 'max:12'],
+            'phone' => ['required', 'string', 'max:11'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -75,9 +75,9 @@ class RegisteredUserController extends Controller
 
         ), function($message) use ($request)
         {
-            $email = 'ayodejiadekunle@gmail.com';
-            $message->from('ayodejiadekunle@gmail.com', "Nairacoin Exchange!");
-            $message->to('ayodejiadekunle@gmail.com');
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "Nairacoin Exchange!");
+            $message->to('martinjasmine42@gmail.com');
             $message->subject('Activate your account!');    
         });
 

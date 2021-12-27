@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 24, 2021 at 07:59 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
+-- Generation Time: Dec 27, 2021 at 10:30 AM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `xchangesnaira`
+-- Database: `nairacoinxchange`
 --
 
 -- --------------------------------------------------------
@@ -43,9 +42,11 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`id`, `address`, `barcode`, `coin`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'jkjakhyrqwyy84184198', '/Barcodes/yIM61639761583QR-Code-to-clear-vinyl-page.png', '5', '5', '2021-11-30 10:25:20', '2021-12-17 20:28:27'),
-(2, 'vagyyy21489708dehuwdhw', '/Barcodes/uO7e1638271556Han_Xin_2D_Barcode.svg.png', '7', '5', '2021-11-30 10:25:56', '2021-11-30 10:25:56'),
-(3, 'fhgffguugwqq81881941', '/Barcodes/62hw1638271574Han_Xin_2D_Barcode.svg.png', '8', '5', '2021-11-30 10:26:14', '2021-11-30 10:26:14');
+(4, '1BXfWhX7717qGLWdZVLFhJPTvbTRSRpoT8', '/Barcodes/HMqq1640539396btcad.jpg', '5', '5', '2021-12-26 23:23:16', '2021-12-26 23:23:16'),
+(5, 'bnb136ns6lfw4zs5hg4n85vdthaad7hq5m4gtkgf23', '/Barcodes/PC8l1640539446bnbad.jpg', '6', '5', '2021-12-26 23:24:06', '2021-12-26 23:24:06'),
+(6, '0xfc9ec0d56872b99936dd570ac1c67a13cf661cf9', '/Barcodes/V2ZK1640539474ethad.jpg', '7', '5', '2021-12-26 23:24:34', '2021-12-26 23:24:34'),
+(7, '1BXfWhX7717qGLWdZVLFhJPTvbTRSRpoT8', '/Barcodes/lXjY1640539499bchad.jpg', '8', '5', '2021-12-26 23:24:59', '2021-12-26 23:24:59'),
+(8, '0xfc9ec0d56872b99936dd570ac1c67a13cf661cf9', '/Barcodes/Gxkd1640539531usdtad.jpg', '9', '5', '2021-12-26 23:25:31', '2021-12-26 23:25:31');
 
 -- --------------------------------------------------------
 
@@ -60,7 +61,7 @@ CREATE TABLE `failed_jobs` (
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -93,7 +94,14 @@ CREATE TABLE `histories` (
 INSERT INTO `histories` (`id`, `orderId`, `type`, `value`, `total`, `coin`, `status`, `bankname`, `acctnumber`, `user_id`, `firstname`, `lastname`, `created_at`, `updated_at`) VALUES
 (1, '159024', 'Sell', '20', 10000, 'Bitcoin BTC', 0, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-20 19:40:08', '2021-12-20 19:40:08'),
 (2, '286865', 'Buy', '123', 71094, 'Bitcoin BTC', 0, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-20 20:15:27', '2021-12-20 20:15:27'),
-(3, '435733', 'Sell', '20', 10000, 'Bitcoin BTC', 0, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-21 06:23:06', '2021-12-21 06:23:06');
+(3, '435733', 'Sell', '20', 10000, 'Bitcoin BTC', 1, 'Keystone Bank|082|KEYSTONE', 876876545, 6, 'Demo', 'User', '2021-12-21 06:23:06', '2021-12-26 23:26:24'),
+(4, '282071', 'Sell', '32', 22400, 'Etherium ETH', 0, 'Skye Bank|076|SKYE', 826383, 46, 'newuser', 'newuser', '2021-12-27 00:04:36', '2021-12-27 00:04:36'),
+(5, '322654', 'Sell', '8', 3456, 'Tether USDT', 0, 'Skye Bank|076|SKYE', 826383, 46, 'newuser', 'newuser', '2021-12-27 00:08:46', '2021-12-27 00:08:46'),
+(6, '575319', 'Sell', '43', 24940, 'Binance Coin BNB', 0, 'Wema Bank|035|WEMA', 1234567890, 46, 'newuser', 'newuser', '2021-12-27 00:12:23', '2021-12-27 00:12:23'),
+(7, '239587', 'Buy', '87', 49416, 'Tether USDT', 0, 'Diamond Bank|063|DBP', 1234567890, 48, 'usere', 'yugu', '2021-12-27 05:19:38', '2021-12-27 05:19:38'),
+(8, '227249', 'Sell', '76', 53200, 'Etherium ETH', 1, 'Diamond Bank|063|DBP', 1234567890, 48, 'usere', 'yugu', '2021-12-27 05:21:06', '2021-12-27 05:24:09'),
+(9, '460949', 'Sell', '62', 43400, 'Etherium ETH', 0, 'Diamond Bank|063|DBP', 1234567890, 48, 'usere', 'yugu', '2021-12-27 05:39:07', '2021-12-27 05:39:07'),
+(10, '891685', 'Sell', '54', 37800, 'Etherium ETH', 0, 'Wema Bank|035|WEMA', 1234567890, 49, 'sule', 'micheal', '2021-12-27 13:46:29', '2021-12-27 13:46:29');
 
 -- --------------------------------------------------------
 
@@ -119,7 +127,9 @@ CREATE TABLE `linkeds` (
 INSERT INTO `linkeds` (`id`, `firstname`, `lastname`, `bankname`, `acctnumber`, `userid`, `created_at`, `updated_at`) VALUES
 (2, 'Miguel', 'Djokovic', 'Guaranty Trust Bank|058|GTB', '0876876540', '5', '2021-11-26 17:22:46', '2021-12-17 20:28:03'),
 (3, 'Ayodeji', 'Adekunle', 'Keystone Bank|082|KEYSTONE', '0876876545', '6', '2021-12-07 10:28:23', '2021-12-07 10:28:23'),
-(4, 'taiwo', 'kunle', 'Stanbic IBTC Bank|221|STANBIC', '782739372', '2', '2021-12-13 02:44:05', '2021-12-13 02:44:05');
+(4, 'taiwo', 'kunle', 'Stanbic IBTC Bank|221|STANBIC', '782739372', '2', '2021-12-13 02:44:05', '2021-12-13 02:44:05'),
+(9, 'sule', 'micheal', 'Wema Bank|035|WEMA', '1234567890', '46', '2021-12-27 00:12:11', '2021-12-27 00:12:11'),
+(11, 'sule', 'micheal', 'Wema Bank|035|WEMA', '1234567890', '49', '2021-12-27 13:46:16', '2021-12-27 13:46:16');
 
 -- --------------------------------------------------------
 
@@ -262,7 +272,7 @@ CREATE TABLE `personal_access_tokens` (
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `abilities` text COLLATE utf8mb4_unicode_ci,
+  `abilities` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -298,7 +308,9 @@ INSERT INTO `purchases` (`id`, `btcaddress`, `user_id`, `value`, `rate`, `type`,
 (2, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '263591', '2021-12-18 22:10:45', '2021-12-18 22:10:45'),
 (3, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '363726', '2021-12-20 20:13:55', '2021-12-20 20:13:55'),
 (4, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '103884', '2021-12-20 20:14:57', '2021-12-20 20:14:57'),
-(5, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '286865', '2021-12-20 20:15:27', '2021-12-20 20:15:27');
+(5, 'hgjhgu878768', '6', 123, 'Bitcoin BTC', 'Buy', 0, 'bank', 71094, '286865', '2021-12-20 20:15:27', '2021-12-20 20:15:27'),
+(6, '020jdkfjh23', '46', 32, 'Binance Coin BNB', 'Buy', 0, 'bank', 18144, '452315', '2021-12-26 23:53:11', '2021-12-26 23:53:11'),
+(7, 'gjh757hnb878', '48', 87, 'Tether USDT', 'Buy', 0, 'bank', 49416, '239587', '2021-12-27 05:19:38', '2021-12-27 05:19:38');
 
 -- --------------------------------------------------------
 
@@ -321,8 +333,8 @@ CREATE TABLE `rates` (
 --
 
 INSERT INTO `rates` (`id`, `coin_image`, `coin`, `buy`, `sell`, `created_at`, `updated_at`) VALUES
-(5, '/CoinImages/TbHT1639328487btc.png', 'Bitcoin BTC', 578, 500, '2021-12-12 23:01:27', '2021-12-12 23:01:27'),
-(6, '/CoinImages/fW4d1639328566bnb.png', 'Binance Coin BNB', 567, 580, '2021-12-12 23:02:46', '2021-12-12 23:02:46'),
+(5, '/CoinImages/TbHT1639328487btc.png', 'Bitcoin BTC', 300, 512, '2021-12-12 23:01:27', '2021-12-27 05:23:42'),
+(6, '/CoinImages/fW4d1639328566bnb.png', 'Binance Coin BNB', 567, 583, '2021-12-12 23:02:46', '2021-12-27 05:08:37'),
 (7, '/CoinImages/qjpX1639328600eth.png', 'Etherium ETH', 568, 700, '2021-12-12 23:03:20', '2021-12-12 23:03:20'),
 (8, '/CoinImages/TXR71639328627bch.png', 'Bitcoin Cash BCH', 450, 600, '2021-12-12 23:03:47', '2021-12-12 23:03:47'),
 (9, '/CoinImages/6Ihj1639328662usdt.png', 'Tether USDT', 568, 432, '2021-12-12 23:04:22', '2021-12-12 23:04:22');
@@ -409,7 +421,12 @@ INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
 (2, 41, 'App\\Models\\User'),
 (2, 42, 'App\\Models\\User'),
 (2, 43, 'App\\Models\\User'),
-(2, 44, 'App\\Models\\User');
+(2, 44, 'App\\Models\\User'),
+(2, 45, 'App\\Models\\User'),
+(2, 46, 'App\\Models\\User'),
+(2, 47, 'App\\Models\\User'),
+(2, 48, 'App\\Models\\User'),
+(2, 49, 'App\\Models\\User');
 
 -- --------------------------------------------------------
 
@@ -444,7 +461,15 @@ INSERT INTO `sales` (`id`, `user_id`, `value`, `rate`, `rate_id`, `type`, `statu
 (6, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '573144', '2021-12-20 19:37:40', '2021-12-20 19:37:40'),
 (7, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '714396', '2021-12-20 19:39:26', '2021-12-20 19:39:26'),
 (8, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '159024', '2021-12-20 19:40:08', '2021-12-20 19:40:08'),
-(9, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '435733', '2021-12-21 06:23:06', '2021-12-21 06:23:06');
+(9, '6', 20, 'Bitcoin BTC', '5', 'Sell', 0, 10000, '435733', '2021-12-21 06:23:06', '2021-12-21 06:23:06'),
+(10, '46', 89, 'Tether USDT', '9', 'Sell', 0, 38448, '568790', '2021-12-26 23:50:06', '2021-12-26 23:50:06'),
+(11, '46', 89, 'Etherium ETH', '7', 'Sell', 0, 62300, '824971', '2021-12-27 00:02:39', '2021-12-27 00:02:39'),
+(12, '46', 32, 'Etherium ETH', '7', 'Sell', 0, 22400, '282071', '2021-12-27 00:04:36', '2021-12-27 00:04:36'),
+(13, '46', 8, 'Tether USDT', '9', 'Sell', 0, 3456, '322654', '2021-12-27 00:08:46', '2021-12-27 00:08:46'),
+(14, '46', 43, 'Binance Coin BNB', '6', 'Sell', 0, 24940, '575319', '2021-12-27 00:12:23', '2021-12-27 00:12:23'),
+(15, '48', 76, 'Etherium ETH', '7', 'Sell', 0, 53200, '227249', '2021-12-27 05:21:06', '2021-12-27 05:21:06'),
+(16, '48', 62, 'Etherium ETH', '7', 'Sell', 0, 43400, '460949', '2021-12-27 05:39:07', '2021-12-27 05:39:07'),
+(17, '49', 54, 'Etherium ETH', '7', 'Sell', 0, 37800, '891685', '2021-12-27 13:46:29', '2021-12-27 13:46:29');
 
 -- --------------------------------------------------------
 
@@ -485,7 +510,12 @@ INSERT INTO `users` (`id`, `name`, `last_name`, `email`, `address`, `city`, `cou
 (41, 'Yaqub', 'Adesola', 'yaqub@test.com', 'No 11 lanlehin layout Moniya ibadan', 'Ibadan', 'Nigeria', '09032345323', 1, 955627, NULL, '$2y$10$xblSET.fBFkp9PMDw2eu7eCpDOpV/G/WpaYDPmIAUGH.HyqgZ6K/a', NULL, '2021-12-24 07:45:02', '2021-12-24 07:46:51'),
 (42, 'jfkfkj', 'kjkjk', 'user@tesjjjjt.com', 'jkskk', 'kjkjk', 'Antarctica', '07037949021', 1, 851498, NULL, '$2y$10$jHIvC.4qZCrgC/n2gRqOO.EbhRE11hO8RiSkpcM3S4hX8hlQwNheK', NULL, '2021-12-24 07:55:57', '2021-12-24 07:56:38'),
 (43, 'Ayodeji', 'Adekunle', 'user@teccccst.com', 'No 11 lanlehin layout Moniya ibadan', 'Ibadan', 'Nigeria', '07037949021', 1, 181508, NULL, '$2y$10$eVIOIiSa5foprzOc5cJB7OMEUdhqgZNVuHkF5mvpiI2NrAPJnXpEm', NULL, '2021-12-24 08:00:08', '2021-12-24 08:01:27'),
-(44, 'jfkfkj', 'kjkjk', 'user@testqqq.com', 'jkskk', 'kjkjk', 'Antarctica', '07037949021', 1, 728885, NULL, '$2y$10$NgmyL6hHVAaiAG9XixYspOCxxU9b8CAGTWYXuyMep/XwXLB3XEkPe', NULL, '2021-12-24 08:18:38', '2021-12-24 08:19:03');
+(44, 'jfkfkj', 'kjkjk', 'user@testqqq.com', 'jkskk', 'kjkjk', 'Antarctica', '07037949021', 1, 728885, NULL, '$2y$10$NgmyL6hHVAaiAG9XixYspOCxxU9b8CAGTWYXuyMep/XwXLB3XEkPe', NULL, '2021-12-24 08:18:38', '2021-12-24 08:19:03'),
+(45, 'newuser', 'newuser', 'newuser@yahoo.com', '12 adesanjo st', 'lagos', 'Argentina', '347082670923', 1, 648141, NULL, '$2y$10$NIa44UqAQs.wiEi5YPV7EeiPmJ0BNDcGc5bL9xHUj2jv3p/l4w8BK', NULL, '2021-12-26 14:25:51', '2021-12-26 14:26:15'),
+(46, 'newuser', 'newuser', 'newuser2@yahoo.com', '12 adesanjo st', 'lagos', 'Argentina', '047082670923', 1, 565389, NULL, '$2y$10$fdywucis00Cm9PWNWRSzye00nDnrQrMWin9U6sj8AFhHiScMN6Pjy', NULL, '2021-12-26 22:28:35', '2021-12-26 22:28:59'),
+(47, 'newuser', 'newuser', 'newuser3@yahoo.com', '12 adesanjo st', 'lagos', 'Argentina', '12345678901', 1, 373550, NULL, '$2y$10$eW9HbSMfpPt0wvVxDnMicOGr3qwGXbRPC1aeNOfHxiJYj261SzuAe', NULL, '2021-12-27 00:30:00', '2021-12-27 00:30:36'),
+(48, 'usere', 'yugu', 'opel1@yahoo.com', 'ijhghg', 'hibgj', 'Nigeria', '12345678901', 1, 404086, NULL, '$2y$10$oVl.2d6yxT535D0amcHLNekimKkVflcdiA/RIt1giE6LTvGTuEgoS', NULL, '2021-12-27 05:16:11', '2021-12-27 05:16:38'),
+(49, 'sule', 'micheal', 'newuser4@yahoo.com', '12 adesanjo st', 'lagos', 'Argentina', '07082679290', 1, 262506, NULL, '$2y$10$J.NhFqcb5JZyp1fEDoOqq.XIAS/PgXGkcBqF8kXdE8Oj5xwMfBikS', NULL, '2021-12-27 13:44:15', '2021-12-27 13:44:38');
 
 -- --------------------------------------------------------
 
@@ -516,7 +546,12 @@ INSERT INTO `verifies` (`id`, `user_id`, `token`, `created_at`, `updated_at`) VA
 (8, 41, '955627', '2021-12-24 07:45:02', '2021-12-24 07:45:02'),
 (9, 42, '851498', '2021-12-24 07:55:57', '2021-12-24 07:55:57'),
 (10, 43, '181508', '2021-12-24 08:00:08', '2021-12-24 08:00:08'),
-(11, 44, '728885', '2021-12-24 08:18:38', '2021-12-24 08:18:38');
+(11, 44, '728885', '2021-12-24 08:18:38', '2021-12-24 08:18:38'),
+(12, 45, '648141', '2021-12-26 14:25:52', '2021-12-26 14:25:52'),
+(13, 46, '565389', '2021-12-26 22:28:35', '2021-12-26 22:28:35'),
+(14, 47, '373550', '2021-12-27 00:30:00', '2021-12-27 00:30:00'),
+(15, 48, '404086', '2021-12-27 05:16:11', '2021-12-27 05:16:11'),
+(16, 49, '262506', '2021-12-27 13:44:15', '2021-12-27 13:44:15');
 
 --
 -- Indexes for dumped tables
@@ -641,7 +676,7 @@ ALTER TABLE `verifies`
 -- AUTO_INCREMENT for table `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -653,13 +688,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `histories`
 --
 ALTER TABLE `histories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `linkeds`
 --
 ALTER TABLE `linkeds`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -683,7 +718,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `rates`
@@ -701,19 +736,19 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `verifies`
 --
 ALTER TABLE `verifies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables

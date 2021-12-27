@@ -41,6 +41,7 @@
                         {{session('error')}}</div>
                         @endif
                         <h3>Register new account</h3>
+                        <p></p>
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row">

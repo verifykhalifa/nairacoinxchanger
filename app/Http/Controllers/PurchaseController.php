@@ -82,7 +82,7 @@ class PurchaseController extends Controller
 
         if(is_null($register)){
 
-            return back()->with('error','Please click on VERIFICATION PAGE to update your bank details. It is required for refunds if we dont have stocks, and when you sell to us.');
+            return back()->with('error','Please click on <a href="/verification">VERIFICATION PAGE</a> to update your bank details. It is required for refunds if we dont have stocks, and when you sell to us.');
 
         }elseif($register){
 

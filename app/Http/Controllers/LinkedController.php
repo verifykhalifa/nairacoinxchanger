@@ -45,7 +45,7 @@ class LinkedController extends Controller
             'firstname' => 'required',
             'lastname' => 'required',
             'bankname' => 'required',
-            'acctnumber' => 'required'
+            'acctnumber' => 'required|max:10'
         ]);
 
         $save = new Linked();

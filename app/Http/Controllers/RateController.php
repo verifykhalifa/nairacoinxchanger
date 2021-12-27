@@ -13,10 +13,14 @@ class RateController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
+
         $rates = Rate::orderBy('created_at', 'asc')->get();
-        return view('userpages.dash')->with('rates', $rates);
+        return view('rate.view')->with('rates', $rates);
+        
     }
 
     /**
@@ -26,7 +30,9 @@ class RateController extends Controller
      */
     public function create()
     {
-        //
+        
+        return view('rate.create');
+
     }
 
     /**
@@ -86,8 +92,9 @@ class RateController extends Controller
      */
     public function edit($id)
     {
-        $rate = Rate::findorfail($id);
-        return view('layout.master')->with('rate', $rate);
+        $rates = Rate::findorfail($id);
+        //dd($rates);
+        return view('rate.edit')->with('rates', $rates);
     }
 
     /**
@@ -101,7 +108,18 @@ class RateController extends Controller
     {
         $data = $request->except(['_method','_token']);
 
-        $rate = Rate::findorfail($id);
+        //dd($data);
+        if ($request->has('coin_image')) {
+            $name = Str::random(4).time().$request->file('coin_image')->getClientOriginalName();
+            $extension = $request->file('coin_image')->getClientOriginalExtension();
+            $destination = public_path().'/CoinImages';
+            $path='/CoinImages/'.$name;
+            $request->file('coin_image')->move($destination, $name);
+            $data['coin_image'] = $path;
+        }
+
+        $rate = Rate::find($id);
+        //dd($rate);
 
         $rate->update($data);
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Rate;
+use DB;
 use App\Models\User;
 use App\Models\Linked;
 use App\Models\History;
@@ -44,9 +45,9 @@ class dcontroller extends Controller
             if($token){
                     \Mail::send('emails.ewelcome', array(), function($message)
                 {
-                    $email = 'ayodejiadekunle@gmail.com';
-                    $message->from('ayodejiadekunle@gmail.com', "New Message From NAIRACOINXCHANGE!");
-                    $message->to('ayodejiadekunle@gmail.com');
+                    $email = 'martinjasmine42@gmail.com';
+                    $message->from('martinjasmine42@gmail.com', "New Message From NAIRACOINXCHANGE!");
+                    $message->to('martinjasmine42@gmail.com');
                     $message->subject('Welcome to NAIRACOINXCHANGE!');
                 });
             }
@@ -87,7 +88,16 @@ class dcontroller extends Controller
         }
 
         public function rate(){
-            return view('adminpages.rate');
+           
+            $rates = Rate::all();
+            return view('rate.create')->with('rates', $rates);
+        }
+
+        public function rateview(){
+           
+            $rates = Rate::all();
+            //dd($rates);
+            return view('rate.view')->with('rates', $rates);
         }
 
         public function addbtc(){

@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="index.html"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
+                            <a class="navbar-brand" href="#"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
                                 </a>
 
                             @auth

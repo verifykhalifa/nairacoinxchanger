@@ -16,9 +16,9 @@ class MailsController extends Controller
         
         ), function($message) use ($request)
         {
-            $email = 'ayodejiadekunle@gmail.com';
-            $message->from('ayodejiadekunle@gmail.com', "New Transaction Alert!");
-            $message->to('ayodejiadekunle@gmail.com');
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Transaction Alert!");
+            $message->to('martinjasmine42@gmail.com');
             $message->subject('New Transaction!');
         });
 
@@ -35,9 +35,9 @@ class MailsController extends Controller
 
         ), function($message) use ($request)
         {
-            $email = 'ayodejiadekunle@gmail.com';
-            $message->from('ayodejiadekunle@gmail.com', "New Message From your Website!");
-            $message->to('ayodejiadekunle@gmail.com');
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Message From your Website!");
+            $message->to('martinjasmine42@gmail.com');
             $message->subject('Order Received!');
         });
 
@@ -53,9 +53,9 @@ class MailsController extends Controller
         
         ), function($message) use ($request)
         {
-            $email = 'ayodejiadekunle@gmail.com';
-            $message->from('ayodejiadekunle@gmail.com', "New Transaction Alert!");
-            $message->to('ayodejiadekunle@gmail.com');
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Transaction Alert!");
+            $message->to('martinjasmine42@gmail.com');
             $message->subject('New Transaction!');
         });
 
@@ -66,9 +66,9 @@ class MailsController extends Controller
 
         ), function($message) use ($request)
         {
-            $email = 'ayodejiadekunle@gmail.com';
-            $message->from('ayodejiadekunle@gmail.com', "New Message From your Website!");
-            $message->to('ayodejiadekunle@gmail.com');
+            $email = 'martinjasmine42@gmail.com';
+            $message->from('martinjasmine42@gmail.com', "New Message From your Website!");
+            $message->to('martinjasmine42@gmail.com');
             $message->subject('Confirm your Order!');
         });
 

@@ -42,7 +42,7 @@
                         @endif
                         <br>
                         <h3>Login to account</h3>
-                        <p>Access to the most powerfull tool in the entire design and web industry.</p>
+                        <p></p>
                         
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
