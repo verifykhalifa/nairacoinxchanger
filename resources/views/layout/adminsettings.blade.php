@@ -14,6 +14,7 @@
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="/admin/vendor/waves/waves.min.css">
     <link rel="stylesheet" href="/admin/vendor/toastr/toastr.min.css">
+    <link rel="stylesheet" href="{{ asset('css/iziToast.css') }}">
     <link rel="stylesheet" href="/admin/vendor/owlcarousel/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/admin/css/style.css">
 </head>
@@ -170,7 +171,8 @@
     </div>
 
 
-
+    <script src="{{ asset('js/iziToast.js') }}"></script>
+    @include('vendor.lara-izitoast.toast')
     <script src="/admin/vendor/jquery/jquery.min.js"></script>
     <script src="/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/admin/vendor/waves/waves.min.js"></script>

@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/all.min.css">
 	<!-- bootstrap -->
+	<link rel="stylesheet" href="{{ asset('css/iziToast.css') }}">
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 	<!-- owl carousel -->
 	<link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -204,6 +205,8 @@
 	<!-- end copyright -->
 	
 	<!-- jquery -->
+	<script src="{{ asset('js/iziToast.js') }}"></script>
+	@include('vendor.lara-izitoast.toast')
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>

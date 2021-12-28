@@ -137,7 +137,7 @@
                 
                 <tr>
                     <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
-                        <p style="margin: 0;">A transaction with Order Number: #{{ $orderId }} has been made on the website Kindly approve! 
+                        <p style="margin: 0;">A transaction with Order Number: #{{ $orderId }} has been made on the website Kindly review this order! 
                     </td>
                 </tr>
 {{--                 

@@ -70,7 +70,9 @@ class RateController extends Controller
 
         Rate::create($data);
     
-        return redirect()->back()->with('success', 'Rates Created');
+        notify()->success("Rates Created!","Success");
+
+        return redirect()->back();
     }
 
     /**
@@ -123,7 +125,9 @@ class RateController extends Controller
 
         $rate->update($data);
 
-        return redirect()->back()->with('success','Rate has been updated!');
+        notify()->success("Rate has been updated!","Success");
+
+        return redirect()->back();
     }
 
     /**

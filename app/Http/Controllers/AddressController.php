@@ -77,8 +77,10 @@ class AddressController extends Controller
         }
 
         Address::create($data);
+
+        notify()->success("BTC Address Added!","Success");
     
-        return redirect()->back()->with('success', 'BTC Address Added!');
+        return redirect()->back();
     }
 
     /**
@@ -105,9 +107,11 @@ class AddressController extends Controller
         $rates = Rate::all();
         $coin_name = Rate::where('id',$address->coin)->first();
         $c_name = $coin_name['coin'];
+        $c_id = $coin_name['id'];
         return view('address.edit')->with('address', $address)
                                    ->with('rates', $rates)
-                                   ->with('c_name', $c_name);
+                                   ->with('c_name', $c_name)
+                                   ->with('c_id', $c_id);
     }
 
     /**
@@ -134,7 +138,9 @@ class AddressController extends Controller
 
         $address->update($data);
 
-        return back()->with('success','Address credentials Updated');
+        notify()->success("Address credentials Updated","Success");
+
+        return back();
     }
 
     /**

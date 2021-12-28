@@ -30,7 +30,7 @@
                                         @foreach ($cat_arr as $cat)
                                         <tr class="cell-1">
                                             <td></td>
-                                            <td>{!! date('d/M/y', strtotime($cat->created_at)) !!}</td>
+                                            <td>{!! date('d / M / y', strtotime($cat->created_at)) !!}</td>
                                             <td>{{$cat->orderId}}</td>
                                             <td>{{$cat->coin}}</td>
                                             <td>{{$cat->type}}</td>

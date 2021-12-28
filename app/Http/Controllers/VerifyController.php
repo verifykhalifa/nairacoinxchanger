@@ -34,15 +34,7 @@ class VerifyController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
-
-        $data = [
-            'token' => $request->token
-        ];
-
-        Verify::create($data);
-
-        return view('auth.login')->with('success','You can now login to your dashboard');
+        //
     }
 
     /**

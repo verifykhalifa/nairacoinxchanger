@@ -59,7 +59,9 @@ class LinkedController extends Controller
 
         if($save->save()){
 
-            return back()->with('success','Bank account added.');
+            notify()->success("Bank account added!","Success");
+
+            return back();
         }
     }
 

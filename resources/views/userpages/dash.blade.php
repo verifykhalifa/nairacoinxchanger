@@ -18,6 +18,12 @@
                        <b>{!!session('error')!!}</b></div>
                     @endif
                 </div>
+                <div class="text-center">
+                    @if(session('success'))
+                    <div class="alert alert-success" style="width:92%; margin:auto">
+                    {{session('success')}}</div>
+                    @endif
+                </div>
                 {{-- <h1 style="font-size: 40px; padding-left:100px;" ></h1> --}}
             </div>
         </div>

@@ -72,8 +72,6 @@ class SalesController extends Controller
         }
         
         $register = Linked::where('userid', $sale->user_id)->first();
-        
-        //dd($register);
 
         if(is_null($register)){
             
@@ -83,22 +81,6 @@ class SalesController extends Controller
 
             $sale->save();
             
-            $data = [
-                'orderId'  => $sale->orderId,
-                'type'     => $sale->type,
-                'total'    => $sale->total,
-                'value'    => $sale->value,
-                'coin'     => $sale->rate,
-                'status'   => $sale->status,
-                'user_id'  => $sale->user_id,
-                'bankname'   => $register->bankname,
-                'acctnumber'  => $register->acctnumber,
-                'firstname'=> auth()->user()->name,
-                'lastname' => auth()->user()->last_name
-            ];
-
-            History::create($data);
-
             return redirect()->route('sales.show', $sale->id);
         }
 
@@ -115,7 +97,8 @@ class SalesController extends Controller
         $sale = Sale::findorfail($id);
         $barcode = Address::where('coin', $sale['rate_id'])->first();
         if(is_null($barcode)){
-            return back()->with('error','Oops... something went wrong contact support.');
+            notify()->error("Oops... something went wrong contact support!","Error");
+            return back();
         }else{
             $usAct = Linked::where('userid', $sale['user_id'])->first();
             return view('sale.show')->with('sale', $sale)
