@@ -76,32 +76,32 @@
                 <tr>
                   
                   <th ><img src="images/btc.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin BTC</td>
-                  <td>550</td>
-                  <td>600</td>
+                  <td>580</td>
+                  <td>560</td>
                 </tr>
                 <tr>
                   
                   <th><img src="assets/img/bnb.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Binance Coin BNB</td>
-                  <td >550</td>
-                  <td>600</td>
+                  <td >575</td>
+                  <td>550</td>
                 </tr>
                 <tr>
                   
                   <th><img src="images/eth.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Etherium ETH</td>
-                  <td>550</td>
-                  <td>600</td>
+                  <td>575</td>
+                  <td>556</td>
                 </tr>
                 <tr>
                   
                   <th><img src="images/bch.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin Cash BCH</td>
+                  <td>575</td>
                   <td>550</td>
-                  <td>600</td>
                 </tr>
                 <tr>
                   
                   <th><img src="assets/img/usdt.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Tether USDT</td>
-                  <td>550</td>
-                  <td>600</td>
+                  <td>580</td>
+                  <td>558</td>
                 </tr>
               </tbody>
             </table>
@@ -145,7 +145,6 @@
                   
                   <th scope="col">Cards</th>    
                   <th scope="col">We Buy</th>
-                  <th scope="col">We Sell</th>
                   <th scope="col"></th>
                 </tr>
               </thead>
@@ -154,91 +153,78 @@
                   
                   <td><img src="images/itunes.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Itunes Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Itunes</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/steam.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Steam Gift Card</td>
                   <td >550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Stream</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/amazon.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Amazon Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Amazon</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/apple.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Apple Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Apple</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/google.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Googleplay Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Google</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/ebay.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Ebay Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Ebay</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/nike.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Nike Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Nike</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/sephora.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Sephora Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Sephora</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/nordstrom.jpg" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Nordsrom Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade nordstrom</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/macys.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Macys Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Macys</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/footlocker.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Footlocker Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Footlocker</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/visa.jpg" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Visa card , Walmart Visa, Mastercard and Vanilla visa card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Visa</a></td>
                 </tr>
                 <tr>
                   
                   <td><img src="images/razer.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Razer Gift Card</td>
                   <td>550</td>
-                  <td>600</td>
                   <td><a href="https://api.whatsapp.com/message/RPAINDCH74RXE1">Trade Razer</a></td>
                 </tr>
               </tbody>

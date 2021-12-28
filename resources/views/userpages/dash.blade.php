@@ -89,7 +89,7 @@
                                     <form action="{{ route('purchases.store')}}" method="post" name="myform" id="buyCoins" class="currency_validate">
                                         @csrf
                                         <div class="d-flex">
-                                            <b><span style="color: rgb(233, 236, 16)">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b>
+                                            <b><span style="color: rgb(233, 236, 16)">Current rate: </span>&nbsp;&#8358;</b><b id="label_buy"></b><b>/USD</b> &nbsp; <span style="color: rgb(233, 236, 16)"><b>| Min:&nbsp; </b></span> <b> 20 USD</b>&nbsp; <span style="color: rgb(233, 236, 16)"><b>| Max:&nbsp; </b></span><b> 50,000 USD</b>
                                         </div>
                                         <br>
                                         <div class="mb-3">
