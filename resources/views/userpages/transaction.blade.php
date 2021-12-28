@@ -27,14 +27,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($historyies as $history)
+                                        @foreach ($cat_arr as $cat)
                                         <tr class="cell-1">
                                             <td></td>
-                                            <td>{{$history['created_at']->toFormattedDateString()}}</td>
-                                            <td>{{$history->orderId}}</td>
-                                            <td>{{$history->coin}}</td>
-                                            <td>{{$history->type}}</td>
-                                            @if($history->status == 0)
+                                            <td>{!! date('d/M/y', strtotime($cat->created_at)) !!}</td>
+                                            <td>{{$cat->orderId}}</td>
+                                            <td>{{$cat->coin}}</td>
+                                            <td>{{$cat->type}}</td>
+                                            @if($cat->status == 0)
                                             <td><i class="btn-sm btn-danger">Pending</i> 
                                             </td>
                                             @else

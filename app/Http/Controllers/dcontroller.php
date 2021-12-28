@@ -18,7 +18,7 @@ class dcontroller extends Controller
         public function dashboard()
         {
             if(Auth::user()->hasRole('admin')){
-                $historyies = History::orderBy('created_at','desc')->get();
+                $historyies = History::orderBy('created_at','asc')->get();
                 return view('adminpages.admindash')->with('historyies', $historyies);
             }elseif(Auth::user()->hasRole('user')){
                 $rates = Rate::orderBy('created_at','asc')->get();
@@ -55,10 +55,14 @@ class dcontroller extends Controller
         } 
 
         public function transaction(){
-
+            $cat_arr = array();
             $user_id = auth()->user()->id;
             $historyies = History::where('user_id',$user_id)->get();
-            return view('userpages.transaction')->with('historyies', $historyies);
+            $pussy = array_reverse(json_decode($historyies), true);
+            foreach($pussy as $cat){
+                array_push($cat_arr, $cat);
+            }
+            return view('userpages.transaction')->with('cat_arr', $cat_arr);
         }
 
         public function adminsettings(){
