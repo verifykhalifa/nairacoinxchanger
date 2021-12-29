@@ -75,9 +75,9 @@ class RegisteredUserController extends Controller
 
         ), function($message) use ($request)
         {
-            $email = 'martinjasmine42@gmail.com';
+            $email = $request->email;
             $message->from('martinjasmine42@gmail.com', "Nairacoin Exchange!");
-            $message->to('martinjasmine42@gmail.com');
+            $message->to($email);
             $message->subject('Activate your account!');    
         });
 
