@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NairacoinXchange</title>
+    <title>Login | NairacoinXchange</title>
     <link rel="shortcut icon" type="image/png" href="log/images/Nairacoinr.png">
     <link rel="stylesheet" type="text/css" href="log/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="log/css/fontawesome-all.min.css">
@@ -21,7 +21,7 @@
                         <div class="website-logo-inside">
                             <a href="/">
                                 <div >
-                                    <img  src="log/images/Nairacoinr.png" style="width: 80px; height: 95px;">
+                                    <img  src="../assets/img/nairacoinr.png" style="width: 80px; height: 95px;">
                                 </div>
                             </a>
                         </div>

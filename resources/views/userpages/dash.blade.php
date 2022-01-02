@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="sell">
                                     <div class="d-flex">
-                                        <b><span style="color: rgb(233, 236, 16)">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>
+                                        <b><span style="color: rgb(233, 236, 16)">current rate: </span>&nbsp;&#8358;</b><b id="label_sell"></b><b>/USD</b>&nbsp; <span style="color: rgb(233, 236, 16)"><b>| Min:&nbsp; </b></span> <b> 20 USD</b>&nbsp; <span style="color: rgb(233, 236, 16)"><b>| Max:&nbsp; </b></span><b> 50,000 USD</b>
                                     </div>
                                     <br>
                                     <form action="{{ route('sales.store')}}" method="post" class="currency2_validate">

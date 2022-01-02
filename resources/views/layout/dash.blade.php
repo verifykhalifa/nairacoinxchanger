@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>NairacoinXchange </title>
+    <title>Buy & Sell Bitcoin | USDT | Bitcoin Cash | Ethereum - Nairacoinxchange</title>
     <!-- Favicon icon -->
     <link rel="shortcut icon" type="image/png" href="assets/img/nairacoinr.png">
     <!-- Custom Stylesheet -->
@@ -36,7 +36,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <nav class="navbar navbar-expand-lg navbar-light px-0 justify-content-between">
-                            <a class="navbar-brand" href="#"><img src="/images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image">
+                            <a class="navbar-brand" href="#"><img src="../assets/img/nairacoinr.png" style="width: 70px; height: 85px;" alt="image">
                                 </a>
 
                             @auth

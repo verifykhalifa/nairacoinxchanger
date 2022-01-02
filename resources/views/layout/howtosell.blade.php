@@ -4,10 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+	<meta name="description" content="NairacoinXchange is a leading Nigerian Bitcoin exchange where you can buy and sell Bitcoin, Bitcoin Cash, USDT and Ethereum  with Naira at best rate. Our team of Crypto enthusiasts are always one click away via whatsapp/ email, social media. Contact NairacoinXchange now for all your crypto investments in Nigeria">
 
 	<!-- title -->
-	<title>NairacoinXchange</title>
+	<title>How To Sell | NairacoinXchange</title>
 
 	<!-- favicon -->
 	<link rel="shortcut icon" type="image/png" href="assets/img/nairacoinr.png">
@@ -51,7 +51,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.html">
-								<img src="/assets/img/nairacoinr.png" style="width: 80px; height: 95px;"  alt="Nairacoinxchange">
+								<img src="/assets/img/nairacoinr.png" style="width: 70px; height: 85px;"  alt="Nairacoinxchange">
 							</a>
 						</div>
 						<!-- logo -->
@@ -159,7 +159,7 @@
 						<h2 class="widget-title">Get in Touch</h2>
 						<ul>
 							<li>24 Lekki - Epe Expressway, Ajah, Lagos, Nigeria</li>
-							<li>support@fruitkha.com</li>
+							<li>info@nairacoinxchange.net</li>
 							<li><i class="fab fa-whatsapp" style="font-size:20px"></i> +234 808 746 8412</li>
 						</ul>
 					</div>

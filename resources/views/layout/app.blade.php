@@ -226,7 +226,7 @@
             <div class="container">
                 <div class="row" >
                     <div class="logo_section">
-                        <a class="navbar-brand" href="/"><img src="images/Nairacoinr.png" style="width: 80px; height: 95px;" alt="image"></a>
+                        <a class="navbar-brand" href="/"><img src="images/Nairacoinr.png" style="width: 70px; height: 85px;" alt="image"></a>
                     </div>
                 
                    
