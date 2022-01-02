@@ -7,6 +7,7 @@ use App\Models\Sale;
 use App\Models\Purchase;
 use App\Models\Linked;
 use App\Models\History;
+use App\Models\User;
 use Mail;
 
 class MailsController extends Controller
@@ -15,7 +16,7 @@ class MailsController extends Controller
     public function sellMail(Request $request){
 
         $purchase = Purchase::where('orderId', $request->orderId)->first();
-
+        $emails    = User::where('id', $purchase->user_id)->first();
         $register = Linked::where('userid', $purchase->user_id)->first();
  
         $data = [
@@ -42,9 +43,9 @@ class MailsController extends Controller
             
             ), function($message) use ($request)
             {
-                $email = 'martinjasmine42@gmail.com';
-                $message->from('martinjasmine42@gmail.com', "New Transaction Alert!");
-                $message->to('martinjasmine42@gmail.com');
+                $email = 'info@nairacoinxchange.net';
+                $message->from('info@nairacoinxchange.net', "New Transaction Alert!");
+                $message->to($email);
                 $message->subject('New Transaction!');
             });
     
@@ -61,10 +62,10 @@ class MailsController extends Controller
     
             ), function($message) use ($request)
             {
-                $email = 'martinjasmine42@gmail.com';
-                $message->from('martinjasmine42@gmail.com', "New Message From your Website!");
-                $message->to('martinjasmine42@gmail.com');
-                $message->subject('Order Received!');
+                $email = $emails['email'];
+                $message->from('info@nairacoinxchange.net', "Naira Coin Xchange");
+                $message->to($email);
+                $message->subject('Confirm your Order!');
             });
     
             return redirect()->route('dashboard')->with('success','Check your email for your order details');
@@ -75,8 +76,8 @@ class MailsController extends Controller
 
     public function buyMail(Request $request){
 
-        $sale = Sale::where('orderId', $request->orderId)->first();
-
+        $sale     = Sale::where('orderId', $request->orderId)->first();
+        $email    = User::where('id', $sale->user_id)->first();
         $register = Linked::where('userid', $sale->user_id)->first();
 
         $data = [
@@ -103,9 +104,9 @@ class MailsController extends Controller
             
             ), function($message) use ($request)
             {
-                $email = 'martinjasmine42@gmail.com';
-                $message->from('martinjasmine42@gmail.com', "New Transaction Alert!");
-                $message->to('martinjasmine42@gmail.com');
+                $email = 'info@nairacoinxchange.net';
+                $message->from('info@nairacoinxchange.net', "New Transaction Alert!");
+                $message->to($email);
                 $message->subject('New Transaction!');
             });
     
@@ -116,9 +117,9 @@ class MailsController extends Controller
     
             ), function($message) use ($request)
             {
-                $email = 'martinjasmine42@gmail.com';
-                $message->from('martinjasmine42@gmail.com', "New Message From your Website!");
-                $message->to('martinjasmine42@gmail.com');
+                $email = $email['email'];
+                $message->from('info@nairacoinxchange.net', "Naira Coin Xchange");
+                $message->to($email);
                 $message->subject('Confirm your Order!');
             });
 
