@@ -26,11 +26,23 @@
                             </a>
                         </div>
                         <h3>Forgot Password</h3>
+                        <div class="text-center">
+                            @if(session('success'))
+                            <div class="alert alert-success" style="width:92%; margin:auto">
+                            {{session('success')}}</div>
+                            @endif
+                        </div>
+                        <br>
                         <p>{{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}</p>
                         
-                        <form method="POST" action="{{ route('password.email') }}">
+                        <form method="POST" action="{{ route('forget.password.post') }}">
                             @csrf
                             <input class="form-control" type="text" name="email" placeholder="E-mail Address" required>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             <div class="form-button">
                                 <button id="submit" type="{{ __('Email Password Reset Link') }}}" class="ibtn">Email Password Reset Link</button>
                                 

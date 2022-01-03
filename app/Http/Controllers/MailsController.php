@@ -16,7 +16,7 @@ class MailsController extends Controller
     public function sellMail(Request $request){
 
         $purchase = Purchase::where('orderId', $request->orderId)->first();
-        $emails    = User::where('id', $purchase->user_id)->first();
+        $user_mail    = User::where('id', $purchase->user_id)->first();
         $register = Linked::where('userid', $purchase->user_id)->first();
  
         $data = [
@@ -62,9 +62,11 @@ class MailsController extends Controller
     
             ), function($message) use ($request)
             {
-                $email = $emails['email'];
-                $message->from('info@nairacoinxchange.net', "Naira Coin Xchange");
-                $message->to($email);
+                $purchase  = Purchase::where('orderId', $request->orderId)->first();
+                $user_mail = User::where('id', $purchase->user_id)->first();
+                $recepient = $user_mail['email'];
+                $message->from('info@nairacoinxchange.net', "NairacoinXchange");
+                $message->to($recepient);
                 $message->subject('Confirm your Order!');
             });
     
@@ -77,7 +79,6 @@ class MailsController extends Controller
     public function buyMail(Request $request){
 
         $sale     = Sale::where('orderId', $request->orderId)->first();
-        $email    = User::where('id', $sale->user_id)->first();
         $register = Linked::where('userid', $sale->user_id)->first();
 
         $data = [
@@ -117,9 +118,11 @@ class MailsController extends Controller
     
             ), function($message) use ($request)
             {
-                $email = $email['email'];
-                $message->from('info@nairacoinxchange.net', "Naira Coin Xchange");
-                $message->to($email);
+                $sale      = Sale::where('orderId', $request->orderId)->first();
+                $user_mail = User::where('id', $sale->user_id)->first();
+                $recepient = $user_mail['email'];
+                $message->from('info@nairacoinxchange.net', "NairacoinXchange");
+                $message->to($recepient);
                 $message->subject('Confirm your Order!');
             });
 
