@@ -99,6 +99,7 @@
         <div class="content-body">
             <div class="container-fluid">
                 <div class="row">
+                    @role('admin')
                     <div class="col-xl-3 col-md-4">
                         <div class="card settings_menu">
                             <div class="card-header">
@@ -129,9 +130,14 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                    
-                    
+                    </div>    
+                    @endrole
+                   
+                    @role('user')
+                    <div class="col-xl-3 col-md-4">
+                        
+                    </div>    
+                    @endrole
                         @yield('content')
                     
 
@@ -158,18 +164,7 @@
                 </div>
             </div>
         </div>
-
-        <!--removeIf(production)-->
-        <!--**********************************
-            Right sidebar start
-        ***********************************-->
-        
-        <!--**********************************
-            Right sidebar end
-        ***********************************-->
-        <!--endRemoveIf(production)-->
     </div>
-
 
     <script src="{{ asset('js/iziToast.js') }}"></script>
     @include('vendor.lara-izitoast.toast')
@@ -194,7 +189,4 @@
     <script src="/admin/js/quixnav-init.js"></script>
     <script src="/admin/js/styleSwitcher.js"></script>
 </body>
-
-
-<!-- Mirrored from demo.quixlab.com/elaenia-html/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 30 Oct 2021 08:58:04 GMT -->
 </html>

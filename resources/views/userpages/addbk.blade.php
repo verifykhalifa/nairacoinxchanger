@@ -22,8 +22,7 @@
                                         <p>{{$items['firstname']}}&nbsp; {{$items['lastname']}}</p>
                                     </div>
                                     <div class="edit-option">
-                                        <p>Default</p>
-                                        
+                                        <a href="{{route('linked.edit', $items['id'])}}"><i class="fa fa-pencil"></i></a>
                                     </div>
                                 </div>
                             </div>

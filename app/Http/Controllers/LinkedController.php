@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Linked;
+use App\Models\Role;
 use DB;
 
 class LinkedController extends Controller
@@ -86,7 +87,12 @@ class LinkedController extends Controller
     {
         $linked = Linked::find($id);
         //dd($linked);
-        return view('adminpages.admineditbk', compact('linked'));
+        if($admin = Auth::user()->hasRole('admin')){
+            return view('adminpages.admineditbk', compact('linked'));
+         }else if($user = Auth::user()->hasRole('user')){
+            return view('userpages.usereditbk', compact('linked'));
+         }
+        
     }
 
     /**
@@ -106,10 +112,15 @@ class LinkedController extends Controller
         $linked->userid               = Auth::id();
        
 
-        if($linked->save()){
-
+        $linked->save();
+         if($admin = Auth::user()->hasRole('admin')){
             return view('adminpages.adminconfirm');
-        }
+         }else if($user = Auth::user()->hasRole('user')){
+            notify()->success("Bank Account Updated!","Success");
+            return back();
+         }
+            
+    
 
     }
 

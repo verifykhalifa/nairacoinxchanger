@@ -22,7 +22,7 @@ class CreateHistoriesTable extends Migration
             $table->string('coin');
             $table->integer('status');
             $table->string('bankname');
-            $table->integer('acctnumber');
+            $table->string('acctnumber');
             $table->integer('user_id');
             $table->string('firstname');
             $table->string('lastname');

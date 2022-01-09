@@ -12,10 +12,10 @@
     <link rel="shortcut icon" type="image/png" href="log/images/Nairacoinr.png">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/iziToast.css') }}">
-    <link rel="stylesheet" href="admin/vendor/waves/waves.min.css">
-    <link rel="stylesheet" href="admin/vendor/toastr/toastr.min.css">
-    <link rel="stylesheet" href="admin/vendor/owlcarousel/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="admin/css/style.css">
+    <link rel="stylesheet" href="{{asset('admin/vendor/waves/waves.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/vendor/toastr/toastr.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/vendor/owlcarousel/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
 </head>
 
 <body>
@@ -180,28 +180,28 @@
 
 
 
-    <script src="admin/vendor/jquery/jquery.min.js"></script>
-    <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="admin/vendor/waves/waves.min.js"></script>
+    <script src="{{asset('admin/vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('admin/vendor/waves/waves.min.js')}}"></script>
     <script src="{{ asset('js/iziToast.js') }}"></script>
     @include('vendor.lara-izitoast.toast')
 
 
-    <script src="admin/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="admin/vendor/circle-progress/circle-progress-init.js"></script>
+    <script src="{{asset('admin/vendor/circle-progress/circle-progress.min.js')}}"></script>
+    <script src="{{asset('admin/vendor/circle-progress/circle-progress-init.js')}}"></script>
 
 
     <!--  flot-chart js -->
-    <script src="admin/vendor/apexchart/apexcharts.min.js"></script>
-    <script src="admin/vendor/apexchart/apexchart-init.js"></script>
+    <script src="{{asset('admin/vendor/apexchart/apexcharts.min.js')}}"></script>
+    <script src="{{asset('admin/vendor/apexchart/apexchart-init.js')}}"></script>
 
-    <script src="admin/js/dashboard.js"></script>
+    <script src="{{asset('admin/js/dashboard.js')}}"></script>
 
 
-    <script src="admin/js/scripts.js"></script>
-    <script src="admin/js/settings.js"></script>
-    <script src="admin/js/quixnav-init.js"></script>
-    <script src="admin/js/styleSwitcher.js"></script>
+    <script src="{{asset('admin/js/scripts.js')}}"></script>
+    <script src="{{asset('admin/js/settings.js')}}"></script>
+    <script src="{{asset('admin/js/quixnav-init.js')}}"></script>
+    <script src="{{asset('admin/js/styleSwitcher.js')}}"></script>
 </body>
 
 
