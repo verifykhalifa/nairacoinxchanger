@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Rate;
 
 class HomeController extends Controller
 {
     public function home(){
-        return view('userpages.home');
+        $rates = Rate::orderBy('created_at','asc')->get();
+        return view('userpages.home')->with('rates', $rates);
     }
 
     public function rate(){

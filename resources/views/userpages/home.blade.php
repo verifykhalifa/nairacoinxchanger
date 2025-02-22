@@ -73,41 +73,19 @@
                 </tr>
               </thead>
               <tbody>
+                @if($rates)
+                @foreach($rates as $rate)
                 <tr>
-                  
-                  <th ><img src="images/btc.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin BTC</td>
-                  <td>560</td>
-                  <td>580</td>
+                  <th ><img src="{{$rate->coin_image}}" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;">{{$rate->coin}}</td>
+                  <td>₦{{$rate->buy}}</td>
+                  <td>₦{{$rate->sell}}</td>
                 </tr>
-                <tr>
-                  
-                  <th><img src="assets/img/bnb.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Binance Coin BNB</td>
-                  <td >550</td>
-                  <td>575</td>
-                </tr>
-                <tr>
-                  
-                  <th><img src="images/eth.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Etherium ETH</td>
-                  <td>556</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  
-                  <th><img src="images/bch.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Bitcoin Cash BCH</td>
-                  <td>550</td>
-                  <td>-</td>
-                </tr>
-                <tr>
-                  
-                  <th><img src="assets/img/usdt.png" class="coinsim" alt="" style="width: 25px; height: 25px; margin-top: -5px;"> Tether USDT</td>
-                  <td>558</td>
-                  <td>580</td>
-                </tr>
+                @endforeach
+                @endif
               </tbody>
             </table>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>

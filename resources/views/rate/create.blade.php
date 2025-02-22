@@ -25,19 +25,19 @@
                 <div class="col-xl-6 col-lg-6 col-md-12">
                         <div class="card-body pt-0">
                             <label>Coin Name</label>
-                            <input type="text" id="address" name="address" placeholder="Enter Name of Coin" class="form-control mb-3">
+                            <input type="text" id="address" name="coin" placeholder="Enter Name of Coin" class="form-control mb-3">
                         </div>
                 </div>
                 <div class="mb-3 col-xl-3">
                     <div class="card-body pt-0">
                         <label>Buy Rate</label>
-                        <input type="text" id="address" name="address" placeholder="0.00" class="form-control mb-3">
+                        <input type="text" id="address" name="buy" placeholder="0.00" class="form-control mb-3">
                     </div>
                 </div>
                 <div class="mb-3 col-xl-3">
                     <div class="card-body pt-0">
                         <label>Sell Rate</label>
-                        <input type="text" id="address" name="address" placeholder="0.00" class="form-control mb-3">
+                        <input type="text" id="address" name="sell" placeholder="0.00" class="form-control mb-3">
                     </div>
                 </div>
             </div>
