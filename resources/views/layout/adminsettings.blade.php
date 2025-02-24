@@ -113,6 +113,12 @@
                                             <span>Link Bank</span>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a href="/rate" class="nav-link">
+                                            <i class="la la-edit"></i>
+                                            <span>Add Coin</span>
+                                        </a>
+                                    </li>
                                     
                                     <li class="nav-item">
                                         <a href="/rateview" class="nav-link">
